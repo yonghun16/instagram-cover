@@ -57,3 +57,4 @@ src/-
 - react(19.1.0) : React
 - react-router-dom(7.6.0) : React Router
 - modern-css-reset(1.4.0) : CSS reset
+- styled-components(6.1.18) : CSS-in-JS
