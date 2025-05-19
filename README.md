@@ -47,4 +47,5 @@ src/-
 - 타유저(user_profile) 레이아웃
 
 
-
+### 사용 라이브러리
+- modern-css-reset(1.4.0) : CSS reset
