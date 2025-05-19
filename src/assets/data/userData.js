@@ -1,11 +1,26 @@
 import { avatarImageMap } from './avatarImageMap';
 
 const rawUserData = [
-  { name: 'Ruffles' },
-  { name: 'sabanok' },
-  { name: 'blue_bouy' },
-  { name: 'waggles' },
-  { name: 'stve.io' },
+  { 
+    name: 'Ruffles', 
+    newStory: false
+  },
+  { 
+    name: 'sabanok',
+    newStory: true
+  },
+  { 
+    name: 'blue_bouy',
+    newStory: true
+  },
+  { 
+    name: 'waggles',
+    newStory: true
+  },
+  { 
+    name: 'stve.io',
+    newStory: true
+  },
 ];
 
 const userData = rawUserData.map(user => ({

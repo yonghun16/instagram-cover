@@ -2,6 +2,7 @@ import HomeIcon from '../assets/icons/bottom_icons/home.png';
 import SearchIcon from '../assets/icons/bottom_icons/search.png';
 import RealsIcon from '../assets/icons/bottom_icons/reels.png';
 import ShoppingBagIcon from '../assets/icons/bottom_icons/shop.png';
+import userData from '../assets/data/userData';
 import styled from 'styled-components';
 
 const BottomNavWrapper = styled.div`
@@ -26,6 +27,10 @@ const NavContainer = styled.div`
 
 const IconImg = styled.img`
   height: 24px;
+  &:hover {
+    opacity: 0.7;
+  }
+
 `;
 
 export default function BottomNav() {
@@ -36,6 +41,7 @@ export default function BottomNav() {
         <IconImg src={SearchIcon} alt="Search" />
         <IconImg src={RealsIcon} alt="Reels" />
         <IconImg src={ShoppingBagIcon} alt="Shop" />
+        <IconImg src={userData[0].image} alt="Profile" />
       </NavContainer>
     </BottomNavWrapper>
   );
