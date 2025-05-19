@@ -1,5 +1,5 @@
-// import reactLogo from './assets/react.svg'
 import { Outlet } from 'react-router-dom';
+import 'modern-css-reset';
 
 function App() {
 
