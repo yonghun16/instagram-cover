@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import userData from '../assets/data/userData';
+
 export const Container = styled.div`
   max-width: 400px;
   margin: auto;
@@ -43,11 +45,14 @@ export const Story = styled.div`
 `;
 
 export const StoryImage = styled.div`
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   background: gray;
   border-radius: 50%;
   margin: auto;
+  background-size: cover;
+  background-position: center;
+  background-image: url(${props => props.$src || ''});
 `;
 
 export const StoryText = styled.p`
@@ -129,10 +134,10 @@ const MainPage = () => {
 
       {/* Stories */}
       <Stories>
-        {['Ruffles', 'sabanok...', 'blue_bouy', 'waggles', 'steve.lo'].map((name, i) => (
+        {userData.map((user, i) => (
           <Story key={i}>
-            <StoryImage />
-            <StoryText>{name}</StoryText>
+            <StoryImage $src={user.image}/>
+            <StoryText>{user.name}</StoryText>
           </Story>
         ))}
       </Stories>
