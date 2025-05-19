@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import WifiIcon from '../assets/icons/status/Wifi.png';
 import SignalIcon from '../assets/icons/status/Signal.png';
-import BatteryIcon from '../assets/icons/status/Battery.png';
+import BatteryIcon from '../assets/icons/status/battery.png';
 
 const StatusBarWrapper = styled.div`
   position: fixed;
