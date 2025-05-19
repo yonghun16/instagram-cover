@@ -21,12 +21,12 @@ src/-
 
 ### Git 브렌치 구조
 ```text
-*(main) 
-|\
-| *(dev)─ ─ ─ ─ 
-|  \           \
-|   *(layout)   *()
-|
+* main
+  |
+  *--- dev
+        |
+        *--- layout *--- mainpage
+        *--- 
 ```
 
 
