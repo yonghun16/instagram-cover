@@ -11,15 +11,19 @@ const BottomHeight = styled.div`
 `;
 
 function MainPost() {
-  const recentStores = [];
+  const recentStories  = [];
   for (let i = 0; i < 4; i++) {
     let { recentUser, recentStory } = recentData(5);
-    recentStores.push({ recentUser, recentStory });
+    if (recentStories.find(recentstory => recentstory.recentUser === recentUser )) {
+      i--;
+      continue;
+    }
+    recentStories.push({ recentUser, recentStory });
   }
 
   return (
     <>
-      {recentStores.map(({ recentUser, recentStory }, index) => (
+      {recentStories.map(({ recentUser, recentStory }, index) => (
         <PostCard
           key={index}
           user={userData[recentUser]}
