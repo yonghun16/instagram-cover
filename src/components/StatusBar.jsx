@@ -10,7 +10,7 @@ const StatusBarWrapper = styled.div`
   left: 0;
   right: 0;
   display: flex;
-  justify-content: center; /* 가운데 정렬 */
+  justify-content: center;
 `;
 
 const StatusContainer = styled.div`
@@ -18,12 +18,11 @@ const StatusContainer = styled.div`
   height: 30px;
   background: white;
   display: flex;
-  justify-content: space-between; /* 아이콘 간격 */
+  justify-content: space-between;
   padding: 20px;
   font-size: 18px;
   font-family: sans-serif;
   align-items: center;
-  box-sizing: border-box; /* 패딩 포함된 너비 계산 */
 `;
 
 const Time = styled.div`
