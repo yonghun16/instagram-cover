@@ -3,8 +3,9 @@ import styled from 'styled-components';
 
 import StatusBar from '../components/StatusBar';
 import Stories from '../components/Stories';
+import BottomNav from '../components/BottomNav';
 
-
+/* Styled Components */
 export const Container = styled.div`
   max-width: 400px;
   margin: auto;
@@ -17,7 +18,7 @@ export const Container = styled.div`
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 40px 10px 10px 10px;
   align-items: center;
   border-bottom: 1px solid #ddd;
 `;
@@ -95,8 +96,6 @@ export const Comments = styled.p`
 const MainPage = () => {
   return (
     <Container>
-
-      {/* StatusBar */}
       <StatusBar />
 
       {/* Header */}
@@ -133,6 +132,30 @@ const MainPage = () => {
           <Comments>View all 16 comments</Comments>
         </PostInfo>
       </Post>
+
+      <Post>
+        <PostHeader>
+          <PostUserImage />
+          <PostUserInfo>
+            <Username>Ruffles</Username>
+            <Sponsored>Sponsored</Sponsored>
+          </PostUserInfo>
+        </PostHeader>
+        <PostImage />
+        <PostActions>
+          <span>♡</span>
+          <span>💬</span>
+          <span>✈</span>
+          <RightIcon>🔖</RightIcon>
+        </PostActions>
+        <PostInfo>
+          <p><strong>100 Likes</strong></p>
+          <p><strong>Username</strong> Lorem ipsum dolor sit amet...</p>
+          <Comments>View all 16 comments</Comments>
+        </PostInfo>
+      </Post>
+
+      <BottomNav /> 
     </Container>
   );
 };
