@@ -1,5 +1,6 @@
 import HomeIcon from '../assets/icons/bottom_icons/home.png';
 import SearchIcon from '../assets/icons/bottom_icons/search.png';
+import RealsIcon from '../assets/icons/bottom_icons/reels.png';
 import ShoppingBagIcon from '../assets/icons/bottom_icons/shop.png';
 import styled from 'styled-components';
 
@@ -15,7 +16,7 @@ const BottomNavWrapper = styled.div`
 `;
 
 const NavContainer = styled.div`
-  width: 398px;
+  width: 400px;
   height: 50px;
   background: white;
   display: flex;
@@ -33,6 +34,7 @@ export default function BottomNav() {
       <NavContainer>
         <IconImg src={HomeIcon} alt="Home" />
         <IconImg src={SearchIcon} alt="Search" />
+        <IconImg src={RealsIcon} alt="Reels" />
         <IconImg src={ShoppingBagIcon} alt="Shop" />
       </NavContainer>
     </BottomNavWrapper>

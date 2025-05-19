@@ -14,7 +14,7 @@ const StatusBarWrapper = styled.div`
 `;
 
 const StatusContainer = styled.div`
-  width: 398px;
+  width: 400px;
   height: 30px;
   background: white;
   display: flex;

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import StatusBar from '../components/StatusBar';
+import MainHeader from '../components/MainHeader';
 import Stories from '../components/Stories';
 import BottomNav from '../components/BottomNav';
 
@@ -10,7 +11,6 @@ export const Container = styled.div`
   max-width: 400px;
   margin: auto;
   background: white;
-  border: 1px solid #ddd;
   font-family: sans-serif;
 `;
 
@@ -20,7 +20,6 @@ export const Header = styled.div`
   justify-content: space-between;
   padding: 40px 10px 10px 10px;
   align-items: center;
-  border-bottom: 1px solid #ddd;
 `;
 
 export const Logo = styled.h1`
@@ -98,15 +97,7 @@ const MainPage = () => {
     <Container>
       <StatusBar />
 
-      {/* Header */}
-      <Header>
-        <Logo>Instagram</Logo>
-        <Icons>
-          <span>♡</span>
-          <span>✉</span>
-          <span>＋</span>
-        </Icons>
-      </Header>
+      <MainHeader />
 
       <Stories />
 
