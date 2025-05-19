@@ -1,12 +1,24 @@
-# React + Vite
+# 인스타그램 커버 
+인스타그램 커버 화면 클론하기 [Figma 목업](https://www.figma.com/design/5aK8OoVhDcw2ZClVJufnIv/Instagram-Template-2.0--Preview-?t=8K6m5UEih7ajX1dN-0)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 디렉토리 구조
+```text
+src/- 
+├── components/ 
+│
+├── hooks/
+│
+└── store/
+```
 
-Currently, two official plugins are available:
+### 요구사항
+1. (필수⭐) **React, JavaScript** 스택을 사용합니다.
+2. (선택) TypeScript, Next.js 스택을 사용합니다.
+3. (필수⭐️) **Redux** 또는 Context API를 통해 전역 상태를 관리합니다.
+4. (필수⭐️) **커스텀 훅**을 통해서 공통으로 사용하는 로직을 관리합니다.
+5. (선택) 스타일링은 styled-components 또는 tailwindcss 사용을 권장합니다.
+6. 프론트엔드 직군끼리 진행하는 프로젝트이므로 mock 데이터나 공공으로 쓸 수 있는 오픈 API 등을 사용합니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 구현한 기능들 (여기에 추가하기)
+- 
