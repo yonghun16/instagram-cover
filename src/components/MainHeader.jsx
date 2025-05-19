@@ -42,6 +42,10 @@ export const Icons = styled.div`
 
 export const Icon = styled.img`
   height: 23px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 function MainHeader() {
