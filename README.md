@@ -1,15 +1,34 @@
 # 인스타그램 커버 
 인스타그램 커버 화면 클론하기 [Figma 목업](https://www.figma.com/design/5aK8OoVhDcw2ZClVJufnIv/Instagram-Template-2.0--Preview-?t=8K6m5UEih7ajX1dN-0)
 
+![화면](https://github.com/jobcodebreak/instagram-cover/blob/layout/preview.png?raw=true)
+
+
 ### 디렉토리 구조
 ```text
 src/- 
+├── assets
+│
+├── pages
+│
 ├── components/ 
 │
 ├── hooks/
 │
 └── store/
 ```
+
+
+### Git 브렌치 구조
+```text
+* main
+  |
+  *--- dev
+        |
+        *--- layout *--- mainpage
+        *--- 
+```
+
 
 ### 요구사항
 1. (필수⭐) **React, JavaScript** 스택을 사용합니다.
@@ -21,4 +40,11 @@ src/-
 
 
 ### 구현한 기능들 (여기에 추가하기)
-- 
+#### pages
+- 메인화면(main_page) 레이아웃. 25.05.19. 용훈    <- 예
+- 검색화면(search_page) 레이아웃
+- 내정보(my_profile) 레이아웃
+- 타유저(user_profile) 레이아웃
+
+
+
