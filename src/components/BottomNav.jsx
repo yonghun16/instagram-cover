@@ -1,10 +1,16 @@
-import HomeIcon from '../assets/icons/bottom_icons/home.png';
-import SearchIcon from '../assets/icons/bottom_icons/search.png';
-import RealsIcon from '../assets/icons/bottom_icons/reels.png';
-import ShoppingBagIcon from '../assets/icons/bottom_icons/shop.png';
+import { useLocation } from 'react-router-dom';
 import userData from '../assets/data/userData';
 import styled from 'styled-components';
 
+/* import icons */
+import HomeIcon from '../assets/icons/bottom_icons/home.png';
+import HomeIconActive from '../assets/icons/bottom_icons/home_active.png';
+import SearchIcon from '../assets/icons/bottom_icons/search.png';
+import RealsIcon from '../assets/icons/bottom_icons/reels.png';
+import ShoppingBagIcon from '../assets/icons/bottom_icons/shop.png';
+
+
+/* BottomNav styled components */
 const BottomNavWrapper = styled.div`
   position: fixed;
   bottom: 0;
@@ -34,10 +40,13 @@ const IconImg = styled.img`
 `;
 
 export default function BottomNav() {
+  const location = useLocation();
+  // console.log(location.pathname);  // 디버그
+
   return (
     <BottomNavWrapper>
       <NavContainer>
-        <IconImg src={HomeIcon} alt="Home" />
+        <IconImg src= {location.pathname === '/' ? HomeIconActive : HomeIcon} alt="Home" />
         <IconImg src={SearchIcon} alt="Search" />
         <IconImg src={RealsIcon} alt="Reels" />
         <IconImg src={ShoppingBagIcon} alt="Shop" />

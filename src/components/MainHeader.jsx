@@ -8,7 +8,7 @@ import plusIcon from '../assets/icons/plus.png'
 
 
 // Styled Components MainHeader
-export const Header = styled.div`
+const Header = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 45px 15px 10px 15px;
@@ -16,7 +16,7 @@ export const Header = styled.div`
 `;
 
 
-export const LogoWrap = styled.div`
+const LogoWrap = styled.div`
   display: flex;
   width: 150px;
   height: 30px;
@@ -26,21 +26,21 @@ export const LogoWrap = styled.div`
   }
 `;
 
-export const Logo = styled.img`
+const Logo = styled.img`
   height: 30px;
 `;
 
-export const DownArowIcon = styled.img`
+const DownArowIcon = styled.img`
   height: 20px;
 `;
 
-export const Icons = styled.div`
+const Icons = styled.div`
   display: flex;
   gap: 20px;
   font-size: 18px;
 `;
 
-export const Icon = styled.img`
+const Icon = styled.img`
   height: 23px;
   cursor: pointer;
   &:hover {

@@ -115,4 +115,13 @@ const userData = [
   },
 ];
 
+const recentData = (num) => {
+  const recentUser = Math.floor(Math.random() * num);
+  const recentStory = Math.floor(Math.random() * 2);
+
+  return { recentUser, recentStory };
+}
+
+
 export default userData;
+export { recentData };

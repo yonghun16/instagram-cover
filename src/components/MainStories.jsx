@@ -47,7 +47,7 @@ const StoryText = styled.p`
   margin-top: 5px;
 `;
 
-const Stories = () => {
+const MainStories = () => {
   return (
     <StoriesWrapper>
       {userData.map((user, i) => (
@@ -62,4 +62,4 @@ const Stories = () => {
   );
 };
 
-export default Stories;
+export default MainStories;
