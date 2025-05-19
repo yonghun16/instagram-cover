@@ -18,7 +18,7 @@ const BottomNavWrapper = styled.div`
   right: 0;
   padding: 0;
   display: flex;
-  justify-content: center; /* 가운데 정렬 */
+  justify-content: center;
   align-items: center;
 `;
 
@@ -27,7 +27,7 @@ const NavContainer = styled.div`
   height: 50px;
   background: white;
   display: flex;
-  justify-content: space-around; /* 아이콘 간격 */
+  justify-content: space-around;
   align-items: center;
 `;
 
