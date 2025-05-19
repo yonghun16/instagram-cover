@@ -9,6 +9,8 @@
 src/- 
 ├── assets
 │
+├── pages
+│
 ├── components/ 
 │
 ├── hooks/
@@ -21,7 +23,7 @@ src/-
 ```text
 *(main) 
 |\
-| *(dev)-------
+| *(dev)─ ─ ─ ─ 
 |  \           \
 |   *(layout)   *()
 |
@@ -38,4 +40,11 @@ src/-
 
 
 ### 구현한 기능들 (여기에 추가하기)
-- 
+#### pages
+- 메인화면(main_page) 레이아웃. 25.05.19. 용훈    <- 예
+- 검색화면(search_page) 레이아웃
+- 내정보(my_profile) 레이아웃
+- 타유저(user_profile) 레이아웃
+
+
+
