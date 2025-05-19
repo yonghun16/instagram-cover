@@ -1,5 +1,5 @@
 function SearchPage() {
-  return <div>이거슨 페이지</div>;
+  return <div>이거슨 페이지 입니다 </div>;
 }
 
 export default SearchPage;
