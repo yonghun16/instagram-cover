@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 /* import icons */
-import logo from '../assets/logo.png'
-import downArrowIcon from '../assets/icons/down_arrow.png'
-import likeIcon from '../assets/icons/like.png'
-import messageIcon from '../assets/icons/message.png'
-import plusIcon from '../assets/icons/plus.png'
+import logo from '../../assets/logo.png'
+import downArrowIcon from '../../assets/icons/down_arrow.png'
+import likeIcon from '../../assets/icons/like.png'
+import messageIcon from '../../assets/icons/message.png'
+import plusIcon from '../../assets/icons/plus.png'
 
 
 /* Styled Components MainHeader */

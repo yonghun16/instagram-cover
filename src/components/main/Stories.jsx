@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import userData from '../assets/data/userData';
-import storyRing from '../assets/avatar/Story_ring.png';
+import userData from '../../assets/data/userData';
+import storyRing from '../../assets/avatar/Story_ring.png';
 import { Link } from "react-router-dom";
 
 const StoriesWrapper = styled.div`
@@ -48,7 +48,7 @@ const StoryText = styled.p`
   margin-top: 5px;
 `;
 
-const MainStories = () => {
+const Stories = () => {
   return (
     <StoriesWrapper>
       {userData.map((user, i) => (
@@ -67,4 +67,4 @@ const MainStories = () => {
   );
 };
 
-export default MainStories;
+export default Stories;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import human_plus from "../assets/icons/human_plus.png";
+import human_plus from "../../assets/icons/human_plus.png";
 
 
 /* Styled Components */
@@ -59,7 +59,7 @@ const ButtonSmall = styled.button`
 `;
 
 
-function ProfileActionButtons() {
+function ActionButtons() {
   return (
     <ButtonsWrapper>
       <FllowButton>Follow</FllowButton>
@@ -75,4 +75,4 @@ function ProfileActionButtons() {
   );
 }
 
-export default ProfileActionButtons;
+export default ActionButtons;

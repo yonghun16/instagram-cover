@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import storyRing from '../assets/avatar/Story_ring.png';
-import knownFollowersAvatars from '../assets/avatar/knownfollowers_example.png';
+import storyRing from '../../assets/avatar/Story_ring.png';
+import knownFollowersAvatars from '../../assets/avatar/knownfollowers_example.png';
 
 
 /* Styled Components */
@@ -96,7 +96,7 @@ const LinkHere = styled.div`
   margin-bottom: 5px;
 `;
 
-function ProfileUserInfo({ user }) {
+function UserInfo({ user }) {
   return (
     <Header>
       <Row>
@@ -137,4 +137,4 @@ function ProfileUserInfo({ user }) {
   );
 }
 
-export default ProfileUserInfo;
+export default UserInfo;

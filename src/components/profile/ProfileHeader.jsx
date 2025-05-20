@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 /* import icons */
-import left_arrow from "../assets/icons/left_arrow.png";
-import verified from "../assets/icons/verified.png";
-import bell from "../assets/icons/bell.png";
-import more from "../assets/icons/more.png";
+import left_arrow from "../../assets/icons/left_arrow.png";
+import verified from "../../assets/icons/verified.png";
+import bell from "../../assets/icons/bell.png";
+import more from "../../assets/icons/more.png";
 
 /* Styled Components ProfileHeader */
 const HeaderWrapper = styled.div`

@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import useToggleImg from '../hooks/useToogleImg';
 
-import grid from '../assets/icons/grid.png';
-import grid_active from '../assets/icons/grid_active.png';
-import reels from '../assets/icons/reels.png';
-import reels_active from '../assets/icons/reels_active.png';
-import mentions from '../assets/icons/mentions.png';
-import mentions_active from '../assets/icons/mentions_active.png';
+/* import icons */
+import grid from '../../assets/icons/grid.png';
+import grid_active from '../../assets/icons/grid_active.png';
+import reels from '../../assets/icons/reels.png';
+import reels_active from '../../assets/icons/reels_active.png';
+import mentions from '../../assets/icons/mentions.png';
+import mentions_active from '../../assets/icons/mentions_active.png';
 
 
-
+/* Styled Components GridTabBar */
 const TabBar = styled.div`
   display: flex;
   justify-content: space-around;
@@ -31,7 +31,7 @@ const TabItem = styled.button`
   }
 `;
 
-const ProfileGridTabBar = () => {
+const GridTabBar = () => {
 const [activeTab, setActiveTab] = useState('grid');
 
   return (
@@ -58,4 +58,4 @@ const [activeTab, setActiveTab] = useState('grid');
   );
 };
 
-export default ProfileGridTabBar;
+export default GridTabBar;

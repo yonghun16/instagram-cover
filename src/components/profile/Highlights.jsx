@@ -31,7 +31,7 @@ const Highlight = styled.div`
   }
 `;
 
-function ProfileHighlights({ user }) {
+function Highlights({ user }) {
   return (
     <HighlightsWrapper>
       {user.stories.map((story, i) => (
@@ -44,4 +44,4 @@ function ProfileHighlights({ user }) {
   );
 }
 
-export default ProfileHighlights;
+export default Highlights;

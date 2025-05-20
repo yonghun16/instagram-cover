@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 /* UI Components */
-import MainHeader from '../components/MainHeader';
-import MainStories from '../components/MainStories';
-import MainPost from '../components/MainPost';
+import MainHeader from '../components/main/MainHeader';
+import Stories from '../components/main/Stories';
+import Post from '../components/main/Post';
 
 
 /* Styled Components */
@@ -19,8 +19,8 @@ const MainPage = () => {
   return (
     <Container>
       <MainHeader />
-      <MainStories />
-      <MainPost />
+      <Stories />
+      <Post />
     </Container>
   );
 };

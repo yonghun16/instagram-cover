@@ -4,12 +4,12 @@ import { useParams } from 'react-router-dom';
 import userData from "../assets/data/userData";
 
 /* UI Components */
-import ProfileHeader from '../components/ProfileHeader';
-import ProfileUserInfo from "../components/ProfileUserInfo";
-import ProfileHighlights from "../components/ProfileHighlights";
-import ProfileActionButtons from "../components/ProfileActionButtons";
-import ProfileGridTabBar from "../components/ProfileGridTabBar";
-import PostsGrid from "../components/PostsGrid";
+import ProfileHeader from '../components/profile/ProfileHeader';
+import UserInfo from "../components/profile/UserInfo";
+import Highlights from "../components/profile/Highlights";
+import ActionButtons from "../components/profile/ActionButtons";
+import GridTabBar from "../components/profile/GridTabBar";
+import PostsGrid from "../components/profile/PostsGrid";
 
 
 /* Styled Components */
@@ -28,10 +28,10 @@ function ProfilePage() {
   return (
     <Container>
       <ProfileHeader user={user} />
-      <ProfileUserInfo user={user} />
-      <ProfileActionButtons />
-      <ProfileHighlights user={user} />
-      <ProfileGridTabBar />
+      <UserInfo user={user} />
+      <ActionButtons />
+      <Highlights user={user} />
+      <GridTabBar />
       <PostsGrid />
     </Container>
   );
