@@ -1,4 +1,5 @@
-import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import userData from '../assets/data/userData';
 import styled from 'styled-components';
 
@@ -20,6 +21,7 @@ const BottomNavWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 `;
 
 const NavContainer = styled.div`
@@ -33,24 +35,44 @@ const NavContainer = styled.div`
 
 const IconImg = styled.img`
   height: 24px;
+  ${props => props.$active && `
+    border: 2px solid black;
+    border-radius: 50%;`}
   &:hover {
     opacity: 0.7;
   }
-
 `;
 
+
+const BlackCircle = styled.div`
+  border: 2px solid black;
+`;
+
+
 export default function BottomNav() {
+  const [loginUser, setloginUser] = useState(userData[0]);
   const location = useLocation();
   // console.log(location.pathname);  // 디버그
+  // console.log(loginUser);  // 디버그
 
   return (
     <BottomNavWrapper>
       <NavContainer>
-        <IconImg src= {location.pathname === '/' ? HomeIconActive : HomeIcon} alt="Home" />
+        <Link
+          to={{ pathname: '/' }} >
+          <IconImg src={location.pathname === '/' ? HomeIconActive : HomeIcon} alt="Home" />
+        </Link>
         <IconImg src={SearchIcon} alt="Search" />
         <IconImg src={RealsIcon} alt="Reels" />
         <IconImg src={ShoppingBagIcon} alt="Shop" />
-        <IconImg src={userData[0].image} alt="Profile" />
+        <Link
+          to={{ pathname: `/${loginUser.name}` }} >
+          <IconImg
+            src={loginUser.image}
+            alt="Profile"
+            $active={location.pathname === `/${loginUser.name}`}
+          />
+        </Link>
       </NavContainer>
     </BottomNavWrapper>
   );

@@ -8,19 +8,48 @@ import stveio from '../avatar/Avatar5.png';
 /* postImages */
 import Ruffles1 from '../post/Ruffles1.png';
 import Ruffles2 from '../post/Ruffles2.jpg';
+import Ruffles3 from '../post/Ruffles3.jpg';
+import Ruffles4 from '../post/Ruffles4.jpg';
+import Ruffles5 from '../post/Ruffles5.jpg';
+import Ruffles6 from '../post/Ruffles6.png';
+
 import sabanok1 from '../post/sabanok1.jpg';
 import sabanok2 from '../post/sabanok2.jpg';
+import sabanok3 from '../post/sabanok3.jpg';
+import sabanok4 from '../post/sabanok4.jpg';
+import sabanok5 from '../post/sabanok5.jpg';
+
 import blue_bouy1 from '../post/blue_bouy1.jpg';
 import blue_bouy2 from '../post/blue_bouy2.jpg';
+import blue_bouy3 from '../post/blue_bouy3.jpg';
+import blue_bouy4 from '../post/blue_bouy4.jpg';
+import blue_bouy5 from '../post/blue_bouy5.jpg';
+import blue_bouy6 from '../post/blue_bouy6.jpeg';
+
 import waggles1 from '../post/waggles1.jpg';
 import waggles2 from '../post/waggles2.jpg';
+import waggles3 from '../post/waggles3.jpg';
+
 import stveio1 from '../post/stveio1.jpg';
 import stveio2 from '../post/stveio2.jpg';
+import stveio3 from '../post/stveio3.jpg';
+import stveio4 from '../post/stveio4.jpg';
+import stveio5 from '../post/stveio5.jpg';
+import stveio6 from '../post/stveio6.webp';
 
 const userData = [
   { 
     name: 'Ruffles', 
     image: Ruffles,
+    intro: 'My name is Ruffles. Lorem ipsum dolor sit amet consectetur',
+
+    posts: 123,
+    followers: 19,
+    knownFollower: "rezamong",  // 로그인한 유저가 봤을 때, 알고 있는 팔로워
+    knownFollowerCount: 3,      // 로그인한 유저가 봤을 때, 팔로워 중 지인 수
+    following: 12,
+    hashTag: ['#dog', '#cat', '#puppy'],
+
     newStory: false,
     stories: [
       {
@@ -34,31 +63,91 @@ const userData = [
         likes: 40,
         comments: 20,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
-      }
+      },
+      {
+        postImage: Ruffles3,
+        likes: 44,
+        comments: 22,
+        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+      },
+      {
+        postImage: Ruffles4,
+        likes: 400,
+        comments: 210,
+        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+      },
+      {
+        postImage: Ruffles5,
+        likes: 320,
+        comments: 110,
+        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+      },
+      {
+        postImage: Ruffles6,
+        likes: 112,
+        comments: 211,
+        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+      },
     ]
   },
   { 
     name: 'sabanok',
     image: sabanok,
+    intro: 'My name is sabanok. Lorem ipsum dolor sit amet consectetur',
+    hashTag: ['#GoldenRetriever', '#ShibaInu', '#FrenchBulldog'],
+
+    posts: 23,
+    followers: 29,
+    knownFollower: "momcat",
+    knownFollowerCount: 5,
+    following: 332,
+
     newStory: true,
     stories: [
       {
         postImage: sabanok1,
-        likes: 100,
+        likes: 12,
         comments: 200,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: sabanok2,
         likes: 40,
-        comments: 20,
+        comments: 29,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
-      }
+      },
+      {
+        postImage: sabanok3,
+        likes: 70,
+        comments: 27,
+        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+      },
+      {
+        postImage: sabanok4,
+        likes: 410,
+        comments: 290,
+        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+      },
+      {
+        postImage: sabanok5,
+        likes: 310,
+        comments: 10,
+        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+      },
     ]
   },
   { 
     name: 'blue_bouy',
     image: blue_bouy,
+    intro: 'My name is blue_bouy. Lorem ipsum dolor sit amet consectetur',
+    hashTag: ['#BorderCollie', '#Dachshund', '#Samoyed'],
+
+    posts: 123,
+    followers: 229,
+    knownFollower: "reallycool128",  // 대표 팔로워
+    knownFollowerCount: 2,
+    following: 832,
+
     newStory: true,
     stories: [
       {
@@ -69,34 +158,82 @@ const userData = [
       },
       {
         postImage: blue_bouy2,
-        likes: 420,
-        comments: 220,
+        likes: 20,
+        comments: 20,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
-      }
+      },
+      {
+        postImage: blue_bouy3,
+        likes: 41,
+        comments: 20,
+        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+      },
+      {
+        postImage: blue_bouy4,
+        likes: 9,
+        comments: 4,
+        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+      },
+      {
+        postImage: blue_bouy5,
+        likes: 11,
+        comments: 22,
+        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+      },
+      {
+        postImage: blue_bouy6,
+        likes: 10,
+        comments: 2,
+        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+      },
     ]
   },
   { 
     name: 'waggles',
     image: waggles,
+    intro: 'My name is waggles. Lorem ipsum dolor sit amet consectetur',
+    hashTag: ['#MaineCoon', '#SphynxCat', '#Ragdoll'],
+
+    posts: 1123,
+    followers: 1229,
+    knownFollower: "zzang9",
+    knownFollowerCount: 1,
+    following: 1731,
+
     newStory: true,
     stories: [
       {
         postImage: waggles1,
-        likes: 110,
+        likes: 11,
         comments: 2,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: waggles2,
-        likes: 40,
+        likes: 8,
         comments: 5,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
-      }
+      },
+      {
+        postImage: waggles3,
+        likes: 2,
+        comments: 3,
+        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+      },
     ]
   },
   { 
     name: 'stve.io',
     image: stveio,
+    intro: 'My name is stve.io. Lorem ipsum dolor sit amet consectetur',
+    hashTag: ['#BritishShorthair', '#BengalCat', '#ScottishFold'],
+
+    posts: 3123,
+    followers: 5229,
+    knownFollower: "songyonghun",
+    knownFollowerCount: 19,
+    following: 5731,
+
     newStory: true,
     stories: [
       {
@@ -107,17 +244,41 @@ const userData = [
       },
       {
         postImage: stveio2,
-        likes: 19,
-        comments: 209,
+        likes: 1119,
+        comments: 2209,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
-      }
+      },
+      {
+        postImage: stveio3,
+        likes: 2019,
+        comments: 2309,
+        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+      },
+      {
+        postImage: stveio4,
+        likes: 1999,
+        comments: 2209,
+        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+      },
+      {
+        postImage: stveio5,
+        likes: 9919,
+        comments: 2309,
+        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+      },
+      {
+        postImage: stveio6,
+        likes: 7339,
+        comments: 2309,
+        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+      },
     ]
   },
 ];
 
 const recentData = (num) => {
   const recentUser = Math.floor(Math.random() * num);
-  const recentStory = Math.floor(Math.random() * 2);
+  const recentStory = Math.floor(Math.random() * 3);
 
   return { recentUser, recentStory };
 }

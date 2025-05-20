@@ -1,14 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import logo from '../assets/logo.png'
-import downArrowIcon from '../assets/icons/down_arrow.png'
-import likeIcon from '../assets/icons/like.png'
-import messageIcon from '../assets/icons/message.png'
-import plusIcon from '../assets/icons/plus.png'
+
+/* import icons */
+import logo from '../../assets/logo.png'
+import downArrowIcon from '../../assets/icons/down_arrow.png'
+import likeIcon from '../../assets/icons/like.png'
+import messageIcon from '../../assets/icons/message.png'
+import plusIcon from '../../assets/icons/plus.png'
 
 
-// Styled Components MainHeader
-const Header = styled.div`
+/* Styled Components MainHeader */
+const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 45px 15px 10px 15px;
@@ -16,7 +18,7 @@ const Header = styled.div`
 `;
 
 
-const LogoWrap = styled.div`
+const LeftSection = styled.div`
   display: flex;
   width: 150px;
   height: 30px;
@@ -34,7 +36,7 @@ const DownArowIcon = styled.img`
   height: 20px;
 `;
 
-const Icons = styled.div`
+const RightSection = styled.div`
   display: flex;
   gap: 20px;
   font-size: 18px;
@@ -50,17 +52,17 @@ const Icon = styled.img`
 
 function MainHeader() {
   return (
-    <Header>
-      <LogoWrap>
+    <HeaderWrapper>
+      <LeftSection>
         <Logo src={logo} alt="logo" />
         <DownArowIcon src={downArrowIcon} alt="down arrow" />
-      </LogoWrap>
-      <Icons>
+      </LeftSection>
+      <RightSection>
         <Icon src={likeIcon} alt="like" />
         <Icon src={messageIcon} alt="message" />
         <Icon src={plusIcon} alt="plus" />
-      </Icons>
-    </Header>
+      </RightSection >
+    </HeaderWrapper>
   )
 }
 
