@@ -76,12 +76,7 @@ const LinkHere = styled.div`
   margin-bottom: 5px;
 `;
 
-function UserInfo() {
-  const { username } = useParams();
-
-  const user = userData.find(user => user.name === username);
-  // console.log(user)  // 디버그용
-
+function UserInfo({ user }) {
   return (
     <Header>
       <Row>

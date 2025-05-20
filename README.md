@@ -36,12 +36,12 @@ src/-
         |      *--- searchepage
         |      
         *--- feature
-        |      |
-        |      *--- mainpage/random image
-        |      |
-        |      *--- mainpage/carousel
-        |      |
-        |      *--- profilepage/fullscreen & carousel
+               |
+               *--- mainpage/random image
+               |
+               *--- mainpage/carousel
+               |
+               *--- profilepage/fullscreen & carousel
 ```
 
 

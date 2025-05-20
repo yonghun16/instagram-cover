@@ -9,7 +9,7 @@ import commentIcon from '../assets/icons/comment.png';
 import shareIcon from '../assets/icons/share.png';
 import bookmarkIcon from '../assets/icons/bookmark.png';
 import bookmark_activeIcon from '../assets/icons/bookmark_active.png';
-import postmoreIcon from '../assets/icons/postmore.png';
+import moreIcon from '../assets/icons/more.png';
 
 /* Post styled components */
 const Post = styled.div`
@@ -34,7 +34,7 @@ const PostUserImage = styled.div`
 
 const PostUserInfo = styled.div``;
 
-const PostMore = styled.img`
+const More = styled.img`
   height: 23px;
   padding-right: 5px;
   margin-left: auto;
@@ -117,7 +117,7 @@ function PostCard({ user, story }) {
           <Username>{user.name}</Username>
           <Sponsored>Sponsored</Sponsored>
         </PostUserInfo>
-        <PostMore src={postmoreIcon} alt="more"/>
+        <More src={moreIcon} alt="more"/>
       </PostHeader>
       <PostImage $src={story.postImage} />
       <PostActions>

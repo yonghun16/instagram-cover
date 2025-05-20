@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { useParams } from 'react-router-dom';
+import userData from "../assets/data/userData";
 
 /* UI Components */
 import StatusBar from '../components/StatusBar';
@@ -19,12 +21,17 @@ const Container = styled.div`
 `;
 
 function ProfilePage() {
+  const { username } = useParams();
+
+  const user = userData.find(user => user.name === username);
+  // console.log(user)  // 디버그용
+  
   return (
     <>
       <StatusBar />
       <Container>
-        <ProfileHeader />
-        <UserInfo />
+        <ProfileHeader user={user} />
+        <UserInfo user={user} />
         <ActionButtons />
         <Highlights />
         <PostsGrid />

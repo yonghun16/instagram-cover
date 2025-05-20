@@ -26,7 +26,8 @@ const StatusContainer = styled.div`
 `;
 
 const Time = styled.div`
-  font-weight: 600;
+  padding-left: 10px;
+  font-weight: 400;
 `;
 
 const Icons = styled.div`
