@@ -6,6 +6,7 @@ import human_plus from "../../assets/icons/human_plus.png";
 /* Styled Components */
 const ButtonsWrapper = styled.div`
   padding: 16px;
+  background-color: white;
 `;
 
 const FllowButton = styled.button`

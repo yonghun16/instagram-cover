@@ -6,6 +6,7 @@ const HighlightsWrapper = styled.div`
   gap: 10px;
   padding: 0 16px;
   overflow-x: auto;
+  background-color: white;
 `;
 
 const Highlight = styled.div`

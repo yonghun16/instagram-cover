@@ -14,6 +14,7 @@ import PostsGrid from "../components/profile/PostsGrid";
 
 /* Styled Components */
 const Container = styled.div`
+  height: 100vh;
   max-width: 400px;
   background: white;
   margin: 0 auto;

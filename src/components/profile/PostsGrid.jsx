@@ -7,7 +7,8 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  padding: 8px 0 100px 0;
+  padding: 8px 0 50px 0;
+  background-color: white;
 `;
 
 const Post = styled.div`

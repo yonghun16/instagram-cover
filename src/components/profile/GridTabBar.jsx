@@ -21,7 +21,7 @@ const TabBar = styled.div`
 const TabItem = styled.button`
   background: none;
   border: none;
-  padding: 20px 0 2px 0;
+  margin: 20px 0 2px 0;
   cursor: pointer;
 
   img {

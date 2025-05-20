@@ -15,6 +15,7 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
   padding: 45px 15px 10px 15px;
   align-items: center;
+  background-color: white;
 `;
 
 const LeftSection = styled.div`

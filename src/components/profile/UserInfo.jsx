@@ -7,6 +7,7 @@ import knownFollowersAvatars from '../../assets/avatar/knownfollowers_example.pn
 /* Styled Components */
 const Header = styled.div`
   padding: 0 16px;
+  background-color: white;
 `;
 
 const Row = styled.div`
