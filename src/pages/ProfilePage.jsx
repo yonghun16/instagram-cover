@@ -32,7 +32,7 @@ function ProfilePage() {
       <ActionButtons />
       <Highlights user={user} />
       <GridTabBar />
-      <PostsGrid />
+      <PostsGrid user={user} />
     </Container>
   );
 }

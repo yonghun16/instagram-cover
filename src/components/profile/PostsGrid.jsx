@@ -1,33 +1,53 @@
 import React from "react";
 import styled from "styled-components";
 
+
+/* Styled Components */
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  margin-top: 8px;
+  padding: 8px 0 100px 0;
 `;
 
-const Post = styled.img`
+const Post = styled.div`
+  position: relative;
   width: 100%;
   aspect-ratio: 1;
-  object-fit: cover;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &:hover .overlay {
+    opacity: 1;
+  }
 `;
 
-export default function PostsGrid() {
-  const images = [
-    "https://placekitten.com/300/300",
-    "https://placekitten.com/301/300",
-    "https://placekitten.com/302/300",
-    "https://placekitten.com/303/300",
-    "https://placekitten.com/304/300",
-    "https://placekitten.com/305/300"
-  ];
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+`;
 
+export default function PostsGrid({ user }) {
   return (
     <Grid>
-      {images.map((src, index) => (
-        <Post key={index} src={src} />
+      {user.stories.map((story, i) => (
+        <Post key={i}>
+          <img src={story.postImage} alt="highlight" />
+          <Overlay className="overlay" />
+        </Post>
       ))}
     </Grid>
   );
