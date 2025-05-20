@@ -1,6 +1,8 @@
 import { Outlet } from 'react-router-dom';
 import 'modern-css-reset';
 import { createGlobalStyle } from "styled-components";
+import StatusBar from './components/StatusBar';
+import BottomNav from './components/BottomNav';
 
 const GlobalStyle = createGlobalStyle`
   /* 스크롤바 숨기기 */
@@ -25,7 +27,9 @@ function App() {
   return (
     <>
       <GlobalStyle />
+      <StatusBar />
       <Outlet />
+      <BottomNav />
     </>
   )
 }

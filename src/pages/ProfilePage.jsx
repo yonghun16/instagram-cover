@@ -25,19 +25,15 @@ function ProfilePage() {
 
   const user = userData.find(user => user.name === username);
   // console.log(user)  // 디버그용
-  
+
   return (
-    <>
-      <StatusBar />
-      <Container>
-        <ProfileHeader user={user} />
-        <UserInfo user={user} />
-        <ActionButtons />
-        <Highlights />
-        <PostsGrid />
-      </Container>
-      <BottomNav />
-    </>
+    <Container>
+      <ProfileHeader user={user} />
+      <UserInfo user={user} />
+      <ActionButtons />
+      <Highlights />
+      <PostsGrid />
+    </Container>
   );
 }
 

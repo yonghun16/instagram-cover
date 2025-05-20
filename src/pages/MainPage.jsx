@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 /* UI Components */
-import StatusBar from '../components/StatusBar';
-import BottomNav from '../components/BottomNav';
 import MainHeader from '../components/MainHeader';
 import MainStories from '../components/MainStories';
 import MainPost from '../components/MainPost';
@@ -19,15 +17,11 @@ export const Container = styled.div`
 
 const MainPage = () => {
   return (
-    <>
-      <StatusBar />
-      <Container>
-        <MainHeader />
-        <MainStories />
-        <MainPost />
-      </Container>
-      <BottomNav />
-    </>
+    <Container>
+      <MainHeader />
+      <MainStories />
+      <MainPost />
+    </Container>
   );
 };
 

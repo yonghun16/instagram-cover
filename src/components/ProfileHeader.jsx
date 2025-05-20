@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 /* import icons */
 import left_arrow from "../assets/icons/left_arrow.png";
@@ -62,15 +63,18 @@ const ProfileHeader = ({ user }) => {
   return (
     <HeaderWrapper>
       <LeftSection>
-        <Icon src={left_arrow} alt="back arrow" />
+        <Link
+          to={{ pathname: '/' }} >
+          <Icon src={left_arrow} alt="back arrow" />
+        </Link>
       </LeftSection>
       <CenterSection>
         <Username>{user.name}</Username>
-        <VerifiedIcon src={verified} alt="verified"/>
+        <VerifiedIcon src={verified} alt="verified" />
       </CenterSection>
       <RightSection>
-        <Icon src={bell}/>
-        <Icon src={more}/>
+        <Icon src={bell} />
+        <Icon src={more} />
       </RightSection>
     </HeaderWrapper>
   );
