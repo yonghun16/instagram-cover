@@ -38,7 +38,7 @@ function Highlights({ user }) {
       {user.stories.map((story, i) => (
         <Highlight key={i}>
           <img src={story.postImage} alt="highlight" />
-          <div>{story.postImage.match(/\/post\/([^/.]+)/)[1]}</div>
+          <div>{user.name}{i}</div>
         </Highlight>
       ))}
     </HighlightsWrapper>
