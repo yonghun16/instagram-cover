@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 /* UI Components */
 import StatusBar from '../components/StatusBar';
+import BottomNav from '../components/BottomNav';
 import MainHeader from '../components/MainHeader';
 import MainStories from '../components/MainStories';
 import MainPost from '../components/MainPost';
-import BottomNav from '../components/BottomNav';
 
 
 /* Styled Components */
@@ -19,13 +19,15 @@ export const Container = styled.div`
 
 const MainPage = () => {
   return (
-    <Container>
+    <>
       <StatusBar />
-      <MainHeader />
-      <MainStories />
-      <MainPost />
-      <BottomNav /> 
-    </Container>
+      <Container>
+        <MainHeader />
+        <MainStories />
+        <MainPost />
+      </Container>
+      <BottomNav />
+    </>
   );
 };
 

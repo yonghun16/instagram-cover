@@ -127,9 +127,9 @@ function PostCard({ user, story }) {
         <RightIcon src={bookmarkImg.currentImg} onClick={bookmarkImg.toggleImage} alt="bookmark" />
       </PostActions>
       <PostInfo>
-        <p><strong>{story.likes} Likes</strong></p>
+        <p><strong>{story.likes.toLocaleString()} Likes</strong></p>
         <p><strong>{user.name}</strong> {story.story}</p>
-        <Comments>View all {story.comments} comments</Comments>
+        <Comments>View all {story.comments.toLocaleString()} comments</Comments>
       </PostInfo>
     </Post>
   );

@@ -21,6 +21,14 @@ const userData = [
   { 
     name: 'Ruffles', 
     image: Ruffles,
+    intro: 'My name is Ruffles. Lorem ipsum dolor sit amet consectetur',
+
+    posts: 123,
+    followers: 19,
+    knownFollowers: 3,  // 팔로워 중 지인
+    following: 12,
+    hashTag: ['#dog', '#cat', '#puppy'],
+
     newStory: false,
     stories: [
       {
@@ -40,6 +48,14 @@ const userData = [
   { 
     name: 'sabanok',
     image: sabanok,
+    intro: 'My name is sabanok. Lorem ipsum dolor sit amet consectetur',
+    hashTag: ['#GoldenRetriever', '#ShibaInu', '#FrenchBulldog'],
+
+    posts: 23,
+    followers: 29,
+    knownFollowers: 5,
+    following: 332,
+
     newStory: true,
     stories: [
       {
@@ -59,6 +75,14 @@ const userData = [
   { 
     name: 'blue_bouy',
     image: blue_bouy,
+    intro: 'My name is blue_bouy. Lorem ipsum dolor sit amet consectetur',
+    hashTag: ['#BorderCollie', '#Dachshund', '#Samoyed'],
+
+    posts: 123,
+    followers: 229,
+    knownFollowers: 2,
+    following: 832,
+
     newStory: true,
     stories: [
       {
@@ -78,6 +102,14 @@ const userData = [
   { 
     name: 'waggles',
     image: waggles,
+    intro: 'My name is waggles. Lorem ipsum dolor sit amet consectetur',
+    hashTag: ['#MaineCoon', '#SphynxCat', '#Ragdoll'],
+
+    posts: 1123,
+    followers: 1229,
+    knownFollowers: 1,
+    following: 1731,
+
     newStory: true,
     stories: [
       {
@@ -97,6 +129,14 @@ const userData = [
   { 
     name: 'stve.io',
     image: stveio,
+    intro: 'My name is stve.io. Lorem ipsum dolor sit amet consectetur',
+    hashTag: ['#BritishShorthair', '#BengalCat', '#ScottishFold'],
+
+    posts: 3123,
+    followers: 5229,
+    knownFollowers: 19,
+    following: 5731,
+
     newStory: true,
     stories: [
       {

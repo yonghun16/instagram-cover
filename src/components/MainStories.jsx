@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import userData from '../assets/data/userData';
 import storyRing from '../assets/avatar/Story_ring.png';
+import { Link } from "react-router-dom";
 
 const StoriesWrapper = styled.div`
   display: flex;
@@ -52,9 +53,13 @@ const MainStories = () => {
     <StoriesWrapper>
       {userData.map((user, i) => (
         <Story key={i}>
-          <StoryRingWrapper $hasRing={user.newStory}>
-            <StoryImage $src={user.image} />
-          </StoryRingWrapper>
+          <Link
+            to={{ pathname: `/${user.name}` }}
+            state={{ name: user.name }} >
+            <StoryRingWrapper $hasRing={user.newStory}>
+              <StoryImage $src={user.image} />
+            </StoryRingWrapper>
+          </Link>
           <StoryText>{user.name}</StoryText>
         </Story>
       ))}
