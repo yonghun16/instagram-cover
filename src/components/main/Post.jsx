@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 /* import data */
-import userData, { recentData } from '../assets/data/userData';
+import userData, { recentData } from '../../assets/data/userData';
 import PostCard from './PostCard';
 
 
@@ -10,7 +10,7 @@ const BottomHeight = styled.div`
   height: 55px;
 `;
 
-function MainPost() {
+function Post() {
   const recentStories  = [];
   for (let i = 0; i < 4; i++) {
     let { recentUser, recentStory } = recentData(5);
@@ -35,4 +35,4 @@ function MainPost() {
   );
 }
 
-export default MainPost
+export default Post
