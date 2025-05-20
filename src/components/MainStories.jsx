@@ -17,8 +17,8 @@ const Story = styled.div`
 `;
 
 const StoryRingWrapper = styled.div`
-  width: 85px;
-  height: 85px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,8 +34,8 @@ const StoryRingWrapper = styled.div`
 `;
 
 const StoryImage = styled.div`
-  width: 75px;
-  height: 75px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
   background-size: cover;
   background-position: center;

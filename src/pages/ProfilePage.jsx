@@ -4,12 +4,10 @@ import { useParams } from 'react-router-dom';
 import userData from "../assets/data/userData";
 
 /* UI Components */
-import StatusBar from '../components/StatusBar';
-import BottomNav from '../components/BottomNav';
 import ProfileHeader from '../components/ProfileHeader';
-import UserInfo from "../components/UserInfo";
+import ProfileUserInfo from "../components/ProfileUserInfo";
 import Highlights from "../components/Highlights";
-import ActionButtons from "../components/ActionButtons";
+import ProfileActionButtons from "../components/ProfileActionButtons";
 import PostsGrid from "../components/PostsGrid";
 
 
@@ -29,8 +27,8 @@ function ProfilePage() {
   return (
     <Container>
       <ProfileHeader user={user} />
-      <UserInfo user={user} />
-      <ActionButtons />
+      <ProfileUserInfo user={user} />
+      <ProfileActionButtons />
       <Highlights />
       <PostsGrid />
     </Container>

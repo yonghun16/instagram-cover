@@ -25,7 +25,8 @@ const userData = [
 
     posts: 123,
     followers: 19,
-    knownFollowers: 3,  // 팔로워 중 지인
+    knownFollower: "rezamong",  // 로그인한 유저가 봤을 때, 알고 있는 팔로워
+    knownFollowerCount: 3,      // 로그인한 유저가 봤을 때, 팔로워 중 지인 수
     following: 12,
     hashTag: ['#dog', '#cat', '#puppy'],
 
@@ -53,7 +54,8 @@ const userData = [
 
     posts: 23,
     followers: 29,
-    knownFollowers: 5,
+    knownFollower: "momcat",
+    knownFollowerCount: 5,
     following: 332,
 
     newStory: true,
@@ -80,7 +82,8 @@ const userData = [
 
     posts: 123,
     followers: 229,
-    knownFollowers: 2,
+    knownFollower: "reallycool128",  // 대표 팔로워
+    knownFollowerCount: 2,
     following: 832,
 
     newStory: true,
@@ -107,7 +110,8 @@ const userData = [
 
     posts: 1123,
     followers: 1229,
-    knownFollowers: 1,
+    knownFollower: "zzang9",
+    knownFollowerCount: 1,
     following: 1731,
 
     newStory: true,
@@ -134,7 +138,8 @@ const userData = [
 
     posts: 3123,
     followers: 5229,
-    knownFollowers: 19,
+    knownFollower: "songyonghun",
+    knownFollowerCount: 19,
     following: 5731,
 
     newStory: true,

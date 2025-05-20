@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { useParams } from 'react-router-dom';
-import userData from "../assets/data/userData";
+import storyRing from '../assets/avatar/Story_ring.png';
+import knownFollowersAvatars from '../assets/avatar/knownfollowers_example.png';
 
 
 /* Styled Components */
@@ -15,11 +15,20 @@ const Row = styled.div`
   align-items: center;
 `;
 
+const StoryRingWrapper = styled.div`
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: ${props => (props.$hasRing ? `url(${storyRing})` : 'none')};
+  background-size: cover;
+`;
+
 const ProfileImage = styled.div`
-  width: 85px;
-  height: 85px;
+  width: ${props => (props.$hasRing ? '75px' : '85px')};
+  height: ${props => (props.$hasRing ? '75px' : '85px')};
   border-radius: 50%;
-  border: 3px solid #ff8501;
   background-size: cover;
   background-position: center;
   background-image: url(${props => props.$src});
@@ -45,7 +54,7 @@ const Stats = styled.div`
 }
 `;
 
-const Bio = styled.div`
+const UserExplain = styled.div`
   margin-top: 12px;
   line-height: 1.4;
 
@@ -57,6 +66,17 @@ const Bio = styled.div`
     color: #00376b;
     text-decoration: none;
   }
+`;
+
+const FoloowersInfo = styled.div`
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+const FollowedAvatars = styled.img`
+  width: 60px;
 `;
 
 const Username = styled.div`
@@ -76,11 +96,13 @@ const LinkHere = styled.div`
   margin-bottom: 5px;
 `;
 
-function UserInfo({ user }) {
+function ProfileUserInfo({ user }) {
   return (
     <Header>
       <Row>
-        <ProfileImage $src={user.image} />
+        <StoryRingWrapper $hasRing={user.newStory}>
+          <ProfileImage $hasRing={user.newStory} $src={user.image} />
+        </StoryRingWrapper>
         <Stats>
           <div>
             <div>{user.posts.toLocaleString()}</div>
@@ -96,7 +118,7 @@ function UserInfo({ user }) {
           </div>
         </Stats>
       </Row>
-      <Bio>
+      <UserExplain>
         <Username>{user.name}</Username>
         <IntroHashTag>
           {user.intro} {user.hashTag.map((tag, i) => <a href="#" key={i}>{tag} </a>)}
@@ -104,12 +126,15 @@ function UserInfo({ user }) {
         <LinkHere>
           <a href="#">Link goes here</a>
         </LinkHere>
+        <FoloowersInfo>
+        <FollowedAvatars src={knownFollowersAvatars} alt="Followed Avatars"/>
         <div>
-          <small>Followed by <strong>{user.name}</strong> and <strong>{user.knownFollowers.toLocaleString()} others</strong></small>
+          <small>Followed by <strong>{user.knownFollower}</strong> and <strong>{user.knownFollowerCount.toLocaleString()} others</strong></small>
         </div>
-      </Bio>
+        </FoloowersInfo>
+      </UserExplain>
     </Header>
   );
 }
 
-export default UserInfo;
+export default ProfileUserInfo;

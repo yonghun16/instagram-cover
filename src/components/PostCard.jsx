@@ -1,8 +1,8 @@
-// PostCard.jsx
 import React from 'react';
 import styled from 'styled-components';
 import useToggleImg from '../hooks/useToogleImg';
 
+/* import icons */
 import likeIcon from '../assets/icons/like.png';
 import like_activeIcon from '../assets/icons/like_active.png';
 import commentIcon from '../assets/icons/comment.png';
@@ -11,9 +11,9 @@ import bookmarkIcon from '../assets/icons/bookmark.png';
 import bookmark_activeIcon from '../assets/icons/bookmark_active.png';
 import moreIcon from '../assets/icons/more.png';
 
+
 /* Post styled components */
-const Post = styled.div`
-`;
+const Post = styled.div` `;
 
 const PostHeader = styled.div`
   display: flex;
