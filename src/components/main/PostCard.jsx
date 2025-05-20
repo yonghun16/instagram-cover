@@ -1,19 +1,19 @@
-// PostCard.jsx
 import React from 'react';
 import styled from 'styled-components';
-import useToggleImg from '../hooks/useToogleImg';
+import useToggleImg from '../../hooks/useToogleImg';
 
-import likeIcon from '../assets/icons/like.png';
-import like_activeIcon from '../assets/icons/like_active.png';
-import commentIcon from '../assets/icons/comment.png';
-import shareIcon from '../assets/icons/share.png';
-import bookmarkIcon from '../assets/icons/bookmark.png';
-import bookmark_activeIcon from '../assets/icons/bookmark_active.png';
-import postmoreIcon from '../assets/icons/postmore.png';
+/* import icons */
+import likeIcon from '../../assets/icons/like.png';
+import like_activeIcon from '../../assets/icons/like_active.png';
+import commentIcon from '../../assets/icons/comment.png';
+import shareIcon from '../../assets/icons/share.png';
+import bookmarkIcon from '../../assets/icons/bookmark.png';
+import bookmark_activeIcon from '../../assets/icons/bookmark_active.png';
+import moreIcon from '../../assets/icons/more.png';
+
 
 /* Post styled components */
-const Post = styled.div`
-`;
+const Post = styled.div` `;
 
 const PostHeader = styled.div`
   display: flex;
@@ -34,7 +34,7 @@ const PostUserImage = styled.div`
 
 const PostUserInfo = styled.div``;
 
-const PostMore = styled.img`
+const More = styled.img`
   height: 23px;
   padding-right: 5px;
   margin-left: auto;
@@ -117,7 +117,7 @@ function PostCard({ user, story }) {
           <Username>{user.name}</Username>
           <Sponsored>Sponsored</Sponsored>
         </PostUserInfo>
-        <PostMore src={postmoreIcon} alt="more"/>
+        <More src={moreIcon} alt="more"/>
       </PostHeader>
       <PostImage $src={story.postImage} />
       <PostActions>
@@ -127,9 +127,9 @@ function PostCard({ user, story }) {
         <RightIcon src={bookmarkImg.currentImg} onClick={bookmarkImg.toggleImage} alt="bookmark" />
       </PostActions>
       <PostInfo>
-        <p><strong>{story.likes} Likes</strong></p>
+        <p><strong>{story.likes.toLocaleString()} Likes</strong></p>
         <p><strong>{user.name}</strong> {story.story}</p>
-        <Comments>View all {story.comments} comments</Comments>
+        <Comments>View all {story.comments.toLocaleString()} comments</Comments>
       </PostInfo>
     </Post>
   );
