@@ -8,6 +8,7 @@ import ProfileHeader from '../components/ProfileHeader';
 import ProfileUserInfo from "../components/ProfileUserInfo";
 import ProfileHighlights from "../components/ProfileHighlights";
 import ProfileActionButtons from "../components/ProfileActionButtons";
+import ProfileGridTabBar from "../components/ProfileGridTabBar";
 import PostsGrid from "../components/PostsGrid";
 
 
@@ -30,6 +31,7 @@ function ProfilePage() {
       <ProfileUserInfo user={user} />
       <ProfileActionButtons />
       <ProfileHighlights user={user} />
+      <ProfileGridTabBar />
       <PostsGrid />
     </Container>
   );
