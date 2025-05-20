@@ -6,7 +6,7 @@ import userData from "../assets/data/userData";
 /* UI Components */
 import ProfileHeader from '../components/ProfileHeader';
 import ProfileUserInfo from "../components/ProfileUserInfo";
-import Highlights from "../components/Highlights";
+import ProfileHighlights from "../components/ProfileHighlights";
 import ProfileActionButtons from "../components/ProfileActionButtons";
 import PostsGrid from "../components/PostsGrid";
 
@@ -29,7 +29,7 @@ function ProfilePage() {
       <ProfileHeader user={user} />
       <ProfileUserInfo user={user} />
       <ProfileActionButtons />
-      <Highlights />
+      <ProfileHighlights user={user} />
       <PostsGrid />
     </Container>
   );

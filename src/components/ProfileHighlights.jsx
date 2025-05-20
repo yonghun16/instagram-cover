@@ -4,16 +4,18 @@ import styled from "styled-components";
 const HighlightsWrapper = styled.div`
   display: flex;
   gap: 10px;
-  padding: 16px;
+  padding: 0 16px;
   overflow-x: auto;
 `;
 
 const Highlight = styled.div`
+  flex-shrink: 0;
   text-align: center;
 
   img {
-    width: 64px;
-    height: 64px;
+    width: 60px;
+    height: 60px;
+    padding: 4px;
     border-radius: 50%;
     border: 1px solid #ddd;
   }
@@ -22,17 +24,24 @@ const Highlight = styled.div`
     margin-top: 4px;
     font-size: 12px;
   }
+
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
-export default function Highlights() {
+function ProfileHighlights({ user }) {
   return (
     <HighlightsWrapper>
-      {[...Array(6)].map((_, i) => (
+      {user.stories.map((story, i) => (
         <Highlight key={i}>
-          <img src="https://placekitten.com/100/100" alt="highlight" />
-          <div>Text here</div>
+          <img src={story.postImage} alt="highlight" />
+          <div>{story.postImage.match(/\/post\/([^/.]+)/)[1]}</div>
         </Highlight>
       ))}
     </HighlightsWrapper>
   );
 }
+
+export default ProfileHighlights;

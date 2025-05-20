@@ -29,7 +29,7 @@ src/-
         |
         *--- layout 
         |      |
-        |      *--- mainpage
+        |      *--- mainpage(작업완료->삭제)
         |      |
         |      *--- profilepage
         |      |
