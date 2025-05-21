@@ -41,7 +41,7 @@ const Overlay = styled.div`
   pointer-events: none;
 `;
 
-export default function PostsGrid({ user }) {
+function PostsGrid({ user }) {
   return (
     <Grid>
       {user.stories.map((story, i) => (
@@ -53,3 +53,5 @@ export default function PostsGrid({ user }) {
     </Grid>
   );
 }
+
+export default PostsGrid;

@@ -98,26 +98,22 @@ const LinkHere = styled.div`
 `;
 
 function UserInfo({ user }) {
+  const userStats = ["Posts", "Followers", "Following" ]
+
   return (
     <Header>
       <Row>
         <StoryRingWrapper $hasRing={user.newStory}>
           <ProfileImage $hasRing={user.newStory} $src={user.image} />
         </StoryRingWrapper>
-        <Stats>
-          <div>
-            <div>{user.posts.toLocaleString()}</div>
-            <div>Posts</div>
+      <Stats>
+        {userStats.map((stat, i) => (
+          <div key={i}>
+            <div>{user[stat.toLowerCase()].toLocaleString()}</div>
+            <div>{stat}</div>
           </div>
-          <div>
-            <div>{user.followers.toLocaleString()}</div>
-            <div>Followers</div>
-          </div>
-          <div>
-            <div>{user.following.toLocaleString()}</div>
-            <div>Following</div>
-          </div>
-        </Stats>
+        ))}
+      </Stats>
       </Row>
       <UserExplain>
         <Username>{user.name}</Username>
