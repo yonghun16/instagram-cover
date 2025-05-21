@@ -7,8 +7,11 @@ import styled from 'styled-components';
 import HomeIcon from '../assets/icons/bottom_icons/home.png';
 import HomeIconActive from '../assets/icons/bottom_icons/home_active.png';
 import SearchIcon from '../assets/icons/bottom_icons/search.png';
-import RealsIcon from '../assets/icons/bottom_icons/reels.png';
+import SearchIconActive from '../assets/icons/bottom_icons/search_active.png';
+import ReelsIcon from '../assets/icons/bottom_icons/reels.png';
+import ReelsIconActive from '../assets/icons/bottom_icons/reels_active.png';
 import ShoppingBagIcon from '../assets/icons/bottom_icons/shop.png';
+import ShoppingBagIconActive from '../assets/icons/bottom_icons/shop_active.png';
 
 
 /* BottomNav styled components */
@@ -50,7 +53,7 @@ const BlackCircle = styled.div`
 
 
 export default function BottomNav() {
-  const [loginUser, setloginUser] = useState(userData[0]);
+  const [loginUser, setloginUser] = useState(userData[0]);  // 로그인 유저 반환
   const location = useLocation();
   // console.log(location.pathname);  // 디버그
   // console.log(loginUser);  // 디버그
@@ -62,9 +65,18 @@ export default function BottomNav() {
           to={{ pathname: '/' }} >
           <IconImg src={location.pathname === '/' ? HomeIconActive : HomeIcon} alt="Home" />
         </Link>
-        <IconImg src={SearchIcon} alt="Search" />
-        <IconImg src={RealsIcon} alt="Reels" />
-        <IconImg src={ShoppingBagIcon} alt="Shop" />
+        <Link
+          to={{ pathname: '/search' }} >
+          <IconImg src={location.pathname === '/search' ? SearchIconActive : SearchIcon} alt="Search" />
+        </Link>
+        <Link
+          to={{ pathname: '/reels' }} >
+          <IconImg src={location.pathname === '/reels' ? ReelsIconActive : ReelsIcon} alt="Search" />
+        </Link>
+        <Link
+          to={{ pathname: '/shop' }} >
+          <IconImg src={location.pathname === '/shop' ? ShoppingBagIconActive : ShoppingBagIcon} alt="Shop" />
+        </Link>
         <Link
           to={{ pathname: `/${loginUser.name}` }} >
           <IconImg

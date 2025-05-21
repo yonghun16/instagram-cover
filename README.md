@@ -31,17 +31,18 @@ src/-
         |      |
         |      *--- mainpage(작업완료->삭제)
         |      |
-        |      *--- profilepage
+        |      *--- profilepage(작업완료->삭제)
         |      |
-        |      *--- searchepage
+        |      *--- searchepage(작업 중)
         |      
         *--- feature
                |
-               *--- mainpage/random image
+               *--- carousel
                |
-               *--- mainpage/carousel
+               *--- useFullscreen
                |
-               *--- profilepage/fullscreen & carousel
+               *--- useInput
+
 ```
 
 
@@ -56,18 +57,20 @@ src/-
 ### ⚙️ 구현한 기능들 **(여기에 추가하기)**
 #### 1. pages
 - 메인화면(main_page) 레이아웃. - finished by 용훈(25.05.19)
-  - userdata를 js파일 안에 객체로 저장하여 공용으로 사용
-- 유저정보(profile) 레이아웃. - working by 용훈(25.05.20)
-  - myprofile, userprofile 구분(url 끝에 계정 명으로 주소를 다르게 받도록 구현)
-- 검색화면(search_page) 레이아웃. - working by 준하
+- 유저정보(profile) 레이아웃. - finished by 용훈(25.05.20)
+- 검색화면(search_page) 레이아웃. - finished by 용훈(25.05.21)
 
 #### 2. feature
-- 메인화면 접속 시 랜덤하게 이미지 바뀌기 적용. - finished by 용훈(25.05.19)
-- 메인화면 로고 모달 만들기
-  - 모달을 hook으로 만들 수 없는지 검토
-- (custom hook) 버튼 누르면 이미지 변환 공용 hook 구현. - finished by 용훈(25.05.19)
-- 메인화면 이미지 케로셀 적용.
-- 프로파일화면에서 이미지 클릭하면 모달로 창 전환한 후 케로셀 적용.
+- 메인화면 -> 접속 시 랜덤하게 이미지 바뀌기 적용. - finished by 용훈(25.05.19)
+- (custom hook) -> 버튼 누르면 이미지 변환 공용 hook 구현. - finished by 용훈(25.05.19)
+- ReelsPage, ShopPage 더미 ->  Main으로 리다이렉트 기능. - finished by 용훈(25.05.21)
+- (custom hook) 모달을 hook으로 만들들고 케로셀 적용 기능.
+- 메인화면 -> 로고 클릭 시 모달 띄워 버튼 표시
+- 메인화면 -> 이미지 케로셀 적용.
+- 프로파일화면 -> 이미지 클릭하면 모달로 창 띄운 후 케로셀 적용.
+- 검색화면화면 -> 이미지 클릭하면 모달로 창 띄운 후 케로셀 적용
+- (custom hook) -> 인풋 입력창에 '금기어' 필터 기능.
+- 404 화면 -> 정상적인 접근이 아니거나, 없는 주소로 직접 접근시 404 화면 표시.
 
 #### 3. refactoring
 - (redux) 로그인한 사용자를 가정하고 로그인 사용자 정보를 공용상태 구현.
