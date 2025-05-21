@@ -1,6 +1,9 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 
+import searchIcon from '../../assets/icons/input_search.png';
+import closeIcon from '../../assets/icons/input_close.png';
+
 /* Styled Components */
 export const SearchWrapper = styled.div`
   position: relative;
@@ -15,11 +18,16 @@ export const SearchWrapper = styled.div`
 
 export const SearchInput = styled.input`
   width: 100%;
-  padding: 4px 10px;
-  margin: 4px 10px;
   background: #ECECEC;
+  margin: 4px 10px;
+  padding: 4px 0;;
+  padding-left: ${(props) => props.$isFocused || props.$hasText ? '10px' : '30px'};
+  padding-right: 10px;
+  display: flex;
+
   font-size: 16px;
-  box-sizing: border-box;
+  font-weight: 300;
+
   border: none;
   border-radius: 9px;
   outline: none;
@@ -30,25 +38,20 @@ export const SearchInput = styled.input`
   }
 `;
 
-export const SearchIcon = styled.svg`
+export const SearchIcon = styled.img`
   position: absolute;
-  left: 10px;
+  left: 20px;
   width: 18px;
   height: 18px;
-  fill: #aaa;
   pointer-events: none;
 `;
 
-export const ClearButton = styled.button`
+export const ClearButton = styled.img`
+  width: 18px;
   position: absolute;
-  right: 10px;
-  font-size: 18px;
-  background: none;
-  border: none;
-  color: #999;
+  right: 20px;
+  padding: 2px;
   cursor: pointer;
-  padding: 0;
-  line-height: 1;
 `;
 
 
@@ -58,16 +61,14 @@ const SearchInputBox = () => {
   const inputRef = useRef(null);
 
   const handleClear = () => {
-    setInputValue('');
-    inputRef.current?.blur();
+    setInputValue('');          // 입력창 비우기
+    inputRef.current?.blur();   // focus 해제
   };
 
   return (
     <SearchWrapper>
       {!isFocused && inputValue === '' && (
-        <SearchIcon viewBox="0 0 24 24">
-          <path d="M10 2a8 8 0 105.29 14.29l4.7 4.7 1.41-1.41-4.7-4.7A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z" />
-        </SearchIcon>
+        <SearchIcon src={searchIcon} />
       )}
       <SearchInput
         ref={inputRef}
@@ -76,9 +77,11 @@ const SearchInputBox = () => {
         onChange={(e) => setInputValue(e.target.value)}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
+        $isFocused={isFocused}
+        $hasText={inputValue.length > 0}
       />
       {isFocused && (
-        <ClearButton onMouseDown={handleClear}>×</ClearButton>
+        <ClearButton onMouseDown={handleClear} src={closeIcon} />
       )}
     </SearchWrapper>
   );
