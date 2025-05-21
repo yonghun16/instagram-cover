@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SearchInputBox from '../components/search/SearchInputBox';
+import SearchGrid from '../components/search/SearchGrid';
 
 // 스타일 정의
 const Container = styled.div`
@@ -27,7 +28,7 @@ const SearchPage = () => {
       <SearchBar>
         <SearchInputBox />
       </SearchBar>
-      {/* 여기에 이미지 Grid 등 추가 */}
+      <SearchGrid />
     </Container>
   );
 };

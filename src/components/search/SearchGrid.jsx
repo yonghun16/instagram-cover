@@ -1,0 +1,122 @@
+import userData from '../../assets/data/userData';
+import styled from 'styled-components';
+import React, { useState, useEffect, useRef } from 'react';
+import { useMemo } from 'react';
+
+/* Styled Components */
+const GridWrapper = styled.div`
+  padding-top: 75px;
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  padding: 8px 0 50px 0;
+  background-color: white;
+`;
+
+const Post = styled.div`
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &:hover .overlay {
+    opacity: 1;
+  }
+`;
+
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+`;
+
+
+function SearchGrid() {
+  /* 초기 posts 배열 준비 */
+  // userPosts : 랜덤한 순서의 유저 게시물(한번만 계산하기 위해 useMemo 사용)
+  const usersPosts = useMemo(() => {  
+    let userRandomArray = [];   // 유저를 랜덤으로 나열한 배열
+
+    // userRandomArray 배열 초기화 (userData의 수 만큼)
+    for (let i = 0; i < userData.length; i++) {
+      userRandomArray.push(i);
+    }
+
+    // fisher-yates : 셔플 알고리즘
+    for (let i = userRandomArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [userRandomArray[i], userRandomArray[j]] = [userRandomArray[j], userRandomArray[i]];
+    }
+    // console.log(userRandomArray); // 디버깅: 확률적으로 균일한 셔플 결과
+    // console.log(userData[userRandomArray[0]].stories[0].postImage); // 디버깅: postImage를 가져옴
+
+    const posts = [];
+    for (let i = 0; i < userRandomArray.length; i++) {
+      for (let j = 0; j < 3; j++) {
+        posts.push(userData[userRandomArray[i]].stories[j]);
+      }
+    }
+    // console.log(usersPosts);  // 디버깅: 유저의 포스트 정보를 가져옴
+
+    return posts;
+  }, []);
+
+
+  /* 무한 스크롤 로직 */
+  const [displayPosts, setDisplayPosts] = useState(usersPosts); // 상태로 보여줄 포스트 관리 (for 무한 스크롤)
+  const containerRef = useRef(null); // 스크롤 감지용 ref
+
+  // 스크롤 핸들러 (하단 도달하면 게시물 더 붙이기)
+  const onScroll = () => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    // 스크롤이 거의 바닥에 닿으면
+    if (el.scrollTop + el.clientHeight >= el.scrollHeight - 10) {
+      // console.log(el.scrollTop, el.clientHeight, el.scrollHeight); // 디버깅 : (스크롤바 상단 y좌표 + 스크롤바 길이) = 스크롤바 하단 y좌표 > 스크롤영역 맨 마지막 y좌표 - 10
+      setDisplayPosts((prev) => [...prev, ...usersPosts]);  // 기존 배열에 같은 배열 다시 붙이기 (무한 반복 효과)
+    }
+  };
+
+  // 최초 1회는 반드시 실행
+  useEffect(() => {
+    onScroll();
+  }, []);
+
+
+  /* Render */
+  return (
+    <GridWrapper
+      ref={containerRef}
+      style={{ height: '100vh', overflowY: 'auto' }}    // 스크롤 가능 영역 지정
+      onScroll={onScroll}
+    >
+      <Grid>
+        {displayPosts.map((post, i) => (
+          <Post key={i}>
+            <img src={post.postImage} alt="posts" />
+            <Overlay className="overlay" />
+          </Post>
+        ))}
+      </Grid>
+    </GridWrapper>
+  );
+}
+
+export default SearchGrid;
