@@ -4,6 +4,8 @@ import App from "./App";
 import MainPage from "./pages/MainPage";
 import ProfilePage from "./pages/ProfilePage";
 import SearchPage from "./pages/SearchPage";
+import ReelsPage from "./pages/ReelsPage";
+import ShopPage from "./pages/ShopPage";
 
 
 // 라우터 컴포넌트
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
       {
         path: "/search",
         element: <SearchPage />,
+      },
+      {
+        path: "/reels",
+        element: <ReelsPage />,
+      },
+      {
+        path: "/shop",
+        element: <ShopPage />,
       },
     ],
   },
