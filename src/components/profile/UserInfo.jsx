@@ -38,7 +38,7 @@ const ProfileImage = styled.div`
 const Stats = styled.div`
   font-size: 0.95rem;
   display: flex;
-  padding-right: 15px;
+  padding-right: 10px;
   justify-content: space-between;
   gap: 25px;
   & > div {
