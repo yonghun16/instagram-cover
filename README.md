@@ -33,11 +33,11 @@ src/-
         |      |
         |      *--- profilepage(작업완료->삭제)
         |      |
-        |      *--- searchepage(작업 중)
+        |      *--- searchepage(작업완료)
         |      
         *--- feature
                |
-               *--- carousel
+               *--- useCarousel
                |
                *--- useFullscreen
                |
@@ -64,17 +64,18 @@ src/-
 - 메인화면 -> 접속 시 랜덤하게 이미지 바뀌기 적용. - finished by 용훈(25.05.19)
 - (custom hook) -> 버튼 누르면 이미지 변환 공용 hook 구현. - finished by 용훈(25.05.19)
 - ReelsPage, ShopPage 더미 ->  Main으로 리다이렉트 기능. - finished by 용훈(25.05.21)
-- (custom hook) 모달을 hook으로 만들들고 케로셀 적용 기능.
+- 검색화면 -> 무한 스크롤 구현. finished by 용훈(25.05.21)
 - 메인화면 -> 로고 클릭 시 모달 띄워 버튼 표시
 - 메인화면 -> 이미지 케로셀 적용.
+- (custom hook) -> 검색화면 검색어 입력창에 '금기어' 필터 기능.
+- (custom hook) 모달을 hook으로 만들고 케로셀 적용 기능.
 - 프로파일화면 -> 이미지 클릭하면 모달로 창 띄운 후 케로셀 적용.
-- 검색화면화면 -> 이미지 클릭하면 모달로 창 띄운 후 케로셀 적용
-- (custom hook) -> 인풋 입력창에 '금기어' 필터 기능.
+- 검색화면 -> 이미지 클릭하면 모달로 창 띄운 후 케로셀 적용
 - 404 화면 -> 정상적인 접근이 아니거나, 없는 주소로 직접 접근시 404 화면 표시.
+- 이미지 속성(like, comment, 사진이 여러장인지?, 동영상?)에 따라 이미지 위에 속성아이콘 적용.
 
 #### 3. refactoring
-- (redux) 로그인한 사용자를 가정하고 로그인 사용자 정보를 공용상태 구현.
-  - myprofile, userprofile 구분 용도.
+- (redux) 공용상태 구현 -> 로그인한 사용자 : 로그인 상태를 공용상태로 만들고 각 필요한 컴포넌트에서 사용.
 
 
 
@@ -93,6 +94,7 @@ src/-
 - react-router-dom(7.6.0) : react router
 - modern-css-reset(1.4.0) : css reset
 - styled-components(6.1.18) : css-in-js
+- react-responsive-carousel(3.2.23) : carousel
 
 
 
