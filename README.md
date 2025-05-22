@@ -81,8 +81,8 @@ src/-
 - 404 화면 -> 정상적인 접근이 아니거나, 없는 주소로 직접 접근시 404 화면 표시.
 
 #### 3. refactoring
-- (redux) 로그인 공용상태 Read. - finished by 용훈(25.05.22)
-- (redux) 포스트 쓰기 로그인된 공용상태 Update.
+- (redux) 로그인 데이타 Read (로그인). - finished by 용훈(25.05.22)
+- (redux) 로그인 데이타 Update. (포스트 작성)
 
 
 
