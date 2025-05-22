@@ -81,9 +81,8 @@ const FollowedAvatars = styled.img`
 `;
 
 const Username = styled.div`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  margin-bottom: 4px;
 `;
 
 const IntroHashTag = styled.div`

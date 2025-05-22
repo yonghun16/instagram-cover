@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useParams } from 'react-router-dom';
 import userData from "../assets/data/userData";
@@ -21,21 +21,40 @@ const Container = styled.div`
 `;
 
 function ProfilePage() {
+  const [userObject, setUserObject] = useState({});
   const { username } = useParams();
 
-  const user = userData.find(user => user.name === username);
-  // console.log(user)  // 디버그용
+  useEffect(() => {
+    setUserObject(userData.find(user => user.name === username));
+  }, []);
 
   return (
-    <Container>
-      <ProfileHeader user={user} />
-      <UserInfo user={user} />
-      <ActionButtons />
-      <Highlights user={user} />
-      <GridTabBar />
-      <PostsGrid user={user} />
-    </Container>
+  <Container>
+    {userObject.name ? (
+      <>
+        <ProfileHeader user={userObject} />
+        <UserInfo user={userObject} />
+        <ActionButtons />
+        <Highlights user={userObject} />
+        <GridTabBar />
+        <PostsGrid user={userObject} />
+      </>
+    ) : (
+      <p>Loading...</p>
+    )}
+  </Container>
   );
+
+  // return (
+  //   <Container>
+  //     <ProfileHeader user={userObject} />
+  //     <UserInfo user={userObject} />
+  //     <ActionButtons />
+  //     <Highlights user={userObject} />
+  //     <GridTabBar />
+  //     <PostsGrid user={userObject} />
+  //   </Container>
+  // );
 }
 
 export default ProfilePage
