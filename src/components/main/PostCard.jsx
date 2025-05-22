@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import useToggleImg from '../../hooks/useToogleImg';
+import ImageCaroucel from '../ImageCaroucel';
 
 /* import icons */
 import likeIcon from '../../assets/icons/like.png';
@@ -10,6 +11,7 @@ import shareIcon from '../../assets/icons/share.png';
 import bookmarkIcon from '../../assets/icons/bookmark.png';
 import bookmark_activeIcon from '../../assets/icons/bookmark_active.png';
 import moreIcon from '../../assets/icons/more.png';
+import carouselIcon from '../../assets/icons/carousel.png';
 
 
 /* Post styled components */
@@ -55,9 +57,27 @@ const Sponsored = styled.p`
   color: gray;
 `;
 
+
+const PostImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 300px;
+`;
+
 const PostImage = styled.div`
   width: 100%;
   height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(${props => props.$src});
+`;
+
+const PostImageOverlayIcon = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
   background-size: cover;
   background-position: center;
   background-image: url(${props => props.$src});
@@ -108,6 +128,7 @@ const Comments = styled.p`
 function PostCard({ user, story }) {
   const likeImg = useToggleImg(likeIcon, like_activeIcon);
   const bookmarkImg = useToggleImg(bookmarkIcon, bookmark_activeIcon);
+  // console.log(story.postImage.length);  // 디버그
 
   return (
     <Post>
@@ -119,7 +140,15 @@ function PostCard({ user, story }) {
         </PostUserInfo>
         <More src={moreIcon} alt="more"/>
       </PostHeader>
-      <PostImage $src={story.postImage} />
+
+      <PostImageWrapper>
+        {story.postImage.length > 1 
+          ? ( <ImageCaroucel story={story.postImage}/> )
+          : ( <PostImage $src={story.postImage.length > 1 ? story.postImage : story.postImage[0]} alt="image" /> )
+        }
+        <PostImageOverlayIcon $src={story.postImage.length > 1 ? carouselIcon : ''} />
+      </PostImageWrapper>
+
       <PostActions>
         <LikeIcon src={likeImg.currentImg} onClick={likeImg.toggleImage} alt="like" />
         <LeftIcon src={commentIcon} alt="comment" />

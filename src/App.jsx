@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 import { Outlet } from 'react-router-dom';
 import StatusBar from './components/StatusBar';
 import BottomNav from './components/BottomNav';
+import useLoginUser from './hooks/useLoginUser'; 
 
 const GlobalStyle = createGlobalStyle`
   /* 스크롤바 숨기기 */
@@ -21,6 +22,9 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
+  const loginUser = useLoginUser();
+  // console.log(loginUser);
+
   return (
     <>
       <GlobalStyle />

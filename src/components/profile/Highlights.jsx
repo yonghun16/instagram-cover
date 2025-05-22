@@ -37,7 +37,7 @@ function Highlights({ user }) {
     <HighlightsWrapper>
       {user.stories.map((story, i) => (
         <Highlight key={i}>
-          <img src={story.postImage} alt="highlight" />
+          <img src={Array.isArray(story.postImage) ? story.postImage[0] : story.postImage} alt="highlight" />
           <div>{user.name}{i}</div>
         </Highlight>
       ))}
