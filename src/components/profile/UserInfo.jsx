@@ -38,7 +38,7 @@ const ProfileImage = styled.div`
 const Stats = styled.div`
   font-size: 0.95rem;
   display: flex;
-  padding-right: 15px;
+  padding-right: 10px;
   justify-content: space-between;
   gap: 25px;
   & > div {
@@ -81,9 +81,8 @@ const FollowedAvatars = styled.img`
 `;
 
 const Username = styled.div`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  margin-bottom: 4px;
 `;
 
 const IntroHashTag = styled.div`

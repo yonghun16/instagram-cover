@@ -7,20 +7,32 @@ import stveio from '../avatar/Avatar5.png';
 
 /* postImages */
 import Ruffles1 from '../post/Ruffles1.png';
+import Ruffles1_1 from '../post/Ruffles1_1.jpg';
+import Ruffles1_2 from '../post/Ruffles1_2.jpg';
 import Ruffles2 from '../post/Ruffles2.jpg';
 import Ruffles3 from '../post/Ruffles3.jpg';
+import Ruffles3_1 from '../post/Ruffles3_1.jpg';
+import Ruffles3_2 from '../post/Ruffles3_2.jpeg';
 import Ruffles4 from '../post/Ruffles4.jpg';
 import Ruffles5 from '../post/Ruffles5.jpg';
 import Ruffles6 from '../post/Ruffles6.png';
 
 import sabanok1 from '../post/sabanok1.jpg';
+import sabanok1_1 from '../post/sabanok1_1.jpg';
+import sabanok1_2 from '../post/sabanok1_2.jpg';
 import sabanok2 from '../post/sabanok2.jpg';
+import sabanok2_1 from '../post/sabanok2_1.jpg';
+import sabanok2_2 from '../post/sabanok2_1.jpg';
 import sabanok3 from '../post/sabanok3.jpg';
 import sabanok4 from '../post/sabanok4.jpg';
 import sabanok5 from '../post/sabanok5.jpg';
 
 import blue_bouy1 from '../post/blue_bouy1.jpg';
+import blue_bouy1_1 from '../post/blue_bouy1_1.jpg';
+import blue_bouy1_2 from '../post/blue_bouy1_2.jpg';
 import blue_bouy2 from '../post/blue_bouy2.jpg';
+import blue_bouy2_1 from '../post/blue_bouy2_1.jpg';
+import blue_bouy2_2 from '../post/blue_bouy2_2.jpg';
 import blue_bouy3 from '../post/blue_bouy3.jpg';
 import blue_bouy4 from '../post/blue_bouy4.jpg';
 import blue_bouy5 from '../post/blue_bouy5.jpg';
@@ -28,10 +40,18 @@ import blue_bouy6 from '../post/blue_bouy6.jpeg';
 
 import waggles1 from '../post/waggles1.jpg';
 import waggles2 from '../post/waggles2.jpg';
+import waggles2_1 from '../post/waggles2_1.jpg';
+import waggles2_2 from '../post/waggles2_2.jpg';
 import waggles3 from '../post/waggles3.jpg';
+import waggles3_1 from '../post/waggles3_1.jpg';
+import waggles3_2 from '../post/waggles3_2.jpg';
 
 import stveio1 from '../post/stveio1.jpg';
+import stveio1_1 from '../post/stveio1_1.jpg';
+import stveio1_2 from '../post/stveio1_2.jpg';
 import stveio2 from '../post/stveio2.jpg';
+import stveio2_1 from '../post/stveio2_1.jpg';
+import stveio2_2 from '../post/stveio2_2.jpg';
 import stveio3 from '../post/stveio3.jpg';
 import stveio4 from '../post/stveio4.jpg';
 import stveio5 from '../post/stveio5.jpg';
@@ -53,37 +73,37 @@ const userData = [
     newStory: false,
     stories: [
       {
-        postImage: Ruffles1,
+        postImage: [Ruffles1, Ruffles1_1, Ruffles1_2],
         likes: 100,
         comments: 200,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: Ruffles2,
+        postImage: [Ruffles2],
         likes: 40,
         comments: 20,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: Ruffles3,
+        postImage: [Ruffles3, Ruffles3_1, Ruffles3_2],
         likes: 44,
         comments: 22,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: Ruffles4,
+        postImage: [Ruffles4],
         likes: 400,
         comments: 210,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: Ruffles5,
+        postImage: [Ruffles5],
         likes: 320,
         comments: 110,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: Ruffles6,
+        postImage: [Ruffles6],
         likes: 112,
         comments: 211,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
@@ -105,31 +125,31 @@ const userData = [
     newStory: true,
     stories: [
       {
-        postImage: sabanok1,
+        postImage: [sabanok1, sabanok1_1, sabanok1_2],
         likes: 12,
         comments: 200,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: sabanok2,
+        postImage: [sabanok2, sabanok2_1, sabanok2_2],
         likes: 40,
         comments: 29,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: sabanok3,
+        postImage: [sabanok3],
         likes: 70,
         comments: 27,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: sabanok4,
+        postImage: [sabanok4],
         likes: 410,
         comments: 290,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: sabanok5,
+        postImage: [sabanok5],
         likes: 310,
         comments: 10,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
@@ -151,37 +171,37 @@ const userData = [
     newStory: true,
     stories: [
       {
-        postImage: blue_bouy1,
+        postImage: [blue_bouy1, blue_bouy1_1, blue_bouy1_2],
         likes: 10,
         comments: 20,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: blue_bouy2,
+        postImage: [blue_bouy2, blue_bouy2_1, blue_bouy2_2],
         likes: 20,
         comments: 20,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: blue_bouy3,
+        postImage: [blue_bouy3],
         likes: 41,
         comments: 20,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: blue_bouy4,
+        postImage: [blue_bouy4],
         likes: 9,
         comments: 4,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: blue_bouy5,
+        postImage: [blue_bouy5],
         likes: 11,
         comments: 22,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: blue_bouy6,
+        postImage: [blue_bouy6],
         likes: 10,
         comments: 2,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
@@ -203,19 +223,19 @@ const userData = [
     newStory: true,
     stories: [
       {
-        postImage: waggles1,
+        postImage: [waggles1],
         likes: 11,
         comments: 2,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: waggles2,
+        postImage: [waggles2, waggles2_1, waggles2_2],
         likes: 8,
         comments: 5,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: waggles3,
+        postImage: [waggles3, waggles3_1, waggles3_2],
         likes: 2,
         comments: 3,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
@@ -237,37 +257,37 @@ const userData = [
     newStory: true,
     stories: [
       {
-        postImage: stveio1,
+        postImage: [stveio1, stveio1_1, stveio1_2],
         likes: 1000,
         comments: 2001,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: stveio2,
+        postImage: [stveio2, stveio2_1, stveio2_2],
         likes: 1119,
         comments: 2209,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: stveio3,
+        postImage: [stveio3],
         likes: 2019,
         comments: 2309,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: stveio4,
+        postImage: [stveio4],
         likes: 1999,
         comments: 2209,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: stveio5,
+        postImage: [stveio5],
         likes: 9919,
         comments: 2309,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
-        postImage: stveio6,
+        postImage: [stveio6],
         likes: 7339,
         comments: 2309,
         story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",

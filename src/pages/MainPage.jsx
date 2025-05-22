@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 /* UI Components */
 import MainHeader from '../components/main/MainHeader';
 import Stories from '../components/main/Stories';
@@ -16,6 +17,7 @@ export const Container = styled.div`
 `;
 
 const MainPage = () => {
+
   return (
     <Container>
       <MainHeader />

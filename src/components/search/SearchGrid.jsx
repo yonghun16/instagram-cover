@@ -110,7 +110,7 @@ function SearchGrid() {
       <Grid>
         {displayPosts.map((post, i) => (
           <Post key={i}>
-            <img src={post.postImage} alt="posts" />
+            <img src={Array.isArray(post.postImage) ? post.postImage[0] : post.postImage} alt="posts" />
             <Overlay className="overlay" />
           </Post>
         ))}

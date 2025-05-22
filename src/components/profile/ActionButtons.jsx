@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useParams } from 'react-router-dom';
 import styled from "styled-components";
 import human_plus from "../../assets/icons/human_plus.png";
 
@@ -61,17 +63,43 @@ const ButtonSmall = styled.button`
 
 
 function ActionButtons() {
+  const [myProfile, setMyProfile] = useState(false);
+  const { username } = useParams();
+  const loginUser = useSelector((state) => state.loginUser);
+
+  useEffect(() => {
+    if (loginUser.isLoggedIn && loginUser.name.name === username) {
+      setMyProfile(true);
+    } else {
+      setMyProfile(false);
+    }
+  }, []);
+
   return (
     <ButtonsWrapper>
-      <FllowButton>Follow</FllowButton>
-      <ButtonRow>
-        <Button>Message</Button>
-        <Button>Subscribe</Button>
-        <Button>Contact</Button>
-        <ButtonSmall>
-          <img src={human_plus} width="16" height="16" />
-        </ButtonSmall>
-      </ButtonRow>
+      {!myProfile
+        ?
+        (<>
+          <FllowButton>Follow</FllowButton>
+          <ButtonRow>
+            <Button>Message</Button>
+            <Button>Subscribe</Button>
+            <Button>Contact</Button>
+            <ButtonSmall>
+              <img src={human_plus} width="16" height="16" />
+            </ButtonSmall>
+          </ButtonRow>
+        </>)
+        :
+        (<>
+          <ButtonRow>
+            <Button>Edit Profile</Button>
+            <ButtonSmall>
+              <img src={human_plus} width="16" height="16" />
+            </ButtonSmall>
+          </ButtonRow>
+        </>)
+      }
     </ButtonsWrapper>
   );
 }

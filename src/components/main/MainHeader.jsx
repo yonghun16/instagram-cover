@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import Logo from './Logo'
 
 /* import icons */
-import logo from '../../assets/logo.png'
-import downArrowIcon from '../../assets/icons/down_arrow.png'
 import likeIcon from '../../assets/icons/like.png'
 import messageIcon from '../../assets/icons/message.png'
 import plusIcon from '../../assets/icons/plus.png'
@@ -17,23 +16,11 @@ const HeaderWrapper = styled.div`
   align-items: center;
 `;
 
-
 const LeftSection = styled.div`
   display: flex;
   width: 150px;
   height: 30px;
   cursor: pointer;
-  &:hover {
-    opacity: 0.7;
-  }
-`;
-
-const Logo = styled.img`
-  height: 30px;
-`;
-
-const DownArowIcon = styled.img`
-  height: 20px;
 `;
 
 const RightSection = styled.div`
@@ -54,8 +41,7 @@ function MainHeader() {
   return (
     <HeaderWrapper>
       <LeftSection>
-        <Logo src={logo} alt="logo" />
-        <DownArowIcon src={downArrowIcon} alt="down arrow" />
+        <Logo />
       </LeftSection>
       <RightSection>
         <Icon src={likeIcon} alt="like" />
