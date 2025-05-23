@@ -16,9 +16,11 @@ export default function useInput(initialValue = '', maxLength = 15) {
     const containsEvent= eventWords.some(word => nextValue.includes(word));
     if (containsBanned) {
       alert('풍속에 어긋나는 단어는 입력할 수 없습니다.');
+      setValue('');
       return;
     } else if (containsEvent) {
-      alert('민지 대리님 좋아해요♥️\n민지 대리님이랑 사귀어도 된다고 엄마한테 허락도 맛았어요!\n오늘 부터 1일 해요!.');
+      alert('민지 대리님 좋아해요♥️\n민지 대리님이랑 사귀어도 된다고 엄마한테 허락도 맛았어요!\n내일부터 우리 같이 \'Re:제로\' 정주행 해요!');
+      setValue('민지 사랑해!');  // 다연발 정신공격 2타
       return;
     }
 
@@ -30,6 +32,7 @@ export default function useInput(initialValue = '', maxLength = 15) {
   const onFocus = () => setIsFocused(true);
   const onBlur = () => setIsFocused(false);
 
+  // 입력창 정화
   const clear = () => {
     setValue('');
     inputRef.current?.blur();
