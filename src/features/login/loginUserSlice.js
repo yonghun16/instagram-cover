@@ -4,14 +4,14 @@ const userSlice = createSlice({
   name: 'loginUser',
   initialState: { 
     name: '', 
+    image: '',
     isLoggedIn: false ,
-    data: null
   },
   reducers: {
     login: (state, action) => {
-      state.name = action.payload;
+      state.name = action.payload.name;
       state.isLoggedIn = true;
-      state.data = action.payload;
+      state.image = action.payload.image;
     },
   },
 });
