@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import searchIcon from '../../assets/icons/input_search.png';
 import closeIcon from '../../assets/icons/input_close.png';
+import useInput from '../../hooks/useInput';
 
 /* Styled Components */
 export const SearchWrapper = styled.div`
@@ -56,32 +57,26 @@ export const ClearButton = styled.img`
 
 
 const SearchInputBox = () => {
-  const [isFocused, setIsFocused] = useState(false);
-  const [inputValue, setInputValue] = useState('');
-  const inputRef = useRef(null);
-
-  const handleClear = () => {
-    setInputValue('');          // 입력창 비우기
-    inputRef.current?.blur();   // focus 해제
-  };
+  const {
+    value,
+    isFocused,
+    bind,
+    clear,
+  } = useInput('', 15);
 
   return (
     <SearchWrapper>
-      {!isFocused && inputValue === '' && (
+      {!isFocused && value === '' && (
         <SearchIcon src={searchIcon} />
       )}
       <SearchInput
-        ref={inputRef}
+        {...bind}
         placeholder="검색"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
         $isFocused={isFocused}
-        $hasText={inputValue.length > 0}
+        $hasText={value.length > 0}
       />
       {isFocused && (
-        <ClearButton onMouseDown={handleClear} src={closeIcon} />
+        <ClearButton onMouseDown={clear} src={closeIcon} />
       )}
     </SearchWrapper>
   );
