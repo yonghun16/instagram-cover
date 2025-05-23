@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
+/* import icons */
+import like_fill from "../../assets/icons/like_fill.png";
+import comment_fill from "../../assets/icons/comment_fill.png";
+
 
 /* Styled Components */
 const Grid = styled.div`
@@ -39,6 +43,26 @@ const Overlay = styled.div`
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    
+    img {
+      margin: 3px 7px;
+      width: 20px;
+      height: 20px;
+    }
+  }
 `;
 
 function PostsGrid({ user }) {
@@ -46,9 +70,11 @@ function PostsGrid({ user }) {
     <Grid>
       {user.stories.map((story, i) => (
         <Post key={i}>
-          <img
-            src={Array.isArray(story.postImage) ? story.postImage[0] : story.postImage} alt="post" />
-          <Overlay className="overlay" />
+          <img src={Array.isArray(story.postImage) ? story.postImage[0] : story.postImage} alt="post" />
+          <Overlay className="overlay" >
+            <div><img src={like_fill} alt="like" />{story.likes.toLocaleString()}</div>
+            <div><img src={comment_fill} alt="like" />{story.comments.toLocaleString()}</div>
+          </Overlay>
         </Post>
       ))}
     </Grid>

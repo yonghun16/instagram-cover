@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import userData from '../assets/data/userData';
+import { useSelector } from 'react-redux';
+import useLoginUser from '../hooks/useLoginUser';
 import styled from 'styled-components';
 
 /* import icons */
@@ -38,23 +39,23 @@ const NavContainer = styled.div`
 
 const IconImg = styled.img`
   height: 24px;
-  ${props => props.$active && `
-    border: 2px solid black;
-    border-radius: 50%;`}
   &:hover {
     opacity: 0.7;
   }
-`;
-
-
-const BlackCircle = styled.div`
-  border: 2px solid black;
+  ${props => props.$active && `
+    border: 2px solid black;
+    border-radius: 50%;`}
 `;
 
 
 export default function BottomNav() {
-  const [loginUser, setloginUser] = useState(userData[0]);  // 로그인 유저 반환
+  const loginUser = useSelector((state) => state.loginUser);   // 로그인 상태 받아오기
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.key]);
+
   // console.log(location.pathname);  // 디버그
   // console.log(loginUser);  // 디버그
 
@@ -80,7 +81,7 @@ export default function BottomNav() {
         <Link
           to={{ pathname: `/${loginUser.name}` }} >
           <IconImg
-            src={loginUser.image}
+            src={loginUser.image ? loginUser.image : null}
             alt="Profile"
             $active={location.pathname === `/${loginUser.name}`}
           />
