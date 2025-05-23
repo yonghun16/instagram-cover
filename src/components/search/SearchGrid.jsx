@@ -3,6 +3,11 @@ import styled from 'styled-components';
 import React, { useState, useEffect, useRef } from 'react';
 import { useMemo } from 'react';
 
+/* import icons */
+import like_fill from "../../assets/icons/like_fill.png";
+import comment_fill from "../../assets/icons/comment_fill.png";
+
+
 /* Styled Components */
 const GridWrapper = styled.div`
   padding-top: 75px;
@@ -44,13 +49,33 @@ const Overlay = styled.div`
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    
+    img {
+      margin: 3px 7px;
+      width: 20px;
+      height: 20px;
+    }
+  }
 `;
 
 
 function SearchGrid() {
   /* 초기 posts 배열 준비 */
   // userPosts : 랜덤한 순서의 유저 게시물(한번만 계산하기 위해 useMemo 사용)
-  const usersPosts = useMemo(() => {  
+  const usersPosts = useMemo(() => {
     let userRandomArray = [];   // 유저를 랜덤으로 나열한 배열
 
     // userRandomArray 배열 초기화 (userData의 수 만큼)
@@ -111,7 +136,10 @@ function SearchGrid() {
         {displayPosts.map((post, i) => (
           <Post key={i}>
             <img src={Array.isArray(post.postImage) ? post.postImage[0] : post.postImage} alt="posts" />
-            <Overlay className="overlay" />
+            <Overlay className="overlay" >
+              <div><img src={like_fill} alt="like" />{post.likes.toLocaleString()}</div>
+              <div><img src={comment_fill} alt="like" />{post.comments.toLocaleString()}</div>
+            </Overlay>
           </Post>
         ))}
       </Grid>
