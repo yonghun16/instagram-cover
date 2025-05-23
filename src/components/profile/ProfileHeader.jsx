@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 /* import icons */
 import left_arrow from "../../assets/icons/left_arrow.png";
