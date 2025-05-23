@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import userData from '../assets/data/userData';
+import { useSelector } from 'react-redux';
+import useLoginUser from '../hooks/useLoginUser';
 import styled from 'styled-components';
 
 /* import icons */
@@ -48,15 +49,15 @@ const IconImg = styled.img`
 
 
 export default function BottomNav() {
-  const [loginUser, setloginUser] = useState(userData[0]);  // 로그인 유저 반환
+  const loginUser = useSelector((state) => state.loginUser);   // 로그인 상태 받아오기
   const location = useLocation();
-
-  // console.log(location.pathname);  // 디버그
-  // console.log(loginUser);  // 디버그
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.key]);
+
+  // console.log(location.pathname);  // 디버그
+  // console.log(loginUser);  // 디버그
 
   return (
     <BottomNavWrapper>
@@ -80,7 +81,7 @@ export default function BottomNav() {
         <Link
           to={{ pathname: `/${loginUser.name}` }} >
           <IconImg
-            src={loginUser.image}
+            src={loginUser.image ? loginUser.image : null}
             alt="Profile"
             $active={location.pathname === `/${loginUser.name}`}
           />

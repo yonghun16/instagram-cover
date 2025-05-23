@@ -68,7 +68,7 @@ function ActionButtons() {
   const loginUser = useSelector((state) => state.loginUser);
 
   useEffect(() => {
-    if (loginUser.isLoggedIn && loginUser.name.name === username) {
+    if (loginUser.isLoggedIn && loginUser.name === username) {
       setMyProfile(true);
     } else {
       setMyProfile(false);
