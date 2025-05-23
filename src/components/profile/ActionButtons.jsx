@@ -73,7 +73,7 @@ function ActionButtons() {
     } else {
       setMyProfile(false);
     }
-  }, []);
+  }, [username]);
 
   return (
     <ButtonsWrapper>

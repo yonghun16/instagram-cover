@@ -90,7 +90,7 @@ const ProfileHeader = ({ user }) => {
     } else {
       setMyProfile(false);
     }
-  }, []);
+  }, [username]);
 
   // console.log(myProfile);  디버그
 
