@@ -70,8 +70,7 @@ function PostsGrid({ user }) {
     <Grid>
       {user.stories.map((story, i) => (
         <Post key={i}>
-          <img
-            src={Array.isArray(story.postImage) ? story.postImage[0] : story.postImage} alt="post" />
+          <img src={Array.isArray(story.postImage) ? story.postImage[0] : story.postImage} alt="post" />
           <Overlay className="overlay" >
             <div><img src={like_fill} alt="like" />{story.likes.toLocaleString()}</div>
             <div><img src={comment_fill} alt="like" />{story.comments.toLocaleString()}</div>
