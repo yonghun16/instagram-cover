@@ -3,7 +3,16 @@ import styled from 'styled-components';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // 기본 슬라이더 스타일은 유지
 
-// styled-components 정의
+// 캐러셀 전체 래퍼 (부모 컨테이너)
+const CarouselWrapper = styled.div`
+  width: ${({ $containerWidth }) => $containerWidth || '100%'};
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: ${({ $containerBorderRadius }) => $containerBorderRadius || '0'}; 
+  overflow: hidden;
+`;
+
+// 캐러셀 내부 이미지
 const CarouselImage = styled.img`
   width: 100%;
   height: ${({ $height }) => $height};
@@ -12,8 +21,9 @@ const CarouselImage = styled.img`
   margin: 0 auto;
 `;
 
-const ImageCarousel = ({ story, height = '300px' }) => {
+const ImageCarousel = ({ story, height = '300px', containerWidth = '100%', containerBorderRadius = '0'}) => {
   return (
+    <CarouselWrapper $containerWidth={containerWidth} $containerBorderRadius={containerBorderRadius}>
     <Carousel 
       infiniteLoop={true}
       showStatus={false}
@@ -25,6 +35,7 @@ const ImageCarousel = ({ story, height = '300px' }) => {
         </div>
       ))}
     </Carousel>
+  </CarouselWrapper>
   );
 };
 

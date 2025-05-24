@@ -20,11 +20,12 @@ const ModalWrapper = styled.div`
 `;
 
 const ModalContent = styled.div`
-
   img {
     max-width: 90vw;
     max-height: 90vh;
+    object-fit: contain;
     border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
   }
 `;
 
@@ -64,7 +65,11 @@ function ImageModal({ image, onClose }) {
       </CloseButton>
       <ModalContent>
         {image.length > 1 
-          ? ( <ImageCaroucel story={image} height='80vh'/> )
+          ? ( <ImageCaroucel 
+            story={image} 
+            height='60vh' 
+            containerWidth='90vw'
+            containerBorderRadius='8px'/> )
           : ( <img src={image[0]} alt="image" /> )
         }
       </ModalContent>
