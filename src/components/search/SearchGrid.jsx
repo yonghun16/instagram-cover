@@ -2,10 +2,12 @@ import userData from '../../assets/data/userData';
 import styled from 'styled-components';
 import React, { useState, useEffect, useRef } from 'react';
 import { useMemo } from 'react';
+import ImageModal from "../ImageModal";
 
 /* import icons */
 import like_fill from "../../assets/icons/like_fill.png";
 import comment_fill from "../../assets/icons/comment_fill.png";
+import carouselIcon from '../../assets/icons/carousel.png';
 
 
 /* Styled Components */
@@ -37,6 +39,17 @@ const Post = styled.div`
   &:hover .overlay {
     opacity: 1;
   }
+`;
+
+const PostImageOverlayIcon = styled.div`
+  position: absolute;
+  top: 7px;
+  right: 2px;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(${props => props.$src});
 `;
 
 const Overlay = styled.div`
@@ -73,6 +86,8 @@ const Overlay = styled.div`
 
 
 function SearchGrid() {
+  const [modalImage, setModalImage] = useState(null);
+
   /* 초기 posts 배열 준비 */
   // userPosts : 랜덤한 순서의 유저 게시물(한번만 계산하기 위해 useMemo 사용)
   const usersPosts = useMemo(() => {
@@ -89,12 +104,12 @@ function SearchGrid() {
       [userRandomArray[i], userRandomArray[j]] = [userRandomArray[j], userRandomArray[i]];
     }
     // console.log(userRandomArray); // 디버깅: 확률적으로 균일한 셔플 결과
-    // console.log(userData[userRandomArray[0]].stories[0].postImage); // 디버깅: postImage를 가져옴
+    // console.log(userData[userRandomArray[0]].posts[0].postImage); // 디버깅: postImage를 가져옴
 
     const posts = [];
     for (let i = 0; i < userRandomArray.length; i++) {
       for (let j = 0; j < 3; j++) {
-        posts.push(userData[userRandomArray[i]].stories[j]);
+        posts.push(userData[userRandomArray[i]].posts[j]);
       }
     }
     // console.log(usersPosts);  // 디버깅: 유저의 포스트 정보를 가져옴
@@ -125,6 +140,29 @@ function SearchGrid() {
   }, []);
 
 
+  /* 모달 조작 버튼(이전 그림, 다음 그림, 닫기) */
+  const [modalPostIndex, setModalPostIndex] = useState(null);
+  const closeModal = () => setModalImage(null);
+
+  const changeImage = (direction) => {
+    if (modalPostIndex == null) return;
+
+    const total = displayPosts.length;
+    const newIndex =
+      direction === 'next'
+        ? (modalPostIndex + 1) % total
+        : (modalPostIndex - 1 + total) % total;
+
+    const post = displayPosts[newIndex];
+    const image = post.postImage;
+
+    setModalPostIndex(newIndex);
+    setModalImage(Array.isArray(image) ? image : [image]);
+  };
+
+  const handleNext = () => changeImage('next');
+  const handlePrev = () => changeImage('prev');
+
   /* Render */
   return (
     <GridWrapper
@@ -135,13 +173,23 @@ function SearchGrid() {
       <Grid>
         {displayPosts.map((post, i) => (
           <Post key={i}>
-            <img src={Array.isArray(post.postImage) ? post.postImage[0] : post.postImage} alt="posts" />
+            <img
+              src={post.postImage.length > 1 ? post.postImage[0] : post.postImage}
+              alt="posts"
+              onClick={() => {
+                setModalPostIndex(i);
+                const img = displayPosts[i].postImage;
+                setModalImage(Array.isArray(img) ? img : [img]);
+              }}
+            />
+            <PostImageOverlayIcon $src={post.postImage.length > 1 ? carouselIcon : ''} />
             <Overlay className="overlay" >
               <div><img src={like_fill} alt="like" />{post.likes.toLocaleString()}</div>
               <div><img src={comment_fill} alt="like" />{post.comments.toLocaleString()}</div>
             </Overlay>
           </Post>
         ))}
+        <ImageModal image={modalImage} onClose={closeModal} onPrev={handlePrev} onNext={handleNext} />
       </Grid>
     </GridWrapper>
   );

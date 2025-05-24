@@ -22,7 +22,7 @@ import sabanok1_1 from '../post/sabanok1_1.jpg';
 import sabanok1_2 from '../post/sabanok1_2.jpg';
 import sabanok2 from '../post/sabanok2.jpg';
 import sabanok2_1 from '../post/sabanok2_1.jpg';
-import sabanok2_2 from '../post/sabanok2_1.jpg';
+import sabanok2_2 from '../post/sabanok2_2.jpg';
 import sabanok3 from '../post/sabanok3.jpg';
 import sabanok4 from '../post/sabanok4.jpg';
 import sabanok5 from '../post/sabanok5.jpg';
@@ -63,7 +63,7 @@ const userData = [
     image: Ruffles,
     intro: 'My name is Ruffles. Lorem ipsum dolor sit amet consectetur',
 
-    posts: 123,
+    post: 123,
     followers: 19,
     knownFollower: "rezamong",  // 로그인한 유저가 봤을 때, 알고 있는 팔로워
     knownFollowerCount: 3,      // 로그인한 유저가 봤을 때, 팔로워 중 지인 수
@@ -71,7 +71,7 @@ const userData = [
     hashTag: ['#dog', '#cat', '#puppy'],
 
     newStory: false,
-    stories: [
+    posts: [
       {
         postImage: [Ruffles1, Ruffles1_1, Ruffles1_2],
         likes: 100,
@@ -116,14 +116,14 @@ const userData = [
     intro: 'My name is sabanok. Lorem ipsum dolor sit amet consectetur',
     hashTag: ['#GoldenRetriever', '#ShibaInu', '#FrenchBulldog'],
 
-    posts: 23,
+    post: 23,
     followers: 29,
     knownFollower: "momcat",
     knownFollowerCount: 5,
     following: 332,
 
     newStory: true,
-    stories: [
+    posts: [
       {
         postImage: [sabanok1, sabanok1_1, sabanok1_2],
         likes: 12,
@@ -162,14 +162,14 @@ const userData = [
     intro: 'My name is blue_bouy. Lorem ipsum dolor sit amet consectetur',
     hashTag: ['#BorderCollie', '#Dachshund', '#Samoyed'],
 
-    posts: 123,
+    post: 123,
     followers: 229,
     knownFollower: "reallycool128",  // 대표 팔로워
     knownFollowerCount: 2,
     following: 832,
 
     newStory: true,
-    stories: [
+    posts: [
       {
         postImage: [blue_bouy1, blue_bouy1_1, blue_bouy1_2],
         likes: 10,
@@ -214,14 +214,14 @@ const userData = [
     intro: 'My name is waggles. Lorem ipsum dolor sit amet consectetur',
     hashTag: ['#MaineCoon', '#SphynxCat', '#Ragdoll'],
 
-    posts: 1123,
+    post: 1123,
     followers: 1229,
     knownFollower: "zzang9",
     knownFollowerCount: 1,
     following: 1731,
 
     newStory: true,
-    stories: [
+    posts: [
       {
         postImage: [waggles1],
         likes: 11,
@@ -248,14 +248,14 @@ const userData = [
     intro: 'My name is stve.io. Lorem ipsum dolor sit amet consectetur',
     hashTag: ['#BritishShorthair', '#BengalCat', '#ScottishFold'],
 
-    posts: 3123,
+    post: 3123,
     followers: 5229,
     knownFollower: "songyonghun",
     knownFollowerCount: 19,
     following: 5731,
 
     newStory: true,
-    stories: [
+    posts: [
       {
         postImage: [stveio1, stveio1_1, stveio1_2],
         likes: 1000,

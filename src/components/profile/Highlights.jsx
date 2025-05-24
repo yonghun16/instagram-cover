@@ -35,7 +35,7 @@ const Highlight = styled.div`
 function Highlights({ user }) {
   return (
     <HighlightsWrapper>
-      {user.stories.map((story, i) => (
+      {user.posts.map((story, i) => (
         <Highlight key={i}>
           <img src={Array.isArray(story.postImage) ? story.postImage[0] : story.postImage} alt="highlight" />
           <div>{user.name}{i}</div>

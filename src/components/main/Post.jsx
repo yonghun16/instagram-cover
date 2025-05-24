@@ -27,7 +27,7 @@ function Post() {
         <PostCard
           key={index}
           user={userData[recentUser]}
-          story={userData[recentUser].stories[recentStory]}
+          story={userData[recentUser].posts[recentStory]}
         />
       ))}
       <BottomHeight />
