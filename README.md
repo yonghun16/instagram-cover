@@ -1,7 +1,7 @@
 <div align="center">
 
   ![header](https://capsule-render.vercel.app/api?type=waving&color=4078c0&height=180&section=header&text=Instagram-cover&fontSize=45&animation=fadeIn&fontAlignY=38&desc=yonghun16&descAlignY=55&descAlign=85)
-  <a href="https://insta33234.netlify.app/"><img src="https://github.com/yonghun16/instagram-cover/blob/main/preview.gif?raw=true" width=800px /></a>
+  <a href="https://insta33234.netlify.app/"><img src="https://github.com/yonghun16/instagram-cover/blob/main/preview.gif?raw=true" width=500px /></a>
 	
 </div>
 
