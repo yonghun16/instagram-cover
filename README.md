@@ -34,6 +34,7 @@
   <!-- JavaScript --><a href="https://www.ecma-international.org/"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" /></a>
   <br />
   <!-- React --><a href="https://reactjs.org/"><img src="https://img.shields.io/badge/React-58B4CD?style=flat&logo=React&logoColor=white" /></a>
+  <!-- Reducx --><a href="https://react-redux.js.org"><img src="https://img.shields.io/badge/Redux-764ABC?style=flat&logo=Redux&logoColor=white" /></a>
   <!-- Styled Components --><a href="https://styled-components.com/"><img src="https://img.shields.io/badge/styled%20components-DB7093?style=flat&logo=Styled%20Components&logoColor=white" /></a>
   <!-- Vite --><a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=Vite&logoColor=white" /></a>
   <br>
