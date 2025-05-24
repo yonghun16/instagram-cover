@@ -97,7 +97,7 @@ const LinkHere = styled.div`
 `;
 
 function UserInfo({ user }) {
-  const userStats = ["Posts", "Followers", "Following" ]
+  const userStats = ["Post", "Followers", "Following" ]
 
   return (
     <Header>
@@ -109,7 +109,7 @@ function UserInfo({ user }) {
         {userStats.map((stat, i) => (
           <div key={i}>
             <div>{user[stat.toLowerCase()].toLocaleString()}</div>
-            <div>{stat}</div>
+            <div>{stat=== 'Post' ? 'Posts': stat}</div>
           </div>
         ))}
       </Stats>
