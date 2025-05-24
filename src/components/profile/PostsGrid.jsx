@@ -89,13 +89,13 @@ function PostsGrid({ user }) {
   const changeImage = (direction) => {
     if (modalPostIndex == null) return;
 
-    const total = user.stories.length;
+    const total = user.posts.length;
     const newIndex =
       direction === 'next'
         ? (modalPostIndex + 1) % total
         : (modalPostIndex - 1 + total) % total;
 
-    const post = user.stories[newIndex];
+    const post = user.posts[newIndex];
     const image = post.postImage;
 
     setModalPostIndex(newIndex);
@@ -109,14 +109,14 @@ function PostsGrid({ user }) {
   return (
     <>
       <Grid>
-        {user.stories.map((story, i) => (
+        {user.posts.map((story, i) => (
           <Post key={i}>
             <img
               src={story.postImage[0]}
               alt="post"
               onClick={() => {
                 setModalPostIndex(i);
-                const img = user.stories[i].postImage;
+                const img = user.posts[i].postImage;
                 setModalImage(Array.isArray(img) ? img : [img]);
               }}
             />

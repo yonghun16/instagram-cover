@@ -29,7 +29,6 @@ const ModalContent = styled.div`
     max-width: 80vw;
     max-height: 90vh;
     object-fit: contain;
-    border-radius: 8px;
   }
 `;
 

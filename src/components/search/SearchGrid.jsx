@@ -104,12 +104,12 @@ function SearchGrid() {
       [userRandomArray[i], userRandomArray[j]] = [userRandomArray[j], userRandomArray[i]];
     }
     // console.log(userRandomArray); // 디버깅: 확률적으로 균일한 셔플 결과
-    // console.log(userData[userRandomArray[0]].stories[0].postImage); // 디버깅: postImage를 가져옴
+    // console.log(userData[userRandomArray[0]].posts[0].postImage); // 디버깅: postImage를 가져옴
 
     const posts = [];
     for (let i = 0; i < userRandomArray.length; i++) {
       for (let j = 0; j < 3; j++) {
-        posts.push(userData[userRandomArray[i]].stories[j]);
+        posts.push(userData[userRandomArray[i]].posts[j]);
       }
     }
     // console.log(usersPosts);  // 디버깅: 유저의 포스트 정보를 가져옴

@@ -8,8 +8,11 @@ const CarouselWrapper = styled.div`
   width: ${({ $containerWidth }) => $containerWidth || '100%'};
   max-width: 800px;
   margin: 0 auto;
-  border-radius: ${({ $containerBorderRadius }) => $containerBorderRadius || '0'}; 
   overflow: hidden;
+
+  .control-arrow {
+    background: none !important;
+  }
 `;
 
 // 캐러셀 내부 이미지
@@ -21,9 +24,10 @@ const CarouselImage = styled.img`
   margin: 0 auto;
 `;
 
+
 const ImageCarousel = ({ story, height = '300px', containerWidth = '100%', containerBorderRadius = '0'}) => {
   return (
-    <CarouselWrapper $containerWidth={containerWidth} $containerBorderRadius={containerBorderRadius}>
+    <CarouselWrapper $containerWidth={containerWidth} >
     <Carousel 
       infiniteLoop={true}
       showStatus={false}
