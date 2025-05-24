@@ -3,6 +3,7 @@ import { useState } from 'react';
 function useToggleImage(firstSrc, secondSrc) {
   const [currentImg, setCurrentSrc] = useState(firstSrc);
 
+  // 이미지 변경 토글
   function toggleImage() {
     setCurrentSrc(prev => (prev === firstSrc ? secondSrc : firstSrc));
   }

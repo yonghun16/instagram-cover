@@ -34,11 +34,11 @@ const Highlight = styled.div`
 
 function Highlights({ user }) {
   return (
-    <HighlightsWrapper>
+    <HighlightsWrapper>     {/* 포스트 사진 대충 가져다 붙임 */}
       {user.posts.map((post, i) => (
         <Highlight key={i}>
-          <img src={Array.isArray(post.postImage) ? post.postImage[0] : post.postImage} alt="highlight" />
-          <div>{user.name}{i}</div>
+          <img src={post.postImage[0]} alt="highlight" />
+          <div>{user.name}{i}</div>  {/* 포스트 작성자 이름 대충 붙임 */}
         </Highlight>
       ))}
     </HighlightsWrapper>

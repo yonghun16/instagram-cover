@@ -34,10 +34,12 @@ const Infomation = styled.div`
   margin-bottom: 20px;
 `;
 
+
 function Redirect({ page, backImg }) {
   const navigate = useNavigate();
   const [count, setCount] = useState(5);
 
+  // 5초 카운트
   useEffect(() => {
     const interval = setInterval(() => {
       setCount((prev) => prev - 1);
@@ -46,6 +48,7 @@ function Redirect({ page, backImg }) {
     return () => clearInterval(interval);    // clean up
   }, []);
 
+  // 0초 때 홈으로 이동
   useEffect(() => {
     if (count === 0) {
       navigate('/');

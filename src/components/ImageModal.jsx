@@ -35,7 +35,7 @@ const ModalContent = styled.div`
 const Button = styled.button`
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 5px;
   left: ${props => props.$left};
 
   background: none;
@@ -81,7 +81,7 @@ function ImageModal({ image, onClose, onPrev, onNext }) {
       <Button onClick={onClose} >
         <img src={closeIcon} alt="close" />
       </Button>
-      <Button onClick={onPrev} $left='10px' $circle={true}>
+      <Button onClick={onPrev} $left='5px' $circle={true}>
         <img src={prevIcon} alt="prev" />
       </Button>
       <Button onClick={onNext} $circle={true}>

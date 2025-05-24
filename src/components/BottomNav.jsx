@@ -66,24 +66,29 @@ export default function BottomNav() {
           to={{ pathname: '/' }} >
           <IconImg src={location.pathname === '/' ? HomeIconActive : HomeIcon} alt="Home" />
         </Link>
+
         <Link
           to={{ pathname: '/search' }} >
           <IconImg src={location.pathname === '/search' ? SearchIconActive : SearchIcon} alt="Search" />
         </Link>
+
         <Link
           to={{ pathname: '/reels' }} >
           <IconImg src={location.pathname === '/reels' ? ReelsIconActive : ReelsIcon} alt="Search" />
         </Link>
+
         <Link
           to={{ pathname: '/shop' }} >
           <IconImg src={location.pathname === '/shop' ? ShoppingBagIconActive : ShoppingBagIcon} alt="Shop" />
         </Link>
+
+        {/* 로그인한 유저의 프로파일로 이동 */}
         <Link
           to={{ pathname: `/${loginUser.name}` }} >
           <IconImg
             src={loginUser.image ? loginUser.image : null}
-            alt="Profile"
             $active={location.pathname === `/${loginUser.name}`}
+            alt="Profile"
           />
         </Link>
       </NavContainer>

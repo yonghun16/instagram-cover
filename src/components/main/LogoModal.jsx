@@ -42,14 +42,17 @@ const Icon = styled.img`
 const LogoModal = ({ isVisible }) => {
   return (
     <MiniModal $visible={isVisible}>
+
       <ModalItem>
         팔로잉
         <Icon src={friendsIcon} />
       </ModalItem>
+
       <ModalItem>
         즐겨찾기
         <Icon src={favoritesIcon} />
       </ModalItem>
+
     </MiniModal>
   );
 };

@@ -8,9 +8,9 @@ function useLoginUser() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const loginAction = {
-      name: userData[0].name,
-      image: userData[0].image,
+    const loginAction = {       // 로그인 액션
+      name: userData[0].name,   // 로그인 유저네임
+      image: userData[0].image, // 로그인 유저 프로필 이미지
     };
     dispatch(login(loginAction));
   }, []);

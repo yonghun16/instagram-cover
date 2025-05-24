@@ -142,7 +142,7 @@ function PostCard({ user, post }) {
       </PostHeader>
 
       <PostImageWrapper>
-        {post.postImage.length > 1 
+        {post.postImage.length > 1
           ? ( <ImageCaroucel post={post.postImage}/> )
           : ( <PostImage $src={post.postImage[0]} alt="image" /> )
         }
@@ -155,11 +155,13 @@ function PostCard({ user, post }) {
         <LeftIcon src={shareIcon} alt="share" />
         <RightIcon src={bookmarkImg.currentImg} onClick={bookmarkImg.toggleImage} alt="bookmark" />
       </PostActions>
+
       <PostInfo>
         <p><strong>{post.likes.toLocaleString()} Likes</strong></p>
         <p><strong>{user.name}</strong> {post.postText}</p>
         <Comments>View all {post.comments.toLocaleString()} comments</Comments>
       </PostInfo>
+
     </Post>
   );
 }

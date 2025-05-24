@@ -80,13 +80,13 @@ const Icon = styled.img`
 
 
 const ProfileHeader = ({ user }) => {
-  const [myProfile, setMyProfile] = useState(false);
+  const [myProfile, setMyProfile] = useState(false);   // 내프로파일 상태
   const { username } = useParams();
-  const loginUser = useSelector((state) => state.loginUser);
+  const loginUser = useSelector((state) => state.loginUser);   // 로그인 유저 정보(이름, 프로필) 불러옴
 
   useEffect(() => {
-    if (loginUser.isLoggedIn && loginUser.name === username) {
-      setMyProfile(true);
+    if (loginUser.isLoggedIn && loginUser.name === username) { // 로그인되어있고, 이름이 useParams과 같을 때
+      setMyProfile(true);  // 내프로파일 상태 true
     } else {
       setMyProfile(false);
     }
@@ -98,28 +98,31 @@ const ProfileHeader = ({ user }) => {
     <HeaderWrapper>
       {!myProfile
         ?
-        (<>
+        (<> {/* 내프로파일 상태가 않을 때 */}
           <LeftSection>
             <Link
               to={{ pathname: '/' }} >
               <Icon src={left_arrow} alt="back arrow" />
             </Link>
           </LeftSection>
+
           <CenterSection>
             <Username>{user.name}</Username>
             <VerifiedIcon src={verified} alt="verified" />
           </CenterSection>
+
           <RightSection>
             <Icon src={bell} />
             <Icon src={more} />
           </RightSection>
         </>)
         : 
-        (<>
+        (<> {/* 내프로파일 상태 */}
           <LeftSection>
             {user.name}
             <RedVerified>10+</RedVerified> 
           </LeftSection>
+
           <RightSection>
             <Icon src={plus} />
             <Icon src={burger} />

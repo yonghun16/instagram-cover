@@ -52,6 +52,7 @@ const StatusBar = () => {
     return `${hours}:${minutes}`;
   }
 
+  // 현재 시각으로 업데이트
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(getCurrentTime());

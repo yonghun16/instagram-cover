@@ -31,6 +31,7 @@ function Logo() {
     <LogoWrapper onClick={toggleModal}>
       <LogoImg src={logo} alt="logo" />
       <DownArrowIcon src={downArrowIcon} alt="down arrow" />
+
       <LogoModal isVisible={isOpen} />
     </LogoWrapper>
   );

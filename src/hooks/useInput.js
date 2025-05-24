@@ -5,9 +5,11 @@ export default function useInput(initialValue = '', maxLength = 15) {
   const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef(null);
 
-  const bannedWords = ['섹스', '야스', '씨발', '개새끼']; // 금칙어 목록
+  // 금칙어 목록
+  const bannedWords = ['섹스', '야스', '씨발', '개새끼'];
   const eventWords = ['민지'];
 
+  // 입력창에서 글자가 써질 때마다 발생하는 이벤트
   const onChange = (e) => {
     const nextValue = e.target.value;
 
@@ -24,13 +26,14 @@ export default function useInput(initialValue = '', maxLength = 15) {
       return;
     }
 
+    // maxLength 이하일 때만 글자 써지도록
     if (nextValue.length <= maxLength) {
       setValue(nextValue);
     }
   };
 
-  const onFocus = () => setIsFocused(true);
-  const onBlur = () => setIsFocused(false);
+  const onFocus = () => setIsFocused(true);  // 글자가 써지는 상태이면 Focuse는 true
+  const onBlur = () => setIsFocused(false);  // 글자가 써지 않는 상태이면 Blur는 false
 
   // 입력창 정화
   const clear = () => {
