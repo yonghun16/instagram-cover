@@ -11,18 +11,18 @@ const BottomHeight = styled.div`
 `;
 
 function Post() {
-  const recentPosts = [];
+  const recentPosts = [];  // 최근 포스트
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 5; i++) { // 5개의 포스트
     const recentPostData = (userNum, postNum) => {
       const recentUser = Math.floor(Math.random() * userNum);
       const recentPost = Math.floor(Math.random() * postNum);
 
       return { recentUser, recentPost };
     }
-    const { recentUser, recentPost } = recentPostData(5, 3);
+    const { recentUser, recentPost } = recentPostData(5, 3);  // 5명의 사용자중의 3개의 포스트
 
-    if (recentPosts.find(item => item.recentUser === recentUser)) {
+    if (recentPosts.find(item => item.recentUser === recentUser)) {  // 유저 중복 제거
       i--;
       continue;
     }

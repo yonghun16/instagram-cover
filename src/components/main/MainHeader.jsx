@@ -40,14 +40,17 @@ const Icon = styled.img`
 function MainHeader() {
   return (
     <HeaderWrapper>
+
       <LeftSection>
         <Logo />
       </LeftSection>
+
       <RightSection>
         <Icon src={likeIcon} alt="like" />
         <Icon src={messageIcon} alt="message" />
         <Icon src={plusIcon} alt="plus" />
       </RightSection >
+
     </HeaderWrapper>
   )
 }

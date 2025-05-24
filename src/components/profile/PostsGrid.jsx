@@ -81,9 +81,9 @@ const Overlay = styled.div`
 
 function PostsGrid({ user }) {
   /* 모달 조작 버튼(이전 그림, 다음 그림, 닫기) */
-  const [modalImage, setModalImage] = useState(null);
+  const [onModalImage, onSetModalImage] = useState(null);
   const [modalPostIndex, setModalPostIndex] = useState(null);
-  const closeModal = () => setModalImage(null);
+  const closeModal = () => onSetModalImage(null);
 
   const changeImage = (direction) => {
     if (modalPostIndex == null) return;
@@ -91,13 +91,13 @@ function PostsGrid({ user }) {
     const total = user.posts.length;
     const newIndex =
       direction === 'next'
-        ? (modalPostIndex + 1) % total
-        : (modalPostIndex - 1 + total) % total;
+        ? (modalPostIndex === total - 1 ? total - 1 : modalPostIndex + 1)   // 마지막 장이 아닐 때만 다음 그림
+        : (modalPostIndex === 0 ? 0 : modalPostIndex - 1)               // 맨 처음 장이 아닐 때만 이전 그림
 
-    const post = user.posts[newIndex];
+    const post = user.posts[newIndex];   // 페이지 업데이트
 
-    setModalPostIndex(newIndex);
-    setModalImage(post.postImage);
+    setModalPostIndex(newIndex);      // 업데이트 적용
+    onSetModalImage(post.postImage);  // 업데이트 적용
   };
 
   const handleNext = () => changeImage('next');
@@ -115,17 +115,19 @@ function PostsGrid({ user }) {
               alt="post"
               onClick={() => {
                 setModalPostIndex(i);
-                setModalImage(user.posts[i].postImage);
+                onSetModalImage(user.posts[i].postImage);
               }}
             />
+            {/* rollover 시 보이는 아이콘 */}
             <PostImageOverlayIcon $src={post.postImage.length > 1 ? carouselIcon : ''} />
-            <Overlay className="overlay">
+            <Overlay className="overlay"> 
               <div><img src={like_fill} alt="like" />{post.likes.toLocaleString()}</div>
-              <div><img src={comment_fill} alt="like" />{post.comments.toLocaleString()}</div>
+              <div><img src={comment_fill} alt="comment" />{post.comments.toLocaleString()}</div>
             </Overlay>
           </Post>
         ))}
-        <ImageModal image={modalImage} onClose={closeModal} onPrev={handlePrev} onNext={handleNext} />
+        {/* 이미지 모달에 image가 전달되면 모달창이 켜짐 */}
+        <ImageModal image={onModalImage} onClose={closeModal} onPrev={handlePrev} onNext={handleNext} />
       </Grid>
 
     </>

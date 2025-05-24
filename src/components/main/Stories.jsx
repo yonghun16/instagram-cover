@@ -56,11 +56,14 @@ const Stories = () => {
           <Link
             to={{ pathname: `/${user.name}` }}
             state={{ name: user.name }} >
+
             <StoryRingWrapper $hasRing={user.newStory}>
               <StoryImage $src={user.image} />
             </StoryRingWrapper>
           </Link>
+
           <StoryText>{user.name}</StoryText>
+
         </Story>
       ))}
     </StoriesWrapper>

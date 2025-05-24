@@ -97,7 +97,7 @@ const LinkHere = styled.div`
 `;
 
 function UserInfo({ user }) {
-  const userStats = ["Post", "Followers", "Following" ]
+  const userStats = ["Post", "Followers", "Following"]
 
   return (
     <Header>
@@ -105,30 +105,34 @@ function UserInfo({ user }) {
         <StoryRingWrapper $hasRing={user.newStory}>
           <ProfileImage $hasRing={user.newStory} $src={user.image} />
         </StoryRingWrapper>
-      <Stats>
-        {userStats.map((stat, i) => (
-          <div key={i}>
-            <div>{user[stat.toLowerCase()].toLocaleString()}</div>
-            <div>{stat=== 'Post' ? 'Posts': stat}</div>
-          </div>
-        ))}
-      </Stats>
+
+        <Stats>
+          {userStats.map((stat, i) => (
+            <div key={i}>
+              <div>{user[stat.toLowerCase()].toLocaleString()}</div>
+              <div>{stat === 'Post' ? 'Posts' : stat}</div>
+            </div>
+          ))}
+        </Stats>
       </Row>
+
       <UserExplain>
         <Username>{user.name}</Username>
+
         <IntroHashTag>
           {user.intro} {user.hashTag.map((tag, i) => <a href="#" key={i}>{tag} </a>)}
         </IntroHashTag>
-        <LinkHere>
-          <a href="#">Link goes here</a>
-        </LinkHere>
+
+        <LinkHere> <a href="#">Link goes here</a> </LinkHere>
+
         <FoloowersInfo>
-        <FollowedAvatars src={knownFollowersAvatars} alt="Followed Avatars"/>
-        <div>
-          <small>Followed by <strong>{user.knownFollower}</strong> and <strong>{user.knownFollowerCount.toLocaleString()} others</strong></small>
-        </div>
+          <FollowedAvatars src={knownFollowersAvatars} alt="Followed Avatars" />
+          <div>
+            <small>Followed by <strong>{user.knownFollower}</strong> and <strong>{user.knownFollowerCount.toLocaleString()} others</strong></small>
+          </div>
         </FoloowersInfo>
       </UserExplain>
+
     </Header>
   );
 }

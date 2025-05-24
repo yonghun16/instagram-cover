@@ -57,22 +57,24 @@ export const ClearButton = styled.img`
 
 
 const SearchInputBox = () => {
-  const { value, isFocused, bind, clear } = useInput('', 15);
+  const { value, isFocused, bind, clear } = useInput('', 15);  // 15자 제한
 
   return (
     <SearchWrapper>
+      {/* 돋보기 아이콘*/}
       {!isFocused && value === '' && (
         <SearchIcon src={searchIcon} />
       )}
+
       <SearchInput
         {...bind}
         placeholder="검색"
         $isFocused={isFocused}
         $hasText={value.length > 0}
       />
-      {isFocused && (
-        <ClearButton onMouseDown={clear} src={closeIcon} />
-      )}
+
+      {/* 포커즈 된 상태에서 X버튼 누르면 clear(blur, value remove)*/}
+      {isFocused && (<ClearButton onMouseDown={clear} src={closeIcon} />)}
     </SearchWrapper>
   );
 };

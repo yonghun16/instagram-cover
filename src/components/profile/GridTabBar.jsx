@@ -42,12 +42,14 @@ const [activeTab, setActiveTab] = useState('grid');
           alt="Grid Icon"
         />
       </TabItem>
+
       <TabItem onClick={() => setActiveTab('reels')}>
         <img
           src={activeTab === 'reels' ? reels_active : reels}
           alt="reels Icon"
         />
       </TabItem>
+
       <TabItem onClick={() => setActiveTab('mentions')}>
         <img
           src={activeTab === 'mentions' ? mentions_active : mentions}

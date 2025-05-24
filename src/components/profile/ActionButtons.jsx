@@ -46,7 +46,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const ButtonSmall = styled.button`
+const ButtonRight = styled.button`
   width: 32px;
   display: flex;
   justify-content: center;
@@ -63,13 +63,13 @@ const ButtonSmall = styled.button`
 
 
 function ActionButtons() {
-  const [myProfile, setMyProfile] = useState(false);
+  const [myProfile, setMyProfile] = useState(false);     // 내프로파일 상태
   const { username } = useParams();
-  const loginUser = useSelector((state) => state.loginUser);
+  const loginUser = useSelector((state) => state.loginUser);   // 로그인 유저 정보 가져옴(이름, 프로필사진)
 
   useEffect(() => {
     if (loginUser.isLoggedIn && loginUser.name === username) {
-      setMyProfile(true);
+      setMyProfile(true);  // 내프로파일 상태 true
     } else {
       setMyProfile(false);
     }
@@ -79,24 +79,21 @@ function ActionButtons() {
     <ButtonsWrapper>
       {!myProfile
         ?
-        (<>
+        (<> {/* 내프로파일 상태가 아닐 때 */}
           <FllowButton>Follow</FllowButton>
+
           <ButtonRow>
             <Button>Message</Button>
             <Button>Subscribe</Button>
             <Button>Contact</Button>
-            <ButtonSmall>
-              <img src={human_plus} width="16" height="16" />
-            </ButtonSmall>
+            <ButtonRight> <img src={human_plus} width="16" height="16" /> </ButtonRight>
           </ButtonRow>
         </>)
         :
-        (<>
+        (<> {/* 내프로파일 상태일 때 */}
           <ButtonRow>
             <Button>Edit Profile</Button>
-            <ButtonSmall>
-              <img src={human_plus} width="16" height="16" />
-            </ButtonSmall>
+            <ButtonRight> <img src={human_plus} width="16" height="16" /> </ButtonRight>
           </ButtonRow>
         </>)
       }
