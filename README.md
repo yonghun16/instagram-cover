@@ -51,6 +51,8 @@ src/-
                *--- useInput (작업완료 -> 삭제)
                |
                *--- useLoginUser (작업완료 -> 삭제)
+               |
+               *--- useModalImageNavigation (작업완료 -> 삭제)
 
 ```
 
@@ -82,6 +84,8 @@ src/-
 - 프로파일화면 -> 이미지 클릭하면 모달로 창 띄운 후 케로셀 적용.- finished by 용훈(25.05.24)
 - 검색화면 -> 이미지 클릭하면 모달로 창 띄운 후 케로셀 적용 - finished by 용훈(25.05.24)
 - 검색화면, 프로파일 화면 -> 모달 확대 시 다음 그림 넘어가는 버튼 기능 추가 - finished by 용훈(25.05.24)
+- (custom hook) -> 모달창에서 다음 그림으로 넘어가는 기능 hook으로 빼기 - finished by 용훈(25.05.24) 
+- PWA 구현 -> 모바일 창에서 웹을 APP처럼 사용경험 만들기 - finished by 용훈(25.05.24)
 - 404 화면 -> 정상적인 접근이 아니거나, 없는 주소로 직접 접근시 404 화면 표시. - 구현 안함.
 
 #### 3. refactoring
@@ -108,6 +112,7 @@ src/-
 - styled-components(6.1.18) : css-in-js
 - modern-css-reset(1.4.0) : css reset
 - react-responsive-carousel(3.2.23) : carousel
+- vite-plugin-pwa(1.0.0) : pwa
 
 
 
