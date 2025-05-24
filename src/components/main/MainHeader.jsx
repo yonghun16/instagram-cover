@@ -1,5 +1,8 @@
+/* import libraries */
 import React from 'react'
 import styled from 'styled-components'
+
+/* import components */
 import Logo from './Logo'
 
 /* import icons */
@@ -8,7 +11,7 @@ import messageIcon from '../../assets/icons/message.png'
 import plusIcon from '../../assets/icons/plus.png'
 
 
-/* Styled Components MainHeader */
+/* Styled Components */
 const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -36,6 +39,7 @@ const Icon = styled.img`
     opacity: 0.7;
   }
 `;
+
 
 function MainHeader() {
   return (

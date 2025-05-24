@@ -1,4 +1,6 @@
+/* import libraries */
 import { useState, useRef } from 'react';
+
 
 export default function useInput(initialValue = '', maxLength = 15) {
   const [value, setValue] = useState(initialValue);

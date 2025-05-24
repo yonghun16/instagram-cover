@@ -1,9 +1,13 @@
+/* import libraries */
 import React from 'react';
 import styled from 'styled-components';
+
+/* import Components */
 import SearchInputBox from '../components/search/SearchInputBox';
 import SearchGrid from '../components/search/SearchGrid';
 
-// 스타일 정의
+
+/* Styled Components */
 const Container = styled.div`
   height: 100vh;
   max-width: 400px;
@@ -22,12 +26,14 @@ const SearchBar = styled.div`
   z-index: 1;
 `;
 
+
 const SearchPage = () => {
   return (
     <Container>
       <SearchBar>
         <SearchInputBox />
       </SearchBar>
+
       <SearchGrid />
     </Container>
   );

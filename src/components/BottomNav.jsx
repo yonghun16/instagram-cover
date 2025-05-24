@@ -1,18 +1,18 @@
+/* import libraries */
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import useLoginUser from '../hooks/useLoginUser';
 import styled from 'styled-components';
 
 /* import icons */
 import HomeIcon from '../assets/icons/bottom_icons/home.png';
-import HomeIconActive from '../assets/icons/bottom_icons/home_active.png';
+import HomeActiveIcon from '../assets/icons/bottom_icons/home_active.png';
 import SearchIcon from '../assets/icons/bottom_icons/search.png';
-import SearchIconActive from '../assets/icons/bottom_icons/search_active.png';
+import SearchActiveIcon from '../assets/icons/bottom_icons/search_active.png';
 import ReelsIcon from '../assets/icons/bottom_icons/reels.png';
-import ReelsIconActive from '../assets/icons/bottom_icons/reels_active.png';
+import ReelsActiveIcon from '../assets/icons/bottom_icons/reels_active.png';
 import ShoppingBagIcon from '../assets/icons/bottom_icons/shop.png';
-import ShoppingBagIconActive from '../assets/icons/bottom_icons/shop_active.png';
+import ShoppingBagActiveIcon from '../assets/icons/bottom_icons/shop_active.png';
 
 
 /* BottomNav styled components */
@@ -48,7 +48,7 @@ const IconImg = styled.img`
 `;
 
 
-export default function BottomNav() {
+function BottomNav() {
   const loginUser = useSelector((state) => state.loginUser);   // 로그인 상태 받아오기
   const location = useLocation();
 
@@ -64,22 +64,22 @@ export default function BottomNav() {
       <NavContainer>
         <Link
           to={{ pathname: '/' }} >
-          <IconImg src={location.pathname === '/' ? HomeIconActive : HomeIcon} alt="Home" />
+          <IconImg src={location.pathname === '/' ? HomeActiveIcon : HomeIcon} alt="Home" />
         </Link>
 
         <Link
           to={{ pathname: '/search' }} >
-          <IconImg src={location.pathname === '/search' ? SearchIconActive : SearchIcon} alt="Search" />
+          <IconImg src={location.pathname === '/search' ? SearchActiveIcon : SearchIcon} alt="Search" />
         </Link>
 
         <Link
           to={{ pathname: '/reels' }} >
-          <IconImg src={location.pathname === '/reels' ? ReelsIconActive : ReelsIcon} alt="Search" />
+          <IconImg src={location.pathname === '/reels' ? ReelsActiveIcon : ReelsIcon} alt="Search" />
         </Link>
 
         <Link
           to={{ pathname: '/shop' }} >
-          <IconImg src={location.pathname === '/shop' ? ShoppingBagIconActive : ShoppingBagIcon} alt="Shop" />
+          <IconImg src={location.pathname === '/shop' ? ShoppingBagActiveIcon : ShoppingBagIcon} alt="Shop" />
         </Link>
 
         {/* 로그인한 유저의 프로파일로 이동 */}
@@ -91,7 +91,10 @@ export default function BottomNav() {
             alt="Profile"
           />
         </Link>
+
       </NavContainer>
     </BottomNavWrapper>
   );
 }
+
+export default BottomNav;

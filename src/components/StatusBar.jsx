@@ -1,9 +1,14 @@
+/* import libraries */
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+
+/* import icons */
 import WifiIcon from '../assets/icons/status/Wifi.png';
 import SignalIcon from '../assets/icons/status/Signal.png';
 import BatteryIcon from '../assets/icons/status/battery.png';
 
+
+/* Styled Components */
 const StatusBarWrapper = styled.div`
   position: fixed;
   top: 0;
@@ -41,7 +46,8 @@ const IconImg = styled.img`
   height: 13px;
 `;
 
-const StatusBar = () => {
+
+function StatusBar() {
   const [time, setTime] = useState(getCurrentTime());
 
   // 현재 시각 구하기(hh:mm)
@@ -60,7 +66,6 @@ const StatusBar = () => {
 
     return () => clearInterval(interval);  // cleanup
   }, []);
-
 
   return (
     <StatusBarWrapper>

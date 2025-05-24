@@ -1,8 +1,8 @@
+/* import libraries */
 import React from 'react';
 import styled from 'styled-components';
 
-
-/* UI Components */
+/* import Components */
 import MainHeader from '../components/main/MainHeader';
 import Stories from '../components/main/Stories';
 import Post from '../components/main/Post';
@@ -16,8 +16,7 @@ export const Container = styled.div`
   font-family: sans-serif;
 `;
 
-const MainPage = () => {
-
+function MainPage() {
   return (
     <Container>
       <MainHeader />

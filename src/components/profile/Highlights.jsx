@@ -1,6 +1,9 @@
+/* import libraries */
 import React from "react";
 import styled from "styled-components";
 
+
+/* styled components */
 const HighlightsWrapper = styled.div`
   display: flex;
   gap: 10px;
@@ -32,13 +35,14 @@ const Highlight = styled.div`
   }
 `;
 
+
 function Highlights({ user }) {
   return (
-    <HighlightsWrapper>     {/* 포스트 사진 대충 가져다 붙임 */}
+    <HighlightsWrapper>
       {user.posts.map((post, i) => (
         <Highlight key={i}>
-          <img src={post.postImage[0]} alt="highlight" />
-          <div>{user.name}{i}</div>  {/* 포스트 작성자 이름 대충 붙임 */}
+          <img src={post.postImage[0]} alt="highlight" />   {/* 포스트 사진 대충 가져다 붙임 */}
+          <div>{user.name}{i}</div>                         {/* 포스트 작성자 이름 대충 붙임 */}
         </Highlight>
       ))}
     </HighlightsWrapper>
