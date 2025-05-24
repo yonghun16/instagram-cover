@@ -39,7 +39,7 @@ const Icon = styled.img`
   margin-right: 10px;
 `;
 
-const MenuModal = ({ isVisible }) => {
+const LogoModal = ({ isVisible }) => {
   return (
     <MiniModal $visible={isVisible}>
       <ModalItem>
@@ -54,4 +54,4 @@ const MenuModal = ({ isVisible }) => {
   );
 };
 
-export default MenuModal;
+export default LogoModal;

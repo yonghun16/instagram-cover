@@ -1,7 +1,7 @@
 # 인스타그램 커버 
 인스타그램 커버 화면 클론하기 [figma 목업](https://www.figma.com/design/5ak8oovhdcw2zclvjufniv/instagram-template-2.0--preview-?t=8k6m5ueih7ajx1dn-0)
 
-![화면](https://github.com/jobcodebreak/instagram-cover/blob/layout/preview.png?raw=true)
+![화면](https://github.com/jobcodebreak/instagram-cover/blob/main/preview.png?raw=true)
 
 
 

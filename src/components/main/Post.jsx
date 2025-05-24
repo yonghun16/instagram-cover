@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 /* import data */
-import userData, { recentData } from '../../assets/data/userData';
+import userData from '../../assets/data/userData';
 import PostCard from './PostCard';
 
 
@@ -11,23 +11,31 @@ const BottomHeight = styled.div`
 `;
 
 function Post() {
-  const recentStories  = [];
-  for (let i = 0; i < 4; i++) {
-    let { recentUser, recentStory } = recentData(5);
-    if (recentStories.find(recentstory => recentstory.recentUser === recentUser )) {
+  const recentPosts = [];
+
+  for (let i = 0; i < 5; i++) {
+    const recentPostData = (userNum, postNum) => {
+      const recentUser = Math.floor(Math.random() * userNum);
+      const recentPost = Math.floor(Math.random() * postNum);
+
+      return { recentUser, recentPost };
+    }
+    const { recentUser, recentPost } = recentPostData(5, 3);
+
+    if (recentPosts.find(item => item.recentUser === recentUser)) {
       i--;
       continue;
     }
-    recentStories.push({ recentUser, recentStory });
+    recentPosts.push({ recentUser, recentPost });
   }
 
   return (
     <>
-      {recentStories.map(({ recentUser, recentStory }, index) => (
+      {recentPosts.map(({ recentUser, recentPost }, index) => (
         <PostCard
           key={index}
           user={userData[recentUser]}
-          story={userData[recentUser].posts[recentStory]}
+          post={userData[recentUser].posts[recentPost]}
         />
       ))}
       <BottomHeight />

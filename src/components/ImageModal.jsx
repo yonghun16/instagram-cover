@@ -90,7 +90,7 @@ function ImageModal({ image, onClose, onPrev, onNext }) {
       <ModalContent>
         {image.length > 1 
           ? ( <ImageCaroucel 
-            story={image} 
+            post={image} 
             height='60vh' 
             containerWidth='80vw'
             containerBorderRadius='8px'/> )
