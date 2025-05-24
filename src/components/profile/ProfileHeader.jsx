@@ -1,16 +1,17 @@
+/* import libraries */
 import React, { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import {Link, useParams } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
 /* import icons */
-import left_arrow from "../../assets/icons/left_arrow.png";
-import verified from "../../assets/icons/verified.png";
-import bell from "../../assets/icons/bell.png";
-import more from "../../assets/icons/more.png";
-import plus from "../../assets/icons/plus.png";
-import burger from "../../assets/icons/burger.png";
+import leftArrowIcon from "../../assets/icons/left_arrow.png";
+import verifiedIcon from "../../assets/icons/verified.png";
+import bellIcon from "../../assets/icons/bell.png";
+import moreIcon from "../../assets/icons/more.png";
+import plusIcon from "../../assets/icons/plus.png";
+import burgerIcon from "../../assets/icons/burger.png";
+
 
 /* Styled Components ProfileHeader */
 const HeaderWrapper = styled.div`
@@ -98,34 +99,34 @@ const ProfileHeader = ({ user }) => {
     <HeaderWrapper>
       {!myProfile
         ?
-        (<> {/* 내프로파일 상태가 않을 때 */}
+        (<>  {/* 내프로파일 상태가 아닐 때 */}
           <LeftSection>
             <Link
               to={{ pathname: '/' }} >
-              <Icon src={left_arrow} alt="back arrow" />
+              <Icon src={leftArrowIcon} alt="back arrow" />
             </Link>
           </LeftSection>
 
           <CenterSection>
             <Username>{user.name}</Username>
-            <VerifiedIcon src={verified} alt="verified" />
+            <VerifiedIcon src={verifiedIcon} alt="verified" />
           </CenterSection>
 
           <RightSection>
-            <Icon src={bell} />
-            <Icon src={more} />
+            <Icon src={bellIcon} />
+            <Icon src={moreIcon} />
           </RightSection>
         </>)
         : 
-        (<> {/* 내프로파일 상태 */}
+        (<>  {/* 내프로파일 상태 */}
           <LeftSection>
             {user.name}
             <RedVerified>10+</RedVerified> 
           </LeftSection>
 
           <RightSection>
-            <Icon src={plus} />
-            <Icon src={burger} />
+            <Icon src={plusIcon} />
+            <Icon src={burgerIcon} />
           </RightSection>
         </>)
       }

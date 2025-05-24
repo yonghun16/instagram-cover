@@ -1,7 +1,10 @@
+/* import libraries */
 import React from 'react';
 import styled from 'styled-components';
-import useToggleImg from '../../hooks/useToogleImg';
+
+/* import components, hooks */
 import ImageCaroucel from '../ImageCaroucel';
+import useToggleImg from '../../hooks/useToogleImg';
 
 /* import icons */
 import likeIcon from '../../assets/icons/like.png';
@@ -57,7 +60,6 @@ const Sponsored = styled.p`
   color: gray;
 `;
 
-
 const PostImageWrapper = styled.div`
   position: relative;
   width: 100%;
@@ -72,7 +74,7 @@ const PostImage = styled.div`
   background-image: url(${props => props.$src});
 `;
 
-const PostImageOverlayIcon = styled.div`
+const CarouselMarkIcon = styled.div`
   position: absolute;
   top: 10px;
   right: 5px;
@@ -90,22 +92,22 @@ const PostActions = styled.div`
   padding: 10px 10px 0 10px;
 `;
 
-const LeftIcon = styled.img`
+const BaseIcon = styled.img`
   height: 23px;
   cursor: pointer;
-  &:hover {
-    opacity: 0.7;
-  }
-`;
-const LikeIcon = styled.img`
-  height: 23px;
-  cursor: pointer;
+
   &:hover {
     opacity: 0.7;
   }
 `;
 
-const RightIcon = styled.img`
+const LikeIcon = styled(BaseIcon)``;
+
+const CommentIcon = styled(BaseIcon)``;
+
+const ShareIcon = styled(BaseIcon)``;
+
+const BookmarkIcon = styled.img`
   height: 23px;
   margin-left: auto;
   padding-right: 10px;
@@ -124,6 +126,7 @@ const Comments = styled.p`
   color: gray;
   font-size: 13px;
 `;
+
 
 function PostCard({ user, post }) {
   const likeImg = useToggleImg(likeIcon, like_activeIcon);
@@ -146,14 +149,14 @@ function PostCard({ user, post }) {
           ? ( <ImageCaroucel post={post.postImage}/> )
           : ( <PostImage $src={post.postImage[0]} alt="image" /> )
         }
-        <PostImageOverlayIcon $src={post.postImage.length > 1 ? carouselIcon : ''} />
+        <CarouselMarkIcon $src={post.postImage.length > 1 ? carouselIcon : ''} />
       </PostImageWrapper>
 
       <PostActions>
         <LikeIcon src={likeImg.currentImg} onClick={likeImg.toggleImage} alt="like" />
-        <LeftIcon src={commentIcon} alt="comment" />
-        <LeftIcon src={shareIcon} alt="share" />
-        <RightIcon src={bookmarkImg.currentImg} onClick={bookmarkImg.toggleImage} alt="bookmark" />
+        <CommentIcon src={commentIcon} alt="comment" />
+        <ShareIcon src={shareIcon} alt="share" />
+        <BookmarkIcon src={bookmarkImg.currentImg} onClick={bookmarkImg.toggleImage} alt="bookmark" />
       </PostActions>
 
       <PostInfo>

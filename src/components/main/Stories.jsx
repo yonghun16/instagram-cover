@@ -1,9 +1,14 @@
+/* import libraries */
 import React from 'react';
 import styled from 'styled-components';
-import userData from '../../assets/data/userData';
-import storyRing from '../../assets/avatar/Story_ring.png';
 import { Link } from "react-router-dom";
 
+/* import data, components */
+import userData from '../../assets/data/userData';
+import storyRing from '../../assets/avatar/Story_ring.png';
+
+
+/* styled components */
 const StoriesWrapper = styled.div`
   display: flex;
   overflow-x: auto;
@@ -48,15 +53,16 @@ const StoryText = styled.p`
   margin-top: 5px;
 `;
 
+
 const Stories = () => {
   return (
     <StoriesWrapper>
       {userData.map((user, i) => (
         <Story key={i}>
+
           <Link
             to={{ pathname: `/${user.name}` }}
             state={{ name: user.name }} >
-
             <StoryRingWrapper $hasRing={user.newStory}>
               <StoryImage $src={user.image} />
             </StoryRingWrapper>

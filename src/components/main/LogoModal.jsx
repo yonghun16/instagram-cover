@@ -1,9 +1,13 @@
+/* import libraries */
 import React from "react";
 import styled from "styled-components";
 
+/* import icons */
 import friendsIcon from "../../assets/icons/friends.png";
 import favoritesIcon from "../../assets/icons/favorites.png";
 
+
+/* styled components */
 const MiniModal = styled.div`
   position: absolute;
   top: 40px;
@@ -39,17 +43,18 @@ const Icon = styled.img`
   margin-right: 10px;
 `;
 
-const LogoModal = ({ isVisible }) => {
+
+function LogoModal({ isVisible }) {
   return (
     <MiniModal $visible={isVisible}>
 
       <ModalItem>
-        팔로잉
+        <span>팔로잉</span> 
         <Icon src={friendsIcon} />
       </ModalItem>
 
       <ModalItem>
-        즐겨찾기
+        <span>즐겨찾기</span>
         <Icon src={favoritesIcon} />
       </ModalItem>
 

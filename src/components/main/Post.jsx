@@ -1,28 +1,34 @@
+/* import libraries */
 import styled from 'styled-components';
 
-/* import data */
+/* import data, components */
 import userData from '../../assets/data/userData';
 import PostCard from './PostCard';
 
 
-/* Post styled components */
+/* styled components */
 const BottomHeight = styled.div`
   height: 55px;
 `;
 
+
 function Post() {
   const recentPosts = [];  // 최근 포스트
 
-  for (let i = 0; i < 5; i++) { // 5개의 포스트
+  // 메인 포스트 5개 보여줌
+  for (let i = 0; i < 5; i++) {
     const recentPostData = (userNum, postNum) => {
       const recentUser = Math.floor(Math.random() * userNum);
       const recentPost = Math.floor(Math.random() * postNum);
 
       return { recentUser, recentPost };
     }
-    const { recentUser, recentPost } = recentPostData(5, 3);  // 5명의 사용자중의 3개의 포스트
 
-    if (recentPosts.find(item => item.recentUser === recentUser)) {  // 유저 중복 제거
+    // 랜덤유저(0~4) 랜덤 포스트(0~2)선택
+    const { recentUser, recentPost } = recentPostData(5, 3); 
+
+    // 유저 중복 제거
+    if (recentPosts.find(item => item.recentUser === recentUser)) {
       i--;
       continue;
     }

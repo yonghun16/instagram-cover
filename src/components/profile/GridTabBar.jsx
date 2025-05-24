@@ -1,13 +1,14 @@
+/* import libraries */
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
 /* import icons */
-import grid from '../../assets/icons/grid.png';
-import grid_active from '../../assets/icons/grid_active.png';
-import reels from '../../assets/icons/reels.png';
-import reels_active from '../../assets/icons/reels_active.png';
-import mentions from '../../assets/icons/mentions.png';
-import mentions_active from '../../assets/icons/mentions_active.png';
+import gridIcon from '../../assets/icons/grid.png';
+import gridActiveIcon from '../../assets/icons/grid_active.png';
+import reelsIcon from '../../assets/icons/reels.png';
+import reelsActiveIcon from '../../assets/icons/reels_active.png';
+import mentionsIcon from '../../assets/icons/mentions.png';
+import mentionsActiveIcon from '../../assets/icons/mentions_active.png';
 
 
 /* Styled Components GridTabBar */
@@ -31,31 +32,34 @@ const TabItem = styled.button`
   }
 `;
 
+
 const GridTabBar = () => {
-const [activeTab, setActiveTab] = useState('grid');
+  const [activeTab, setActiveTab] = useState('grid');
 
   return (
     <TabBar>
+
       <TabItem onClick={() => setActiveTab('grid')}>
         <img
-          src={activeTab === 'grid' ? grid_active : grid}
+          src={activeTab === 'grid' ? gridActiveIcon : gridIcon}
           alt="Grid Icon"
         />
       </TabItem>
 
       <TabItem onClick={() => setActiveTab('reels')}>
         <img
-          src={activeTab === 'reels' ? reels_active : reels}
+          src={activeTab === 'reels' ? reelsActiveIcon : reelsIcon}
           alt="reels Icon"
         />
       </TabItem>
 
       <TabItem onClick={() => setActiveTab('mentions')}>
         <img
-          src={activeTab === 'mentions' ? mentions_active : mentions}
+          src={activeTab === 'mentions' ? mentionsActiveIcon : mentionsIcon}
           alt="mentions Icon"
         />
       </TabItem>
+
     </TabBar>
   );
 };

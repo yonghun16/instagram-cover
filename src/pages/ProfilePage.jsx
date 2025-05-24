@@ -1,9 +1,12 @@
+/* import libraries */
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useParams } from 'react-router-dom';
+
+/* import data */
 import userData from "../assets/data/userData";
 
-/* UI Components */
+/* import Components */
 import ProfileHeader from '../components/profile/ProfileHeader';
 import UserInfo from "../components/profile/UserInfo";
 import Highlights from "../components/profile/Highlights";
