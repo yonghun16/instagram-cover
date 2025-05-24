@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
 import ImageModal from "../ImageModal";
+import useModalImageNavigation from "../../hooks/useModalImageNavigation";
 
 /* import icons */
 import like_fill from "../../assets/icons/like_fill.png";
@@ -80,28 +80,16 @@ const Overlay = styled.div`
 `;
 
 function PostsGrid({ user }) {
+
   /* 모달 조작 버튼(이전 그림, 다음 그림, 닫기) */
-  const [onModalImage, onSetModalImage] = useState(null);
-  const [modalPostIndex, setModalPostIndex] = useState(null);
-  const closeModal = () => onSetModalImage(null);
-
-  const changeImage = (direction) => {
-    if (modalPostIndex == null) return;
-
-    const total = user.posts.length;
-    const newIndex =
-      direction === 'next'
-        ? (modalPostIndex === total - 1 ? total - 1 : modalPostIndex + 1)   // 마지막 장이 아닐 때만 다음 그림
-        : (modalPostIndex === 0 ? 0 : modalPostIndex - 1)               // 맨 처음 장이 아닐 때만 이전 그림
-
-    const post = user.posts[newIndex];   // 페이지 업데이트
-
-    setModalPostIndex(newIndex);      // 업데이트 적용
-    onSetModalImage(post.postImage);  // 업데이트 적용
-  };
-
-  const handleNext = () => changeImage('next');
-  const handlePrev = () => changeImage('prev');
+  const {
+    onModalImage,
+    setOnModalImage,
+    setModalPostIndex,
+    closeModal,
+    handleNext,
+    handlePrev,
+  } = useModalImageNavigation(user.posts);
 
 
   /* render */
@@ -115,12 +103,12 @@ function PostsGrid({ user }) {
               alt="post"
               onClick={() => {
                 setModalPostIndex(i);
-                onSetModalImage(user.posts[i].postImage);
+                setOnModalImage(user.posts[i].postImage);
               }}
             />
             {/* rollover 시 보이는 아이콘 */}
             <PostImageOverlayIcon $src={post.postImage.length > 1 ? carouselIcon : ''} />
-            <Overlay className="overlay"> 
+            <Overlay className="overlay">
               <div><img src={like_fill} alt="like" />{post.likes.toLocaleString()}</div>
               <div><img src={comment_fill} alt="comment" />{post.comments.toLocaleString()}</div>
             </Overlay>
