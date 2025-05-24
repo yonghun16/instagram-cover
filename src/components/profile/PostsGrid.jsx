@@ -80,9 +80,8 @@ const Overlay = styled.div`
 `;
 
 function PostsGrid({ user }) {
-  const [modalImage, setModalImage] = useState(null);
-
   /* 모달 조작 버튼(이전 그림, 다음 그림, 닫기) */
+  const [modalImage, setModalImage] = useState(null);
   const [modalPostIndex, setModalPostIndex] = useState(null);
   const closeModal = () => setModalImage(null);
 
@@ -96,34 +95,33 @@ function PostsGrid({ user }) {
         : (modalPostIndex - 1 + total) % total;
 
     const post = user.posts[newIndex];
-    const image = post.postImage;
 
     setModalPostIndex(newIndex);
-    setModalImage(Array.isArray(image) ? image : [image]);
+    setModalImage(post.postImage);
   };
 
   const handleNext = () => changeImage('next');
   const handlePrev = () => changeImage('prev');
 
 
+  /* render */
   return (
     <>
       <Grid>
-        {user.posts.map((story, i) => (
+        {user.posts.map((post, i) => (
           <Post key={i}>
             <img
-              src={story.postImage[0]}
+              src={post.postImage[0]}
               alt="post"
               onClick={() => {
                 setModalPostIndex(i);
-                const img = user.posts[i].postImage;
-                setModalImage(Array.isArray(img) ? img : [img]);
+                setModalImage(user.posts[i].postImage);
               }}
             />
-            <PostImageOverlayIcon $src={story.postImage.length > 1 ? carouselIcon : ''} />
+            <PostImageOverlayIcon $src={post.postImage.length > 1 ? carouselIcon : ''} />
             <Overlay className="overlay">
-              <div><img src={like_fill} alt="like" />{story.likes.toLocaleString()}</div>
-              <div><img src={comment_fill} alt="like" />{story.comments.toLocaleString()}</div>
+              <div><img src={like_fill} alt="like" />{post.likes.toLocaleString()}</div>
+              <div><img src={comment_fill} alt="like" />{post.comments.toLocaleString()}</div>
             </Overlay>
           </Post>
         ))}

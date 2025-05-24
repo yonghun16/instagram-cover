@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import MenuModal from './MenuModal';
+import LogoModal from './LogoModal';
 
 /* import images */
 import logo from '../../assets/logo.png';
@@ -31,7 +31,7 @@ function Logo() {
     <LogoWrapper onClick={toggleModal}>
       <LogoImg src={logo} alt="logo" />
       <DownArrowIcon src={downArrowIcon} alt="down arrow" />
-      <MenuModal isVisible={isOpen} />
+      <LogoModal isVisible={isOpen} />
     </LogoWrapper>
   );
 }

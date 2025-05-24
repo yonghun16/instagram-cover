@@ -76,37 +76,37 @@ const userData = [
         postImage: [Ruffles1, Ruffles1_1, Ruffles1_2],
         likes: 100,
         comments: 200,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [Ruffles2],
         likes: 40,
         comments: 20,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [Ruffles3, Ruffles3_1, Ruffles3_2],
         likes: 44,
         comments: 22,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [Ruffles4],
         likes: 400,
         comments: 210,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [Ruffles5],
         likes: 320,
         comments: 110,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [Ruffles6],
         likes: 112,
         comments: 211,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
     ]
   },
@@ -128,31 +128,31 @@ const userData = [
         postImage: [sabanok1, sabanok1_1, sabanok1_2],
         likes: 12,
         comments: 200,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [sabanok2, sabanok2_1, sabanok2_2],
         likes: 40,
         comments: 29,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [sabanok3],
         likes: 70,
         comments: 27,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [sabanok4],
         likes: 410,
         comments: 290,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [sabanok5],
         likes: 310,
         comments: 10,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
     ]
   },
@@ -174,37 +174,37 @@ const userData = [
         postImage: [blue_bouy1, blue_bouy1_1, blue_bouy1_2],
         likes: 10,
         comments: 20,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [blue_bouy2, blue_bouy2_1, blue_bouy2_2],
         likes: 20,
         comments: 20,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [blue_bouy3],
         likes: 41,
         comments: 20,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [blue_bouy4],
         likes: 9,
         comments: 4,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [blue_bouy5],
         likes: 11,
         comments: 22,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [blue_bouy6],
         likes: 10,
         comments: 2,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
     ]
   },
@@ -226,19 +226,19 @@ const userData = [
         postImage: [waggles1],
         likes: 11,
         comments: 2,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [waggles2, waggles2_1, waggles2_2],
         likes: 8,
         comments: 5,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [waggles3, waggles3_1, waggles3_2],
         likes: 2,
         comments: 3,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
     ]
   },
@@ -260,49 +260,41 @@ const userData = [
         postImage: [stveio1, stveio1_1, stveio1_2],
         likes: 1000,
         comments: 2001,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [stveio2, stveio2_1, stveio2_2],
         likes: 1119,
         comments: 2209,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [stveio3],
         likes: 2019,
         comments: 2309,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [stveio4],
         likes: 1999,
         comments: 2209,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [stveio5],
         likes: 9919,
         comments: 2309,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
       {
         postImage: [stveio6],
         likes: 7339,
         comments: 2309,
-        story: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
+        postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem.",
       },
     ]
   },
 ];
 
-const recentData = (num) => {
-  const recentUser = Math.floor(Math.random() * num);
-  const recentStory = Math.floor(Math.random() * 3);
-
-  return { recentUser, recentStory };
-}
-
 
 export default userData;
-export { recentData };

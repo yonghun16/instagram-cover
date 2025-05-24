@@ -86,8 +86,6 @@ const Overlay = styled.div`
 
 
 function SearchGrid() {
-  const [modalImage, setModalImage] = useState(null);
-
   /* 초기 posts 배열 준비 */
   // userPosts : 랜덤한 순서의 유저 게시물(한번만 계산하기 위해 useMemo 사용)
   const usersPosts = useMemo(() => {
@@ -139,8 +137,8 @@ function SearchGrid() {
     onScroll();
   }, []);
 
-
   /* 모달 조작 버튼(이전 그림, 다음 그림, 닫기) */
+  const [modalImage, setModalImage] = useState(null);
   const [modalPostIndex, setModalPostIndex] = useState(null);
   const closeModal = () => setModalImage(null);
 
@@ -154,10 +152,9 @@ function SearchGrid() {
         : (modalPostIndex - 1 + total) % total;
 
     const post = displayPosts[newIndex];
-    const image = post.postImage;
 
     setModalPostIndex(newIndex);
-    setModalImage(Array.isArray(image) ? image : [image]);
+    setModalImage(post.postImage);
   };
 
   const handleNext = () => changeImage('next');
@@ -174,12 +171,11 @@ function SearchGrid() {
         {displayPosts.map((post, i) => (
           <Post key={i}>
             <img
-              src={post.postImage.length > 1 ? post.postImage[0] : post.postImage}
+              src={post.postImage[0]}
               alt="posts"
               onClick={() => {
                 setModalPostIndex(i);
-                const img = displayPosts[i].postImage;
-                setModalImage(Array.isArray(img) ? img : [img]);
+                setModalImage(displayPosts[i].postImage);
               }}
             />
             <PostImageOverlayIcon $src={post.postImage.length > 1 ? carouselIcon : ''} />

@@ -25,7 +25,7 @@ const CarouselImage = styled.img`
 `;
 
 
-const ImageCarousel = ({ story, height = '300px', containerWidth = '100%', containerBorderRadius = '0'}) => {
+const ImageCarousel = ({ post, height = '300px', containerWidth = '100%', containerBorderRadius = '0'}) => {
   return (
     <CarouselWrapper $containerWidth={containerWidth} >
     <Carousel 
@@ -33,7 +33,7 @@ const ImageCarousel = ({ story, height = '300px', containerWidth = '100%', conta
       showStatus={false}
       showThumbs={false}
     >
-      {story.map((item, idx) => (
+      {post.map((item, idx) => (
         <div key={idx}>
           <CarouselImage src={item} alt={`slide-${idx}`} $height={height} />
         </div>

@@ -125,10 +125,10 @@ const Comments = styled.p`
   font-size: 13px;
 `;
 
-function PostCard({ user, story }) {
+function PostCard({ user, post }) {
   const likeImg = useToggleImg(likeIcon, like_activeIcon);
   const bookmarkImg = useToggleImg(bookmarkIcon, bookmark_activeIcon);
-  // console.log(story.postImage.length);  // 디버그
+  // console.log(post.postImage.length);  // 디버그
 
   return (
     <Post>
@@ -142,11 +142,11 @@ function PostCard({ user, story }) {
       </PostHeader>
 
       <PostImageWrapper>
-        {story.postImage.length > 1 
-          ? ( <ImageCaroucel story={story.postImage}/> )
-          : ( <PostImage $src={story.postImage[0]} alt="image" /> )
+        {post.postImage.length > 1 
+          ? ( <ImageCaroucel post={post.postImage}/> )
+          : ( <PostImage $src={post.postImage[0]} alt="image" /> )
         }
-        <PostImageOverlayIcon $src={story.postImage.length > 1 ? carouselIcon : ''} />
+        <PostImageOverlayIcon $src={post.postImage.length > 1 ? carouselIcon : ''} />
       </PostImageWrapper>
 
       <PostActions>
@@ -156,9 +156,9 @@ function PostCard({ user, story }) {
         <RightIcon src={bookmarkImg.currentImg} onClick={bookmarkImg.toggleImage} alt="bookmark" />
       </PostActions>
       <PostInfo>
-        <p><strong>{story.likes.toLocaleString()} Likes</strong></p>
-        <p><strong>{user.name}</strong> {story.story}</p>
-        <Comments>View all {story.comments.toLocaleString()} comments</Comments>
+        <p><strong>{post.likes.toLocaleString()} Likes</strong></p>
+        <p><strong>{user.name}</strong> {post.postText}</p>
+        <Comments>View all {post.comments.toLocaleString()} comments</Comments>
       </PostInfo>
     </Post>
   );
