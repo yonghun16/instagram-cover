@@ -1,8 +1,11 @@
+/* import libraries */
 import React from 'react';
 import styled from 'styled-components';
 import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // 기본 슬라이더 스타일은 유지
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // 캐러셀 기본 스타일
 
+
+/* Styled Components */
 // 캐러셀 전체 래퍼 (부모 컨테이너)
 const CarouselWrapper = styled.div`
   width: ${({ $containerWidth }) => $containerWidth || '100%'};
@@ -25,7 +28,7 @@ const CarouselImage = styled.img`
 `;
 
 
-const ImageCarousel = ({ post, height = '300px', containerWidth = '100%', containerBorderRadius = '0'}) => {
+const ImageCarousel = ({ post, height = '300px', containerWidth = '100%'}) => {
   return (
     <CarouselWrapper $containerWidth={containerWidth} >
     <Carousel 

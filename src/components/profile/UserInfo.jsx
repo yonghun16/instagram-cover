@@ -1,7 +1,10 @@
+/* import libraries */
 import React from "react";
 import styled from "styled-components";
-import storyRing from '../../assets/avatar/Story_ring.png';
-import knownFollowersAvatars from '../../assets/avatar/knownfollowers_example.png';
+
+/* import images */
+import storyRingImg from '../../assets/avatar/Story_ring.png';
+import knownFollowersAvatarsImg from '../../assets/avatar/knownfollowers_example.png';
 
 
 /* Styled Components */
@@ -22,7 +25,7 @@ const StoryRingWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: ${props => (props.$hasRing ? `url(${storyRing})` : 'none')};
+  background-image: ${props => (props.$hasRing ? `url(${storyRingImg})` : 'none')};
   background-size: cover;
 `;
 
@@ -41,18 +44,20 @@ const Stats = styled.div`
   padding-right: 10px;
   justify-content: space-between;
   gap: 25px;
+
   & > div {
     text-align: center;
   }
+
   & > div > div:nth-child(1) {
     font-weight: bold;
     margin-bottom: -4px;
   }
+
   & > div > div:nth-child(2) {
     font-size: 0.90rem;
     color: #3e3e3e;
   }
-}
 `;
 
 const UserExplain = styled.div`
@@ -96,6 +101,7 @@ const LinkHere = styled.div`
   margin-bottom: 5px;
 `;
 
+
 function UserInfo({ user }) {
   const userStats = ["Post", "Followers", "Following"]
 
@@ -109,7 +115,7 @@ function UserInfo({ user }) {
         <Stats>
           {userStats.map((stat, i) => (
             <div key={i}>
-              <div>{user[stat.toLowerCase()].toLocaleString()}</div>
+              <div>{user[stat.toLowerCase()].toLocaleString()}</div>  {/* ex) user.post = 123, user.followers = 456, user.following = 789 */}
               <div>{stat === 'Post' ? 'Posts' : stat}</div>
             </div>
           ))}
@@ -126,7 +132,7 @@ function UserInfo({ user }) {
         <LinkHere> <a href="#">Link goes here</a> </LinkHere>
 
         <FoloowersInfo>
-          <FollowedAvatars src={knownFollowersAvatars} alt="Followed Avatars" />
+          <FollowedAvatars src={knownFollowersAvatarsImg} alt="Followed Avatars" />
           <div>
             <small>Followed by <strong>{user.knownFollower}</strong> and <strong>{user.knownFollowerCount.toLocaleString()} others</strong></small>
           </div>

@@ -1,3 +1,4 @@
+/* import libraries */
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
@@ -39,7 +40,7 @@ function Redirect({ page, backImg }) {
   const navigate = useNavigate();
   const [count, setCount] = useState(5);
 
-  // 5초 카운트
+  // 5초 카운트를 세고
   useEffect(() => {
     const interval = setInterval(() => {
       setCount((prev) => prev - 1);
@@ -48,7 +49,7 @@ function Redirect({ page, backImg }) {
     return () => clearInterval(interval);    // clean up
   }, []);
 
-  // 0초 때 홈으로 이동
+  // 0초가 되면 홈으로 이동
   useEffect(() => {
     if (count === 0) {
       navigate('/');

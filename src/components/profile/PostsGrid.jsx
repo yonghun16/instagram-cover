@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+/* import libraries */
 import styled from "styled-components";
+
+/* import components, hooks */
 import ImageModal from "../ImageModal";
 import useModalImageNavigation from "../../hooks/useModalImageNavigation";
 
 /* import icons */
-import like_fill from "../../assets/icons/like_fill.png";
-import comment_fill from "../../assets/icons/comment_fill.png";
+import likeFillIcon from "../../assets/icons/like_fill.png";
+import commentFillIcon from "../../assets/icons/comment_fill.png";
 import carouselIcon from '../../assets/icons/carousel.png';
 
 
@@ -36,7 +38,7 @@ const Post = styled.div`
   }
 `;
 
-const PostImageOverlayIcon = styled.div`
+const CarouselMarkIcon = styled.div`
   position: absolute;
   top: 7px;
   right: 2px;
@@ -83,12 +85,13 @@ function PostsGrid({ user }) {
 
   /* 모달 조작 버튼(이전 그림, 다음 그림, 닫기) */
   const {
-    onModalImage,
-    setOnModalImage,
-    setModalPostIndex,
-    closeModal,
-    handleNext,
-    handlePrev,
+    onModalImage,       // 모달 상태(true, false)
+    setOnModalImage,    // 모달 열고 닫기
+    setModalPostIndex,  // 모달 포스트 인덱스
+
+    closeModal,  // 모달 닫기
+    handleNext,  // 다음 포스트
+    handlePrev,  // 이전 포스트
   } = useModalImageNavigation(user.posts);
 
 
@@ -106,14 +109,16 @@ function PostsGrid({ user }) {
                 setOnModalImage(user.posts[i].postImage);
               }}
             />
-            {/* rollover 시 보이는 아이콘 */}
-            <PostImageOverlayIcon $src={post.postImage.length > 1 ? carouselIcon : ''} />
+
+            {/* 아이콘들, Overlay 안의 아이콘은 RollOver시에만 보임 */}
+            <CarouselMarkIcon $src={post.postImage.length > 1 ? carouselIcon : ''} />
             <Overlay className="overlay">
-              <div><img src={like_fill} alt="like" />{post.likes.toLocaleString()}</div>
-              <div><img src={comment_fill} alt="comment" />{post.comments.toLocaleString()}</div>
+              <div><img src={likeFillIcon} alt="like" />{post.likes.toLocaleString()}</div>
+              <div><img src={commentFillIcon} alt="comment" />{post.comments.toLocaleString()}</div>
             </Overlay>
           </Post>
         ))}
+
         {/* 이미지 모달에 image가 전달되면 모달창이 켜짐 */}
         <ImageModal image={onModalImage} onClose={closeModal} onPrev={handlePrev} onNext={handleNext} />
       </Grid>

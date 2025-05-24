@@ -1,9 +1,11 @@
-import React, { useState, useRef } from 'react';
+// import libraries
 import styled from 'styled-components';
 
+// import icons
 import searchIcon from '../../assets/icons/input_search.png';
 import closeIcon from '../../assets/icons/input_close.png';
 import useInput from '../../hooks/useInput';
+
 
 /* Styled Components */
 export const SearchWrapper = styled.div`
@@ -57,7 +59,7 @@ export const ClearButton = styled.img`
 
 
 const SearchInputBox = () => {
-  const { value, isFocused, bind, clear } = useInput('', 15);  // 15자 제한
+  const { value, isFocused, bind, clear } = useInput('', 15);  // 15자 제한, bind{ value, onChange, onFocus, onBlur, ref }
 
   return (
     <SearchWrapper>
@@ -73,7 +75,7 @@ const SearchInputBox = () => {
         $hasText={value.length > 0}
       />
 
-      {/* 포커즈 된 상태에서 X버튼 누르면 clear(blur, value remove)*/}
+      {/* 포커즈 된 상태에서 X버튼 누르면 Input텍스트 삭제 및 cblur(on) */}
       {isFocused && (<ClearButton onMouseDown={clear} src={closeIcon} />)}
     </SearchWrapper>
   );

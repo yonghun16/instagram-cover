@@ -1,11 +1,16 @@
+/* import libraries */
 import React, { useState } from 'react';
 import styled from 'styled-components';
+
+/* import components */
 import LogoModal from './LogoModal';
 
 /* import images */
 import logo from '../../assets/logo.png';
 import downArrowIcon from '../../assets/icons/down_arrow.png';
 
+
+/* styled components */
 const LogoWrapper = styled.div`
   display: flex;
   position: relative;

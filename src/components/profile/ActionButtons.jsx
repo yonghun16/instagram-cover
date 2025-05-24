@@ -1,8 +1,11 @@
+/* import libraries */
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import styled from "styled-components";
-import human_plus from "../../assets/icons/human_plus.png";
+
+/* import icons */
+import friendPlusIcon from "../../assets/icons/human_plus.png";
 
 
 /* Styled Components */
@@ -63,7 +66,7 @@ const ButtonRight = styled.button`
 
 
 function ActionButtons() {
-  const [myProfile, setMyProfile] = useState(false);     // 내프로파일 상태
+  const [myProfile, setMyProfile] = useState(false);           // 내프로파일 상태
   const { username } = useParams();
   const loginUser = useSelector((state) => state.loginUser);   // 로그인 유저 정보 가져옴(이름, 프로필사진)
 
@@ -86,14 +89,14 @@ function ActionButtons() {
             <Button>Message</Button>
             <Button>Subscribe</Button>
             <Button>Contact</Button>
-            <ButtonRight> <img src={human_plus} width="16" height="16" /> </ButtonRight>
+            <ButtonRight><img src={friendPlusIcon} width="16" height="16" /></ButtonRight>
           </ButtonRow>
         </>)
         :
         (<> {/* 내프로파일 상태일 때 */}
           <ButtonRow>
             <Button>Edit Profile</Button>
-            <ButtonRight> <img src={human_plus} width="16" height="16" /> </ButtonRight>
+            <ButtonRight><img src={friendPlusIcon} width="16" height="16" /></ButtonRight>
           </ButtonRow>
         </>)
       }

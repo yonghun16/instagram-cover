@@ -91,9 +91,8 @@ function ImageModal({ image, onClose, onPrev, onNext }) {
         {image.length > 1 
           ? ( <ImageCaroucel 
             post={image} 
-            height='60vh' 
-            containerWidth='80vw'
-            containerBorderRadius='8px'/> )
+            height='700px' 
+            containerWidth='80vw'/>)
           : ( <img src={image[0]} alt="image" /> )
         }
       </ModalContent>

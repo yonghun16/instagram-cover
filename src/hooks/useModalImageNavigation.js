@@ -1,12 +1,15 @@
+/* import libraries */
 import { useState } from 'react';
 
-/* 모달 조작 버튼(이전 그림, 다음 그림, 닫기) */
+/* 모달 조작 (이전 그림, 다음 그림, 닫기) */
 export default function useModalImageNavigation(posts = []) {
-  const [onModalImage, setOnModalImage] = useState(null);
-  const [modalPostIndex, setModalPostIndex] = useState(null);
+  const [onModalImage, setOnModalImage] = useState(null);      // 모달 열기, 닫기 상태
+  const [modalPostIndex, setModalPostIndex] = useState(null);  // 모달 그림의 인덱스
+
+  // 모달 닫기
   const closeModal = () => setOnModalImage(null);
 
-  const changeImage = (direction) => {
+  const changePost = (direction) => {
     if (modalPostIndex == null) return;
 
     const total = posts.length;
@@ -21,15 +24,16 @@ export default function useModalImageNavigation(posts = []) {
     setOnModalImage(post.postImage);   // 업데이트 적용
   };
 
-  const handleNext = () => changeImage('next');
-  const handlePrev = () => changeImage('prev');
+  const handleNext = () => changePost('next');
+  const handlePrev = () => changePost('prev');
 
   return {
-    onModalImage,
-    setOnModalImage,
-    setModalPostIndex,
-    closeModal,
-    handleNext,
-    handlePrev,
+    onModalImage,       // 모달 상태(true, false)
+    setOnModalImage,    // 모달 열고 닫기
+    setModalPostIndex,  // 모달 포스트 인덱스
+
+    closeModal,  // 모달 닫기
+    handleNext,  // 다음 포스트
+    handlePrev,  // 이전 포스트
   };
 }
