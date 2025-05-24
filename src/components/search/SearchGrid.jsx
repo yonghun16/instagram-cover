@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import React, { useState, useEffect, useRef } from 'react';
 import { useMemo } from 'react';
 import ImageModal from "../ImageModal";
+import useModalImageNavigation from "../../hooks/useModalImageNavigation";
 
 /* import icons */
 import like_fill from "../../assets/icons/like_fill.png";
@@ -138,27 +139,14 @@ function SearchGrid() {
   }, []);
 
   /* 모달 조작 버튼(이전 그림, 다음 그림, 닫기) */
-  const [onModalImage, setOnModalImage] = useState(null);
-  const [modalPostIndex, setModalPostIndex] = useState(null);
-  const closeModal = () => setOnModalImage (null);
-
-  const changeImage = (direction) => {
-    if (modalPostIndex == null) return;
-
-    const total = displayPosts.length;
-    const newIndex =
-      direction === 'next'
-        ? (modalPostIndex === total-1 ? total-1 : modalPostIndex + 1)  // 마지막 페이지면 이동하지 않기
-        : (modalPostIndex === 0 ? 0 : modalPostIndex - 1)              // 첫 페이지면 이동하지 않기
-
-    const post = displayPosts[newIndex];  // 이동 그림으로 업데이트
-
-    setModalPostIndex(newIndex);       // 업데이트 적용
-    setOnModalImage (post.postImage);  // 업데이트 적용
-  };
-
-  const handleNext = () => changeImage('next');
-  const handlePrev = () => changeImage('prev');
+  const {
+    onModalImage,
+    setOnModalImage,
+    setModalPostIndex,
+    closeModal,
+    handleNext,
+    handlePrev,
+  } = useModalImageNavigation(displayPosts);
 
   /* Render */
   return (
@@ -175,7 +163,7 @@ function SearchGrid() {
               alt="posts"
               onClick={() => {
                 setModalPostIndex(i);
-                setOnModalImage (displayPosts[i].postImage);
+                setOnModalImage(displayPosts[i].postImage);
               }}
             />
             {/* rollover 시 보이는 아이콘들 */}
