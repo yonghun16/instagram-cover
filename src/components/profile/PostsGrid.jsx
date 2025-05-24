@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+
+import ImageModal from "../ImageModal";
 
 /* import icons */
 import like_fill from "../../assets/icons/like_fill.png";
 import comment_fill from "../../assets/icons/comment_fill.png";
+import carouselIcon from '../../assets/icons/carousel.png';
 
 
 /* Styled Components */
@@ -31,6 +34,17 @@ const Post = styled.div`
   &:hover .overlay {
     opacity: 1;
   }
+`;
+
+const PostImageOverlayIcon = styled.div`
+  position: absolute;
+  top: 7px;
+  right: 2px;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(${props => props.$src});
 `;
 
 const Overlay = styled.div`
@@ -66,18 +80,30 @@ const Overlay = styled.div`
 `;
 
 function PostsGrid({ user }) {
+  const [modalImage, setModalImage] = useState(null);
+  const closeModal = () => setModalImage(null);
+
   return (
-    <Grid>
-      {user.stories.map((story, i) => (
-        <Post key={i}>
-          <img src={Array.isArray(story.postImage) ? story.postImage[0] : story.postImage} alt="post" />
-          <Overlay className="overlay" >
-            <div><img src={like_fill} alt="like" />{story.likes.toLocaleString()}</div>
-            <div><img src={comment_fill} alt="like" />{story.comments.toLocaleString()}</div>
-          </Overlay>
-        </Post>
-      ))}
-    </Grid>
+    <>
+      <Grid>
+        {user.stories.map((story, i) => (
+          <Post key={i}>
+            <img
+              src={story.postImage[0]}
+              alt="post"
+              onClick={() => setModalImage(story.postImage)}
+            />
+            <PostImageOverlayIcon $src={story.postImage.length > 1 ? carouselIcon : ''} />
+            <Overlay className="overlay">
+              <div><img src={like_fill} alt="like" />{story.likes.toLocaleString()}</div>
+              <div><img src={comment_fill} alt="like" />{story.comments.toLocaleString()}</div>
+            </Overlay>
+          </Post>
+        ))}
+        <ImageModal image={modalImage} onClose={closeModal} />
+      </Grid>
+
+    </>
   );
 }
 

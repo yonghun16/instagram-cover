@@ -144,7 +144,7 @@ function PostCard({ user, story }) {
       <PostImageWrapper>
         {story.postImage.length > 1 
           ? ( <ImageCaroucel story={story.postImage}/> )
-          : ( <PostImage $src={story.postImage.length > 1 ? story.postImage : story.postImage[0]} alt="image" /> )
+          : ( <PostImage $src={story.postImage[0]} alt="image" /> )
         }
         <PostImageOverlayIcon $src={story.postImage.length > 1 ? carouselIcon : ''} />
       </PostImageWrapper>

@@ -57,12 +57,7 @@ export const ClearButton = styled.img`
 
 
 const SearchInputBox = () => {
-  const {
-    value,
-    isFocused,
-    bind,
-    clear,
-  } = useInput('', 15);
+  const { value, isFocused, bind, clear } = useInput('', 15);
 
   return (
     <SearchWrapper>

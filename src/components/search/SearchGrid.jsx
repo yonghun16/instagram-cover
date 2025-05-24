@@ -2,10 +2,12 @@ import userData from '../../assets/data/userData';
 import styled from 'styled-components';
 import React, { useState, useEffect, useRef } from 'react';
 import { useMemo } from 'react';
+import ImageModal from "../ImageModal";
 
 /* import icons */
 import like_fill from "../../assets/icons/like_fill.png";
 import comment_fill from "../../assets/icons/comment_fill.png";
+import carouselIcon from '../../assets/icons/carousel.png';
 
 
 /* Styled Components */
@@ -37,6 +39,17 @@ const Post = styled.div`
   &:hover .overlay {
     opacity: 1;
   }
+`;
+
+const PostImageOverlayIcon = styled.div`
+  position: absolute;
+  top: 7px;
+  right: 2px;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(${props => props.$src});
 `;
 
 const Overlay = styled.div`
@@ -73,6 +86,9 @@ const Overlay = styled.div`
 
 
 function SearchGrid() {
+  const [modalImage, setModalImage] = useState(null);
+  const closeModal = () => setModalImage(null);
+
   /* 초기 posts 배열 준비 */
   // userPosts : 랜덤한 순서의 유저 게시물(한번만 계산하기 위해 useMemo 사용)
   const usersPosts = useMemo(() => {
@@ -135,13 +151,19 @@ function SearchGrid() {
       <Grid>
         {displayPosts.map((post, i) => (
           <Post key={i}>
-            <img src={Array.isArray(post.postImage) ? post.postImage[0] : post.postImage} alt="posts" />
+            <img 
+              src={post.postImage.length > 1 ? post.postImage[0] : post.postImage} 
+              alt="posts"
+              onClick={() => setModalImage(post.postImage)}
+            />
+            <PostImageOverlayIcon $src={post.postImage.length > 1 ? carouselIcon : ''} />
             <Overlay className="overlay" >
               <div><img src={like_fill} alt="like" />{post.likes.toLocaleString()}</div>
               <div><img src={comment_fill} alt="like" />{post.comments.toLocaleString()}</div>
             </Overlay>
           </Post>
         ))}
+        <ImageModal image={modalImage} onClose={closeModal} />
       </Grid>
     </GridWrapper>
   );
