@@ -87,7 +87,6 @@ const Overlay = styled.div`
 
 function SearchGrid() {
   const [modalImage, setModalImage] = useState(null);
-  const closeModal = () => setModalImage(null);
 
   /* 초기 posts 배열 준비 */
   // userPosts : 랜덤한 순서의 유저 게시물(한번만 계산하기 위해 useMemo 사용)
@@ -141,6 +140,29 @@ function SearchGrid() {
   }, []);
 
 
+  /* 모달 조작 버튼(이전 그림, 다음 그림, 닫기) */
+  const [modalPostIndex, setModalPostIndex] = useState(null);
+  const closeModal = () => setModalImage(null);
+
+  const changeImage = (direction) => {
+    if (modalPostIndex == null) return;
+
+    const total = displayPosts.length;
+    const newIndex =
+      direction === 'next'
+        ? (modalPostIndex + 1) % total
+        : (modalPostIndex - 1 + total) % total;
+
+    const post = displayPosts[newIndex];
+    const image = post.postImage;
+
+    setModalPostIndex(newIndex);
+    setModalImage(Array.isArray(image) ? image : [image]);
+  };
+
+  const handleNext = () => changeImage('next');
+  const handlePrev = () => changeImage('prev');
+
   /* Render */
   return (
     <GridWrapper
@@ -151,10 +173,14 @@ function SearchGrid() {
       <Grid>
         {displayPosts.map((post, i) => (
           <Post key={i}>
-            <img 
-              src={post.postImage.length > 1 ? post.postImage[0] : post.postImage} 
+            <img
+              src={post.postImage.length > 1 ? post.postImage[0] : post.postImage}
               alt="posts"
-              onClick={() => setModalImage(post.postImage)}
+              onClick={() => {
+                setModalPostIndex(i);
+                const img = displayPosts[i].postImage;
+                setModalImage(Array.isArray(img) ? img : [img]);
+              }}
             />
             <PostImageOverlayIcon $src={post.postImage.length > 1 ? carouselIcon : ''} />
             <Overlay className="overlay" >
@@ -163,7 +189,7 @@ function SearchGrid() {
             </Overlay>
           </Post>
         ))}
-        <ImageModal image={modalImage} onClose={closeModal} />
+        <ImageModal image={modalImage} onClose={closeModal} onPrev={handlePrev} onNext={handleNext} />
       </Grid>
     </GridWrapper>
   );

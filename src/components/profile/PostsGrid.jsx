@@ -81,7 +81,30 @@ const Overlay = styled.div`
 
 function PostsGrid({ user }) {
   const [modalImage, setModalImage] = useState(null);
+
+  /* 모달 조작 버튼(이전 그림, 다음 그림, 닫기) */
+  const [modalPostIndex, setModalPostIndex] = useState(null);
   const closeModal = () => setModalImage(null);
+
+  const changeImage = (direction) => {
+    if (modalPostIndex == null) return;
+
+    const total = user.stories.length;
+    const newIndex =
+      direction === 'next'
+        ? (modalPostIndex + 1) % total
+        : (modalPostIndex - 1 + total) % total;
+
+    const post = user.stories[newIndex];
+    const image = post.postImage;
+
+    setModalPostIndex(newIndex);
+    setModalImage(Array.isArray(image) ? image : [image]);
+  };
+
+  const handleNext = () => changeImage('next');
+  const handlePrev = () => changeImage('prev');
+
 
   return (
     <>
@@ -91,7 +114,11 @@ function PostsGrid({ user }) {
             <img
               src={story.postImage[0]}
               alt="post"
-              onClick={() => setModalImage(story.postImage)}
+              onClick={() => {
+                setModalPostIndex(i);
+                const img = user.stories[i].postImage;
+                setModalImage(Array.isArray(img) ? img : [img]);
+              }}
             />
             <PostImageOverlayIcon $src={story.postImage.length > 1 ? carouselIcon : ''} />
             <Overlay className="overlay">
@@ -100,7 +127,7 @@ function PostsGrid({ user }) {
             </Overlay>
           </Post>
         ))}
-        <ImageModal image={modalImage} onClose={closeModal} />
+        <ImageModal image={modalImage} onClose={closeModal} onPrev={handlePrev} onNext={handleNext} />
       </Grid>
 
     </>

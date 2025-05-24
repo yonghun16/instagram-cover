@@ -22,7 +22,7 @@ import sabanok1_1 from '../post/sabanok1_1.jpg';
 import sabanok1_2 from '../post/sabanok1_2.jpg';
 import sabanok2 from '../post/sabanok2.jpg';
 import sabanok2_1 from '../post/sabanok2_1.jpg';
-import sabanok2_2 from '../post/sabanok2_1.jpg';
+import sabanok2_2 from '../post/sabanok2_2.jpg';
 import sabanok3 from '../post/sabanok3.jpg';
 import sabanok4 from '../post/sabanok4.jpg';
 import sabanok5 from '../post/sabanok5.jpg';
