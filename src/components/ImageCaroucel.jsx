@@ -38,7 +38,7 @@ const ImageCarousel = ({ post, height = '300px', containerWidth = '100%'}) => {
     >
       {post.map((item, i) => (
         <div key={i}>
-          <CarouselImage src={item} alt={`slide-${idx}`} $height={height} />
+          <CarouselImage src={item} alt={`slide-${i}`} $height={height} />
         </div>
       ))}
     </Carousel>
