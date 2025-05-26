@@ -37,9 +37,9 @@ function Post() {
 
   return (
     <>
-      {recentPosts.map(({ recentUser, recentPost }, index) => (
+      {recentPosts.map(({ recentUser, recentPost }, i) => (
         <PostCard
-          key={index}
+          key={i}
           user={userData[recentUser]}
           post={userData[recentUser].posts[recentPost]}
         />

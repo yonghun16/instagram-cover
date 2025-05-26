@@ -1,14 +1,16 @@
 /* import libraries */
 import { useState } from 'react';
 
-/* 모달 조작 (이전 그림, 다음 그림, 닫기) */
-export default function useModalImageNavigation(posts = []) {
+
+function useModalImageNavigation(posts = []) {
+  /* 모달 조작 (이전 그림, 다음 그림, 닫기) */
   const [onModalImage, setOnModalImage] = useState(null);      // 모달 열기, 닫기 상태
   const [modalPostIndex, setModalPostIndex] = useState(null);  // 모달 그림의 인덱스
 
   // 모달 닫기
   const closeModal = () => setOnModalImage(null);
 
+  // 모달 포스트 변경 함수(callback)
   const changePost = (direction) => {
     if (modalPostIndex == null) return;
 
@@ -24,16 +26,20 @@ export default function useModalImageNavigation(posts = []) {
     setOnModalImage(post.postImage);   // 업데이트 적용
   };
 
+  // 다음 포스트로 변경
   const handleNext = () => changePost('next');
+
+  // 이전 포스트로 변경
   const handlePrev = () => changePost('prev');
 
   return {
     onModalImage,       // 모달 상태(true, false)
     setOnModalImage,    // 모달 열고 닫기
-    setModalPostIndex,  // 모달 포스트 인덱스
+    setModalPostIndex,  // 모달 포스트의 이미지 인덱스 변경
 
     closeModal,  // 모달 닫기
     handleNext,  // 다음 포스트
     handlePrev,  // 이전 포스트
   };
 }
+export default useModalImageNavigation;
