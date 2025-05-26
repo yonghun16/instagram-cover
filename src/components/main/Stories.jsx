@@ -3,8 +3,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
-/* import data, components */
+/* import data */
 import userData from '../../assets/data/userData';
+
+/* import icons */
 import storyRing from '../../assets/avatar/Story_ring.png';
 
 

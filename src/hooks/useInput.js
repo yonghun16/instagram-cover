@@ -8,7 +8,7 @@ export default function useInput(initialValue = '', maxLength = 15) {
   const inputRef = useRef(null);
 
   // 금칙어 목록
-  const bannedWords = ['섹스', '야스', '씨발', '개새끼'];
+  const bannedWords = ['원정숙', '미친', '씨발', '개새끼', '똘아이', '경계성지능장애자', '싸이코패스'];
   const eventWords = ['민지'];
 
   // 입력창에서 글자가 써질 때마다 발생하는 이벤트
@@ -19,7 +19,7 @@ export default function useInput(initialValue = '', maxLength = 15) {
     const containsBanned = bannedWords.some(word => nextValue.includes(word));
     const containsEvent= eventWords.some(word => nextValue.includes(word));
     if (containsBanned) {
-      alert('풍속에 어긋나는 단어는 입력할 수 없습니다.');
+      alert(`"${nextValue}"과 같은 욕설은 제한되어 있습니다. 다른 표현을 사용해 주세요.`);
       setValue('');
       return;
     } else if (containsEvent) {

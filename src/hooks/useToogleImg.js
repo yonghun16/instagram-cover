@@ -1,3 +1,4 @@
+/* import libraries */
 import { useState } from 'react';
 
 function useToggleImage(firstSrc, secondSrc) {
