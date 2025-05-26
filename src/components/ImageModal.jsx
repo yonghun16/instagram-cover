@@ -1,5 +1,7 @@
-import React, { useEffect } from "react";
+/* import libraries */
 import styled from "styled-components";
+
+/* import components */
 import ImageCaroucel from './ImageCaroucel';
 
 /* import icons */
@@ -67,11 +69,11 @@ const Button = styled.button`
     }
   `}
 
-
   &:hover {
     opacity: 0.7;
   }
 `;
+
 
 function ImageModal({ image, onClose, onPrev, onNext }) {
   if (!image) return null;
