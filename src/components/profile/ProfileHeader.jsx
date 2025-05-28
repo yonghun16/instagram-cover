@@ -113,8 +113,8 @@ const ProfileHeader = ({ user }) => {
           </CenterSection>
 
           <RightSection>
-            <Icon src={bellIcon} />
-            <Icon src={moreIcon} />
+            <Icon src={bellIcon} alt="bell" />
+            <Icon src={moreIcon} alt="more" />
           </RightSection>
         </>)
         : 
@@ -125,8 +125,8 @@ const ProfileHeader = ({ user }) => {
           </LeftSection>
 
           <RightSection>
-            <Icon src={plusIcon} />
-            <Icon src={burgerIcon} />
+            <Icon src={plusIcon} alt="plus" />
+            <Icon src={burgerIcon} alt="burger" />
           </RightSection>
         </>)
       }
