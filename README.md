@@ -113,6 +113,7 @@ src/-
 - modern-css-reset(1.4.0) : css reset
 - react-responsive-carousel(3.2.23) : carousel
 - vite-plugin-pwa(1.0.0) : pwa
+- vite-plugin-imagemin(0.6.1) : image compression
 
 
 
