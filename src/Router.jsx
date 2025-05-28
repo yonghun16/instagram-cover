@@ -1,11 +1,12 @@
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
-import App from "./App";
-import MainPage from "./pages/MainPage";
-import ProfilePage from "./pages/ProfilePage";
-import SearchPage from "./pages/SearchPage";
-import ReelsPage from "./pages/ReelsPage";
-import ShopPage from "./pages/ShopPage";
+const App = lazy( () => import("./App") );
+const MainPage = lazy( () => import("./pages/MainPage") );
+const ProfilePage = lazy( () => import("./pages/ProfilePage") );
+const SearchPage = lazy( () => import("./pages/SearchPage") );
+const ReelsPage = lazy( () => import("./pages/ReelsPage") );
+const ShopPage = lazy( () => import("./pages/ShopPage") );
 
 
 // 라우터 컴포넌트

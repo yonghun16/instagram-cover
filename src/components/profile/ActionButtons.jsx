@@ -89,14 +89,14 @@ function ActionButtons() {
             <Button>Message</Button>
             <Button>Subscribe</Button>
             <Button>Contact</Button>
-            <ButtonRight><img src={friendPlusIcon} width="16" height="16" /></ButtonRight>
+            <ButtonRight><img src={friendPlusIcon} width="16" height="16" alt="friend plus" /></ButtonRight>
           </ButtonRow>
         </>)
         :
         (<> {/* 내프로파일 상태일 때 */}
           <ButtonRow>
             <Button>Edit Profile</Button>
-            <ButtonRight><img src={friendPlusIcon} width="16" height="16" /></ButtonRight>
+            <ButtonRight><img src={friendPlusIcon} width="16" height="16" alt="friend plus" /></ButtonRight>
           </ButtonRow>
         </>)
       }

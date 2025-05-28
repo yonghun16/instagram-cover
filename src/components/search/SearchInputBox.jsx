@@ -65,7 +65,7 @@ const SearchInputBox = () => {
     <SearchWrapper>
       {/* 돋보기 아이콘*/}
       {!isFocused && value === '' && (
-        <SearchIcon src={searchIcon} />
+        <SearchIcon src={searchIcon} alt="search" />
       )}
 
       <SearchInput
@@ -76,7 +76,7 @@ const SearchInputBox = () => {
       />
 
       {/* 포커즈 된 상태에서 X버튼 누르면 Input텍스트 삭제 및 cblur(on) */}
-      {isFocused && (<ClearButton onMouseDown={clear} src={closeIcon} />)}
+      {isFocused && (<ClearButton onMouseDown={clear} src={closeIcon} alt="clear"/>)}
     </SearchWrapper>
   );
 };

@@ -50,12 +50,12 @@ function LogoModal({ isVisible }) {
 
       <ModalItem>
         <span>팔로잉</span> 
-        <Icon src={friendsIcon} />
+        <Icon src={friendsIcon} alt="friends"/>
       </ModalItem>
 
       <ModalItem>
         <span>즐겨찾기</span>
-        <Icon src={favoritesIcon} />
+        <Icon src={favoritesIcon} alt="favorites" />
       </ModalItem>
 
     </MiniModal>
